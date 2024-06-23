@@ -6,8 +6,6 @@ package Protocol::Sys::Virt;
 
 1;
 
-__END__
-
 =head1 NAME
 
 Protocol::Sys::Virt - Abstract LibVirt protocol implementation
@@ -39,23 +37,15 @@ used for all threads, sharing variable values.
 
 =over 8
 
-=item * Import constants from libvirt's C<include/libvirt/*.h> and C<src/libvirt_internal.h>
-
-The latter because it contains the "supports" feature flags.
-
 =item * Write functions which C<remote_protocol.x> lists as "not automatically generated"
 
 =over 8
 
-=item * OPEN
-
 =item * CLOSE
 
+=item * EVENT CALLBACKS (de)registration
+
 =back
-
-=item * Generate wrappers to pack arguments into structures
-
-=item * Generate callback wrappers to unpack structures into function arguments
 
 =item * Generate reply wrappers to unpack structures into function arguments
 
