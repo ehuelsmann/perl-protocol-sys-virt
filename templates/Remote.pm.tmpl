@@ -1,0 +1,422 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __VERSION__
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
+
+use v5.14;
+use warnings;
+
+package Protocol::Sys::Virt::Remote __VERSION__;
+
+use Carp qw(croak);
+use Log::Any qw($log);
+
+use Protocol::Sys::Virt::Remote::XDR __VERSION__;
+use Protocol::Sys::Virt::Transport::XDR __VERSION__;
+my $remote = 'Protocol::Sys::Virt::Remote::XDR';
+my $transport = 'Protocol::Sys::Virt::Transport::XDR';
+
+__CONSTANTS__
+
+sub encode_no_args { '' }
+sub decode_no_args { undef }
+sub encode_no_ret { '' }
+sub decode_no_ret { undef }
+
+sub invalid_proc { my $proc = shift; sub { die "Invalid remote procedure ($proc)" } };
+
+__CODEC_TABLES__
+
+sub new {
+    my ($class, %args) = @_;
+    my $self = bless {
+        role       => $args{role} // 'client',
+        sender     => sub { croak 'Not registered with a transport'; },
+
+        expect     => 'START', # first state of the state machine...
+    }, $class;
+    $self->configure(
+        on_closed  => $args{on_closed},
+        on_call    => $args{on_call},
+        on_reply   => $args{on_reply},
+        on_message => $args{on_reply},
+        on_stream  => $args{on_stream},
+        );
+
+    return $self;
+}
+
+sub configure {
+    my $self = shift;
+    my %args = @_;
+    for my $cb (keys %args) {
+        $self->{$cb} = $args{$cb} // sub {}
+    }
+}
+
+sub _dispatch_call {
+    my ($self, %args) = @_;
+    my $proc = $args{header}->{proc};
+    say "Dispatching call to $proc";
+    $self->{on_call}->(%args,
+                       data => $args_decoders[$proc]->($args{data}));
+}
+
+sub _dispatch_reply {
+    my ($self, %args) = @_;
+    my $proc = $args{header}->{proc};
+    say "Dispatching reply to $proc";
+    if (defined $args{error}) {
+        $self->{on_reply}->(%args);
+        return;
+    }
+    else {
+        $self->{on_reply}->(%args,
+                            data => $ret_decoders[$proc]->($args{data}));
+        return;
+    }
+}
+
+sub _dispatch_message {
+    my ($self, %args) = @_;
+    my $proc = $args{header}->{proc};
+    $log->trace("Dispatching message $proc");
+    $self->{on_message}->(%args,
+                          data => $msg_decoders[$proc]->($args{data}));
+    return;
+}
+
+sub register {
+    my ($self, $transport) = @_;
+    $self->{sender} = $transport->register(
+        $remote->PROGRAM,
+        $remote->PROTOCOL_VERSION,
+        {
+            on_call    => sub { $self->_dispatch_call(@_) },
+            on_reply   => sub { $self->_dispatch_reply(@_) },
+            on_message => sub { $self->_dispatch_message(@_) },
+            on_stream  => $self->{on_stream},
+        });
+}
+
+sub _auth_success {
+   my ($self) = @_;
+   $self->{on_reply} = $self->{saved_on_reply}
+        if $self->{saved_on_reply};
+   $self->{on_call}  = $self->{saved_on_call}
+        if $self->{saved_on_call};
+
+   $self->{on_auth}->(status => 'success');
+}
+
+sub _auth_client_on_reply {
+    my ($self, %args) = @_;
+    my $serial = $args{header}->{serial};
+    if ($serial != $self->{expected_serial}) {
+       $self->{saved_on_reply}->(%args);
+       return;
+    }
+    my $proc = $args{header}->{proc};
+    if ($proc == $remote->PROC_AUTH_LIST) {
+       my $authtype = $remote->AUTH_NONE;
+       for my $type ( @{ $args{data}->{types} } ) {
+           if ($self->{wanted_authtype} == $type) {
+               $authtype = $type;
+               last;
+           }
+       }
+       if ($authtype == $remote->AUTH_NONE) {
+          $self->_auth_success;
+       }
+       elsif ($authtype == $remote->AUTH_SASL) {
+          $self->{expected_serial} = $self->call( $remote->PROC_AUTH_SASL_INIT );
+       }
+       elsif ($authtype == $remote->AUTH_POLKIT) {
+          $self->{expected_serial} = $self->call( $remote->PROC_AUTH_POLKIT );
+       }
+       else {
+           die "Unsupported authtype requested: $self->{wanted_authtype}";
+       }
+    }
+    elsif ($proc == $remote->PROC_AUTH_SASL_INIT) {
+        my $mechs = $args{data}->{mechlist};
+    }
+    elsif ($proc == $remote->PROC_SASL_START) {
+    }
+    elsif ($proc == $remote->PROC_SASL_STEP) {
+        # if success, restore original 'on_reply'
+        # if failure, go back to SASL_INIT/_START?
+    }
+    elsif ($proc == $remote->PROC_AUTH_POLKIT) {
+    }
+}
+
+sub _auth_server_on_call {
+    my ($self, %args) = @_;
+    my $proc = $args{header}->{proc};
+    if (not grep { $proc == $_ } @{ $self->{expected_proc} }) {
+       $self->{saved_on_call}->(%args);
+       return;
+    }
+    my $serial = $args{header}->{serial};
+    if ($proc == $remote->PROC_AUTH_SASL_INIT) {
+       $self->{expected_proc} = [ $remote->PROC_AUTH_SASL_START ];
+    }
+    elsif ($proc == $remote->PROC_AUTH_POLKIT) {
+    }
+    elsif ($proc == $remote->PROC_AUTH_SASL_START) {
+       $self->{expected_proc} = [ $remote->PROC_AUTH_SASL_STEP ];
+    }
+    elsif ($proc == $remote->PROC_AUTH_SASL_STEP) {
+       # if success, restore the original 'on_call'
+       # if failure, go back to SASL_START as the expected state?
+    }
+}
+
+sub start_auth {
+    my ($self, $wanted, %args) = @_;
+
+    $self->{sasl}    = $args{sasl};
+    $self->{on_auth} = $args{on_complete} // sub {};
+    if ($self->{role} eq 'client') {
+       $self->{saved_on_reply} = $self->{on_reply};
+       $self->{on_reply} = sub { $self->_auth_client_on_reply(@_); };
+
+       # First step in the authentication sequence: request the AUTH_LIST
+       $self->{expected_serial} = $self->call( $remote->PROC_AUTH_LIST );
+       $self->{wanted_authtype} = $wanted;
+    }
+    elsif ($self->{role} eq 'server') {
+       $self->{saved_on_call} = $self->{on_call};
+       $self->{on_call} = sub { $self->_auth_server_on_call(@_); };
+
+       # Start waiting for the authorization sequence
+       $self->{expected_proc} = [
+            $remote->PROC_AUTH_LIST,
+            $remote->PROC_AUTH_SASL_INIT,
+            $remote->PROC_AUTH_POLKIT,
+            ];
+    }
+    else {
+        die "Unexpected role: $self->{role}";
+    }
+}
+
+
+
+sub call {
+    my ($self, $proc, $args) = @_;
+
+    if (not (0 < $proc and $proc <= $#args_encoders)) {
+        die "Invalid procedure number ($proc)";
+    }
+    return $self->{sender}->(
+        $proc, $transport->CALL, data => $args_encoders[$proc]->($args));
+}
+
+sub reply {
+    my ($self, $proc, $serial, $status, $args) = @_;
+
+    if (not (0 < $proc and $proc <= $#ret_encoders)) {
+        die "Invalid procedure number ($proc)";
+    }
+    return $self->{sender}->(
+        $proc, $transport->REPLY,
+        serial => $serial,
+        status => $status,
+        data   => $ret_encoders[$proc]->($args));
+}
+
+sub message {
+    my ($self, $proc, $args) = @_;
+
+    if (not (0 < $proc and $proc <= $#ret_encoders)) {
+        die "Invalid procedure number ($proc)";
+    }
+
+    return $self->{sender}->(
+        $proc, $transport->MESSAGE,
+        data   => $ret_encoders[$proc]->($args));
+}
+
+sub stream {
+    ...;
+}
+
+1;
+
+__END__
+
+=head1 NAME
+
+Protocol::Sys::Virt::Remote - Connect to remote libvirt daemon
+
+=head1 VERSION
+
+__VERSION__
+
+=head1 SYNOPSIS
+
+  use Protocol::Sys::Virt::Transport;
+  use Protocol::Sys::Virt::Remote;
+  use Protocol::Sys::Virt::Remote::XDR;
+  my $prot = 'Protocol::Sys::Virt::Remote::XDR';
+
+  open my $fh, 'rw', '/run/libvirt/libvirt.sock';
+  my $transport = Protocol::Sys::Virt::Transport->new(
+       role => 'client',
+       on_send => sub { syswrite( $fh, $_ ) for @_ }
+  );
+
+  my $remote = Protocol::Sys::Virt::Remote->new(
+       role => 'client',
+       on_reply => sub { say 'Reply handled!'; },
+  );
+  $remote->register( $transport );
+
+  $remote->start_auth( $prot->AUTH_NONE,
+                       on_complete => sub { say "Authenticated!" });
+
+  my $serial = $remote->call( $prot->PROC_CONNECT_OPEN,
+                 { name => 'qemu:///system', flags => 0 } );
+
+=head1 DESCRIPTION
+
+This module contains a class to connect to a "remote" libvirt daemon. That is,
+a deamon connected to a stream, which may be a Unix socket, a TCP socket,
+a pipe, etc.  The data sent and received is encoded and decoded before passing
+it on to the transport or back to the caller.
+
+=head1 EVENTS
+
+=head2 on_closed
+
+Called when the remote side of the stream announces it will close the stream
+using the C<REMOTE_PROC_CONNECT_CLOSE> message, or when it confirms such a
+message as initiated locally.
+
+=head2 on_call
+
+  $on_call->(header => $hdr, data => $decoded_data, [fds => $fds]);
+
+Called when receiving a C<VIR_NET_CALL> or C<VIR_NET_CALL_WITH_FDS>
+(abbreviated as C<CALL> or C<CALL_WITH_FDS>) message.  This
+callback differs from the one in C<Protocol::Sys::Virt::Transport> by the fact
+the C<data> has been decoded from XDR to the Perl representation.
+
+=head2 on_reply
+
+  $on_reply->(header => $hdr, data  => $decoded_data, [fds => $fds]);
+  $on_reply->(header => $hdr, error => $err);
+
+Called when receiving a C<VIR_NET_REPLY> or C<VIR_NET_REPLY_WITH_FDS>
+(abbreviated as C<REPLY> or C<REPLY_WITH_FDS>) message.  This
+callback differs from the one in C<Protocol::Sys::Virt::Transport> by the fact
+the C<data> has been decoded from XDR to the Perl representation.
+
+=head2 on_message
+
+  $on_message->(header => $hdr, data  => $data);
+
+Called when receiving a C<VIR_NET_MESSAGE> (abbreviated as C<MESSAGE>) message.
+This callback differs from the one in C<Protocol::Sys::Virt::Transport> by the
+fact the C<data> has been decoded from XDR to the Perl representation.
+
+=head2 on_stream
+
+  $on_stream->(header => $hdr, data => $data);
+  $on_stream->(header => $hdr, hole => $hole);
+  $on_stream->(header => $hdr, error => $err);
+
+Passthrough from the C<on_stream> event in C<Protocol::Sys::Virt::Transport>.
+
+=head1 CONSTRUCTOR
+
+=head2 new
+
+   my $remote = Protocol::Sys::Virt::Remote->new(
+       role     => 'client',
+       on_close => sub { ... },
+       on_call  => sub { ... },
+   );
+
+Creates an instance on the client side (C<< role => 'client' >>) or server side
+(C<< role => 'server' >>) of the connection.  In addition to the required C<role>
+parameter, the constructor may be provided with a coderef for each of the
+events.
+
+=head1 METHODS
+
+=head2 configure
+
+  $remote->configure( on_reply => $callback, ... );
+
+Sets callback handlers for events.
+
+=head2 register
+
+  $remote->register( $transport );
+
+Sets the callbacks on C<$transport> for C<< $remote->PROGRAM >>, allowing this instance
+to handle any incoming transfers.
+
+=head2 start_auth
+
+  $remote->start_auth( $wanted_auth_type,
+                       sasl => $sasl,
+                       on_complete => sub { ... } );
+
+Starts a sequence of message exchanges to authenticate with the remote.  The messages
+being exchanged are handled internally and not passed to the event handlers.  When
+C<AUTH_SASL> is wanted, the C<sasl> key should be provided with an instance of
+L<Authen::SASL>.  The C<on_complete> handler is defined as:
+
+  $on_complete->(status => $status);
+
+Where C<$status> can be C<success> or C<fail>.
+
+=head2 call
+
+  $serial = $remote->call( $proc, $data );
+
+Calls the remote procedure C<$proc> with the arguments given in C<$data>.  C<$proc>
+is one of the values in the enum C<procedure> as defined in
+C<Protocol::Sys::Virt::Remote::XDR>.  Reply and stream messages in response to this
+call are identified by C<$serial>.
+
+=head2 reply
+
+  $remote->reply( $proc, $serial, $status, $data );
+
+Sends a reply to a remote call C<$proc> using C<$serial>.  If C<$status> is C<ERROR>,
+C<$data> is expected to provide an C<error> (C<remote_error>) structure.
+
+=head2 message
+
+  $remote->message( $proc, $data );
+
+Sends a notification message C<$data> to the remote procedure C<$proc>.
+
+=head2 stream
+
+  # TODO
+
+
+=head1 CONSTANTS
+
+=over 8
+
+__CONSTANTS_POD__
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+See the LICENSE file in this distribution.

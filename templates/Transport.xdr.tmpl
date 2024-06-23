@@ -1,0 +1,103 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __VERSION__
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
+package Protocol::Sys::Virt::Transport::XDR __VERSION__;
+
+__GENERATORCONTENT__
+
+1;
+
+__END__
+
+=head1 NAME
+
+Protocol::Sys::Virt::Transport::XDR - Protocol header and error constants and (de)serializers
+
+=head1 VERSION
+
+__VERSION__
+
+=head1 SYNOPSYS
+
+  use Protocol::Sys::Virt::Transport::XDR;
+  my $transport = 'Protocol::Sys::Virt::Transport::XDR';
+
+  my $out = '';
+  my $idx = 0;
+  my $value = {
+     code => 1,
+     domain => 1,
+     message => 'This is my error',
+     level => 1,
+     int1 => 0,
+     int2 => 0,
+  };
+  $transport->serialize_Error($value, $idx, $out);
+
+=head1 DESCRIPTION
+
+This module contains the constants and (de)serializers defined by LibVirt
+to operate the lowest level of the protocol: the transmission frames, which
+consist of a header and the payload.  The elements in this module are defined
+in libvirt's source code in the file C<libvirt/src/rpc/virnetprotocol.x>.
+
+Identifiers in this module have been transformed to strip their prefix for
+brevity.  These prefixes have been stripped:
+
+=over 8
+
+=item * VIR_NET_MESSAGE_
+
+=item * VIR_NET_
+
+=item * virNetMessage
+
+=item * virNet
+
+=back
+
+=head1 CONSTANTS
+
+=head2 General
+
+=over 8
+
+__CONSTANTS__
+
+=back
+
+=head2 From enums
+
+__ENUMS__
+
+=head1 (DE)SERIALIZERS
+
+  $transport->serialize_Error($value, $idx, $out);
+  $transport->deserialize_Error($value, $idx, $inp);
+
+Serializers convert the input provided in C<$value> to their corresponding XDR
+representation in C<$out>, at index position C<$idx>.  Non-zero C<$idx> values
+can be used to append to or overwrite parts of C<$out>.
+
+Deserializers convert the XDR representation input provided in C<$inp> at index
+position C<$idx> into their corresponding Perl representation.
+
+=over 8
+
+__SERIALIZERS__
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+See the LICENSE file in this distribution
+
+

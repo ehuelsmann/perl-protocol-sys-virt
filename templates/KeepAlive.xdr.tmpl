@@ -1,0 +1,63 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __VERSION__
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
+package Protocol::Sys::Virt::KeepAlive::XDR __VERSION__;
+
+__GENERATORCONTENT__
+
+1;
+
+__END__
+
+=head1 NAME
+
+Protocol::Sys::Virt::KeepAlive::XDR - Constants and (de)serializers for KeepAlive messages
+
+=head1 VERSION
+
+__VERSION__
+
+=head1 SYNOPSYS
+
+  use Protocol::Sys::Virt::Transport::XDR;
+  use Protocol::Sys::Virt::KeepAlive::XDR;
+  my $transport = 'Protocol::Sys::Virt::Transport::XDR';
+  my $ka = 'Protocol::Sys::Virt::KeepAlive::XDR';
+
+  my $out = '';
+  my $idx = 0;
+  my $value = {
+     proc => $ka->PROC_PING,
+  };
+  $transport->serialize_Header( $value, $idx, $out );
+
+
+=head1 SERIALIZERS
+
+=over 8
+
+__SERIALIZERS__
+
+=back
+
+head1 DESERIALIZERS
+
+=over 8
+
+__DESERIALIZERS__
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+See the LICENSE file in this distribution
+
+

@@ -1,0 +1,65 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __VERSION__
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
+package Protocol::Sys::Virt::Remote::XDR __VERSION__;
+
+__GENERATORCONTENT__
+
+1;
+
+__END__
+
+=head1 NAME
+
+Protocol::Sys::Virt::Remote::XDR - Constants and (de)serializers for remote servers
+
+=head1 VERSION
+
+__VERSION__
+
+=head1 SYNOPSYS
+
+  use Protocol::Sys::Virt::Remote::XDR;
+  my $remote = 'Protocol::Sys::Virt::Remote::XDR';
+
+  my $out = '';
+  my $idx = 0;
+  my $value = {
+     code => 1,
+     domain => 1,
+     message => 'This is my error',
+     level => 1,
+     int1 => 0,
+     int2 => 0,
+  };
+  $remote->serialize_error($value , $idx, $out);
+
+=head1 SERIALIZERS
+
+=over 8
+
+__SERIALIZERS__
+
+=back
+
+head1 DESERIALIZERS
+
+=over 8
+
+__DESERIALIZERS__
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+See the LICENSE file in this distribution
+
+

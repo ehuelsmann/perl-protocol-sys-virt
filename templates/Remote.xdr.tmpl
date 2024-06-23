@@ -1,0 +1,99 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __VERSION__
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
+package Protocol::Sys::Virt::Remote::XDR __VERSION__;
+
+use constant {
+    VIR_TYPED_PARAM_INT     => 1,
+    VIR_TYPED_PARAM_UINT    => 2,
+    VIR_TYPED_PARAM_LLONG   => 3,
+    VIR_TYPED_PARAM_ULLONG  => 4,
+    VIR_TYPED_PARAM_DOUBLE  => 5,
+    VIR_TYPED_PARAM_BOOLEAN => 6,
+    VIR_TYPED_PARAM_STRING  => 7,
+};
+
+__GENERATORCONTENT__
+
+1;
+
+__END__
+
+=head1 NAME
+
+Protocol::Sys::Virt::Remote::XDR - Constants and (de)serializers for remote server connections
+
+=head1 VERSION
+
+__VERSION__
+
+=head1 SYNOPSYS
+
+  use Protocol::Sys::Virt::Remote::XDR;
+  my $remote = 'Protocol::Sys::Virt::Remote::XDR';
+
+  my $out = '';
+  my $idx = 0;
+  my $value = $remote->AUTH_NONE;
+  $remote->serialize_auth_type($value, $idx, $out);
+
+=head1 DESCRIPTION
+
+This module contains the constants and (de)serializers defined by LibVirt
+to as part of the remote LibVirt daemon protocol: controlling the remote host
+and the libvirt managed resources on it, such as domains, networks, etc.  The
+elements in this module are defined in libvirt's source code in the file
+C<libvirt/src/remote/remote_protocol.x>.
+
+Identifiers in this module have been transformed to strip their prefix for
+brevity.  These prefixes have been stripped:
+
+=over 8
+
+=item * REMOTE_
+
+=item * remote_
+
+=back
+
+=head1 CONSTANTS
+
+=head2 General
+
+__CONSTANTS__
+
+=head2 From enums
+
+__ENUMS__
+
+=head1 (DE)SERIALIZERS
+
+
+  $transport->serialize_Error($value, $idx, $out);
+  $transport->deserialize_Error($value, $idx, $inp);
+
+Serializers convert the input provided in C<$value> to their corresponding XDR
+representation in C<$out>, at index position C<$idx>.  Non-zero C<$idx> values
+can be used to append to or overwrite parts of C<$out>.
+
+Deserializers convert the XDR representation input provided in C<$inp> at index
+position C<$idx> into their corresponding Perl representation.
+
+=over 8
+
+__SERIALIZERS__
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+See the LICENSE file in this distribution
+
