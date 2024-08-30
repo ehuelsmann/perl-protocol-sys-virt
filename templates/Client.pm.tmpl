@@ -402,9 +402,25 @@ __VERSION__
   my $client = Protocol::Sys::Virt::Client->new();
   $client->register( $remote );
 
-  $client->open( on_opened => sub { say "Opened!"; } );
+  $client->auth( $remote->AUTH_NONE, sub {
+      $client->open( 'qemu:///system', on_opened => sub { say "Opened!"; } );
+  });
 
 =head1 DESCRIPTION
+
+This module manages access to a LibVirt service through its remote protocol.
+
+The API documentation of this module and the related modules C<Protocol::Sys::Virt::Client::*>
+is meant to be used in conjunction with the documentation found at L<LibVirt's API
+reference|https://libvirt.org/html/index.html>.  Since the C API is procedural
+whereas the Perl API is object oriented; to look up a function from e.g.
+C<Protocol::Sys::Virt::Client::Domain>, translate the function to CamelCase and
+add the prefix C<virDomain>.  The functions in this module may need to be prefixed
+with either C<virConnect> or C<virNode>.  An important difference with the C API
+is that this API only lists the C<INPUT> and C<INPUT|OUTPUT (as input)> arguments for its
+functions.  The C<OUTPUT> and C<INPUT|OUTPUT (as output)> arguments will be returned in the
+C<on_reply>
+
 
 =head1 EVENTS
 
@@ -427,11 +443,29 @@ for which no callback has been registered through L</register_callback>
 Receives all messages for which no stream has been registered through
 L</register_stream>.
 
+=head2 on_open
+
+  $on_open->();
+
+=head2 on_close
+
+  $on_close->();
+
 =head1 CONSTRUCTOR
 
 =head2 new
 
-  $client = Protocol::Sys::Virt::Client->new( remote => $remote );
+  $client = Protocol::Sys::Virt::Client->new( remote => $remote, ... );
+
+Creates a new client instance.  The constructor supports the following arguments:
+
+=over 8
+
+=item * C<remote> (optional)
+
+=item * C<keepalive> (optional)
+
+=back
 
 =head1 METHODS
 
@@ -453,14 +487,29 @@ L</register_stream>.
 
 =head2 unregister_stream
 
-  $client->unregister_stream( $serial )
+  $client->unregister_stream( $serial );
 
-=head2 auth @@@TODO
+=head2 auth
 
-=head2 open @@@TODO
+  $client->auth( $auth_type, $on_completed );
 
-=head2 close @@@TODO
+Authenticates the client with the server.
 
+=head2 open
+
+  $serial = $client->open( $url, $flags = 0 );
+
+This function opens the connection to the remote driver C<$url> as documented in
+L<LibVirt's Connection URIs|https://libvirt.org/uri.html>.  Note that the value
+is to be the B<local> hypervisor URI as applicable to the remote end of the
+connection.
+
+=head2 close
+
+  $serial = $client->close;
+
+Announces to the remote the intent to close the connection. The client will receive
+a confirmation message from the server after which the server will close the connection.
 
 __ENTRYPOINTS__
 
