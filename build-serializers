@@ -633,7 +633,10 @@ sub client {
     return $main_content;
 }
 
-
+sub main_virt {
+    my ($ast, $template, $h_syms) = @_;
+    return contents( $template );
+}
 
 if (-d libvirt) {
     say "Deleting libvirt/...";
@@ -671,6 +674,11 @@ my @modules = (
                 template  => 'templates/',
                 generator => \&client,
                 module    => 'lib/Protocol/Sys/Virt/Client.pm',
+            },
+            {
+                template  => 'templates/Virt.pm.tmpl',
+                generator => \&main_virt,
+                module    => 'lib/Protocol/Sys/Virt.pm',
             },
             ]
     },
