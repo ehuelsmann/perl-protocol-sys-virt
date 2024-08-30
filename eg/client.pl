@@ -33,11 +33,17 @@ use Data::Dumper;
 
 my $next_reply = sub {};
 
+sub on_close {
+    say "Close confirmed";
+}
+
 sub on_vol_download {
     say "Starting download!";
 }
 
 sub on_vol_list {
+    $client->close;
+    $next_reply = \&on_close;
     # my $dl;
     # for my $v ( @{ $args{data}->{vols} } ) {
     #     $dl = $v if $v->{name} eq 'releaser.qcow2';
@@ -123,6 +129,7 @@ sub start_client {
 sub auth_complete {
     say "Authenticated!";
     $client->open( 'qemu:///system' );
+    $next_reply = \&on_open;
 }
 
 my $sock = await $loop->connect(
@@ -152,6 +159,7 @@ do {
         ($data, $eof) = await $stream->read_exactly( $len );
         $log->trace("Socket read (finished)");
     }
+    say "Remote connection closed...";
 };
 
 close $sock;

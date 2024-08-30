@@ -798,6 +798,53 @@ sub _translated {
     return (%args, );
 }
 
+sub _domain_factory {
+    return Protocol::Sys::Virt::Client::Domain->new( @_ );
+}
+
+sub _domain_checkpoint_factory {
+    return Protocol::Sys::Virt::Client::DomainCheckpoint->new( @_ );
+}
+
+sub _domain_snapshot_factory {
+    return Protocol::Sys::Virt::Client::DomainSnapshot->new( @_ );
+}
+
+sub _network_factory {
+    return Protocol::Sys::Virt::Client::Network->new( @_ );
+}
+
+sub _network_port_factory {
+    return Protocol::Sys::Virt::Client::NetworkPort->new( @_ );
+}
+
+sub _nwfilter_factory {
+    return Protocol::Sys::Virt::Client::NwFilter->new( @_ );
+}
+
+sub _nwfilter_binding_factory {
+    return Protocol::Sys::Virt::Client::NwFilterBinding->new( @_ );
+}
+
+sub _interface_factory {
+    return Protocol::Sys::Virt::Client::Interface->new( @_ );
+}
+
+sub _storage_pool_factory {
+    return Protocol::Sys::Virt::Client::StoragePool->new( @_ );
+}
+
+sub _storage_vol_factory {
+    return Protocol::Sys::Virt::Client::StorageVol->new( @_ );
+}
+
+sub _node_device_factory {
+    return Protocol::Sys::Virt::Client::NodeDevice->new( @_ );
+}
+
+sub _secret_factory {
+    return Protocol::Sys::Virt::Client::Secret->new( @_ );
+}
 
 sub new {
     my ($class, %args) = @_;
@@ -817,18 +864,18 @@ sub new {
         _callbacks => {},
         _streams => {},
 
-        domain_factory => sub { Protocol::Sys::Virt::Client::Domain->new( @_ ) },
-        domain_checkpoint_factory => sub { Protocol::Sys::Virt::Client::DomainCheckpoint->new( @_ ) },
-        domain_snapshot_factory => sub { Protocol::Sys::Virt::Client::DomainSnapshot->new( @_ ) },
-        network_factory => sub { Protocol::Sys::Virt::Client::Network->new( @_ ) },
-        network_port_factory => sub { Protocol::Sys::Virt::Client::NetworkPort->new( @_ ) },
-        nwfilter_factory => sub { Protocol::Sys::Virt::Client::NwFilter->new( @_ ) },
-        nwfilter_binding_factory => sub { Protocol::Sys::Virt::Client::NwFilterBinding->new( @_ ) },
-        interface_factory => sub { Protocol::Sys::Virt::Client::Interface->new( @_ ) },
-        storage_pool_factory => sub { Protocol::Sys::Virt::Client::StoragePool->new( @_ ) },
-        storage_vol_factory => sub { Protocol::Sys::Virt::Client::StorageVol->new( @_ ) },
-        node_device_factory => sub { Protocol::Sys::Virt::Client::NodeDevice->new( @_ ) },
-        secret_factory => sub { Protocol::Sys::Virt::Client::Secret->new( @_ ) },
+        domain_factory            => \&_domain_factory,
+        domain_checkpoint_factory => \&_domain_checkpoint_factory,
+        domain_snapshot_factory   => \&_domain_snapshot_factory,
+        network_factory           => \&_network_factory,
+        network_port_factory      => \&_network_port_factory,
+        nwfilter_factory          => \&_nwfilter_factory,
+        nwfilter_binding_factory  => \&_nwfilter_binding_factory,
+        interface_factory         => \&_interface_factory,
+        storage_pool_factory      => \&_storage_pool_factory,
+        storage_vol_factory       => \&_storage_vol_factory,
+        node_device_factory       => \&_node_device_factory,
+        secret_factory            => \&_secret_factory,
     }, $class;
 
     $self->register( $args{remote} ) if $args{remote};
@@ -1730,8 +1777,10 @@ reference|https://libvirt.org/html/index.html>.  Since the C API is procedural
 whereas the Perl API is object oriented; to look up a function from e.g.
 C<Protocol::Sys::Virt::Client::Domain>, translate the function to CamelCase and
 add the prefix C<virDomain>.  The functions in this module may need to be prefixed
-with either C<virConnect> or C<virNode>.
-
+with either C<virConnect> or C<virNode>.  An important difference with the C API
+is that this API only lists the C<INPUT> and C<INPUT|OUTPUT (as input)> arguments for its
+functions.  The C<OUTPUT> and C<INPUT|OUTPUT (as output)> arguments will be returned in the
+C<on_reply> event.
 
 
 =head1 EVENTS
