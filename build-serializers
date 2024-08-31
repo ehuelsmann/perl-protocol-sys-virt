@@ -194,6 +194,7 @@ sub call_reply_codecs {
 sub _version_replacements {
     $_[0] =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
     $_[0] =~ s/__XDR_GEN_VERSION__/$XDR::Gen::VERSION/g;
+    $_[0] =~ s/__LIBVIRT_TAG__/$tag/g;
     $_[0] =~ s/__VERSION__/$version/g;
 }
 
