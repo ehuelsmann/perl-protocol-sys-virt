@@ -296,6 +296,7 @@ for my $module (@modules) {
                                                $header_syms);
             $content =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
             $content =~ s/__XDR_GEN_VERSION__/$XDR::Gen::VERSION/g;
+            $content =~ s/__LIBVIRT_TAG__/$tag/g;
             $content =~ s/__VERSION__/$version/g;
 
             open my $fh, '>:encoding(UTF-8)', $addn->{module}
