@@ -11,6 +11,7 @@ use Scalar::Util qw(reftype);
 
 use XDR::Parse;
 use XDR::Gen;
+use Protocol::Sys::Virt::Devel qw(extract_all);
 
 my $json = JSON::PP->new->canonical(1);
 my $parser = XDR::Parse->new;
@@ -24,30 +25,11 @@ my $tag = $ARGV[0];
 my $version = $ARGV[1];
 
 
-sub trim {
-    my $v = ($_[0] =~ s/^\s*//r);
-    $v =~ s/\s*$//;
-    $v;
-}
-
-sub strip_number_suffix {
-    my $v = ($_[0] =~ s/([0-9]+)(?:u|l|ul|ll|ull)(\s|$)/$1$2/igr);
-    $v;
-}
-
 sub contents {
     my ($fn) = @_;
     local $/;
     open my $fh, '<:encoding(UTF-8)', $fn;
     <$fh>;
-}
-
-sub ast {
-    my $filename = shift;
-    open my $fh, '<:encoding(UTF-8)', $filename
-        or die "$!";
-
-    return $parser->parse( $fh );
 }
 
 sub capture {
@@ -208,247 +190,6 @@ sub call_reply_codecs {
     $tmpl;
 }
 
-my %module = (
-    remote_nonnull_domain => 'Domain',
-    remote_nonnull_domain_checkpoint => 'DomainCheckpoint',
-    remote_nonnull_domain_snapshot => 'DomainSnapshot',
-    remote_nonnull_network => 'Network',
-    remote_nonnull_network_port => 'NetworkPort',
-    remote_nonnull_nwfilter => 'NwFilter',
-    remote_nonnull_nwfilter_binding => 'NwFilterBinding',
-    remote_nonnull_interface => 'Interface',
-    remote_nonnull_storage_pool => 'StoragePool',
-    remote_nonnull_storage_vol => 'StorageVol',
-    remote_nonnull_node_device => 'NodeDevice',
-    remote_nonnull_secret => 'Secret',
-    );
-
-my $main_module = 'Client';
-
-my %headers = (
-    'include/libvirt/libvirt-common.h.in' => {
-        module => [
-            qr// => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-host.h' => {
-        module => [
-            qr// => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-domain.h' => {
-        module => [
-            qr/^VIR_DOMAIN_(DEFINE_|EVENT_ID_)/ => 'Client',
-            qr/^VIR_(DOMAIN_|KEYCODE_|PERF_|VCPU_|MEMORY_|MIGRATE_|DUMP_)/ => 'Domain',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-domain-checkpoint.h' => {
-        module => [
-            qr/^VIR_DOMAIN_CHECKPOINT_CREATE/ => 'Domain',
-            qr/^VIR_DOMAIN_CHECKPOINT_/ => 'DomainCheckpoint',
-        ],
-    },
-    'include/libvirt/libvirt-domain-snapshot.h' => {
-        module => [
-            qr/^VIR_DOMAIN_SNAPSHOT_CREATE_/ => 'Domain',
-            qr/^VIR_DOMAIN_SNAPSHOT_/ => 'DomainSnapshot',
-        ],
-    },
-    'include/libvirt/libvirt-interface.h' => {
-        module => [
-            qr/^VIR_INTERFACE_DEFINE_/ => 'Client',
-            qr/^VIR_INTERFACE_/ => 'Interface',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-network.h' => {
-        module => [
-            qr/^VIR_NETWORK_(DEFINE_|CREATE_|EVENT_ID_)/ => 'Client',
-            qr/^VIR_NETWORK_PORT_CREATE_/ => 'Network',
-            qr/^VIR_NETWORK_PORT_/ => 'NetworkPort',
-            qr/^VIR_(NETWORK_|IP_)/ => 'Network',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-nodedev.h' => {
-        module => [
-            qr/^VIR_NODE_DEVICE_(DEFINE_|CREATE_|EVENT_ID_)/ => 'Client',
-            qr/^VIR_NODE_DEVICE_/ => 'NodeDevice',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-nwfilter.h' => {
-        module => [
-            qr/^VIR_NWFILTER_DEFINE_/ => 'Client',
-            qr/^VIR_NWFILTER_BINDING_CREATE_/ => 'Client',
-            qr/^VIR_NWFILTER_BINDING_/ => 'NwFilterBinding', # no occurrances in libvirt 10.3.0
-            qr/^VIR_NWFILTER_/ => 'NwFilter',                # no occurrances in libvirt 10.3.0
-        ],
-    },
-    'src/libvirt_internal.h' => {
-        module => [
-            qr/^VIR_DRV_FEATURE_/ => 'Remote',
-        ],
-    },
-    'include/libvirt/libvirt-secret.h' => {
-        module => [
-            qr/^VIR_SECRET_(DEFINE_|CREATE_|EVENT_ID_)/ => 'Client',
-            qr/^VIR_SECRET_USAGE_/ => 'Client',
-            qr/^VIR_SECRET_/ => 'Secret',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-storage.h' => {
-        module => [
-            qr/^VIR_STORAGE_POOL_(CREATE_|DEFINE_|EVENT_ID_)/ => 'Client',
-            qr/^VIR_STORAGE_VOL_CREATE_/ => 'Client',
-            qr/^VIR_STORAGE_POOL_/ => 'StoragePool',
-            qr/^VIR_STORAGE_VOL_/ => 'StorageVol',
-            qr/^VIR_STORAGE_XML/ => 'StoragePool',
-            qr/^VIR_CONNECT_/ => 'Client',
-        ],
-    },
-    'include/libvirt/libvirt-stream.h' => {
-        module => [
-            qr/^VIR_STREAM_/ => 'Stream',
-        ],
-    },
-    );
-
-my %prefix_strip_xdr = (
-    Client => qr/^connect_/,
-    Domain => qr/^domain_/,
-    DomainCheckpoint => qr/^domain_(checkpoint_)?/,
-    DomainSnapshot => qr/^domain_(snapshot_)?/,
-    Network => qr/^network_/,
-    NetworkPort => qr/^network_port_/,
-    NwFilter => qr/^nwfilter_/,
-    NwFilterBinding => qr/^nwfilter_binding_/,
-    Interface => qr/^interface_/,
-    StoragePool => qr/^storage_(pool_)?/,
-    StorageVol => qr/^storage_(vol_)?/,
-    NodeDevice => qr/^node_device_/,
-    Secret => qr/^secret_/,
-    );
-
-my %prefix_strip_h = (
-    Client => qr/^VIR_(CONNECT_|NODE_(?!DEVICE_))?/,
-    Domain => qr/^VIR_(DOMAIN_)?/,
-    DomainCheckpoint => qr/^VIR_(DOMAIN_CHECKPOINT_)?/,
-    DomainSnapshot => qr/^VIR_(DOMAIN_SNAPSHOT_)?/,
-    Interface => qr/^VIR_(INTERFACE_)?/,
-    Network => qr/^VIR_(NETWORK_)?/,
-    NetworkPort => qr/^VIR_(NETWORK_PORT_)?/,
-    NwFilter => qr/^VIR_(NWFILTER_)?/,
-    NwFilterBinding => qr/^VIR_(NWFILTER_BINDING_)?/,
-    NodeDevice  => qr/^VIR_(NODE_DEVICE_)?/,
-    Remote      => qr/^VIR_/,
-    Secret      => qr/^VIR_(SECRET_)?/,
-    StoragePool => qr/^VIR_(STORAGE_(POOL_)?)?/,
-    StorageVol  => qr/^VIR_(STORAGE_(VOL_)?)?/,
-    Stream      => qr/^VIR_STREAM_/,
-    );
-
-
-
-
-sub header_parser {
-    my ($header) = @_;
-    my @syms;
-
-    open my $fh, '<', 'libvirt/' . $header
-        or die "$!";
-
-    my $in_enum = 0;
-    while (my $line = <$fh>) {
-        if (not $in_enum
-            and $line =~ m/^\s*typedef\s+enum\s*{/) {
-            $in_enum = 1;
-            next;
-        }
-        $line =~ s{/\*([^*]|\*[^/])*\*/}{}g
-            if $in_enum;
-        if ($in_enum
-            and $line =~ m/^\s*}/) {
-            $in_enum = 0;
-            next;
-        }
-        if ($in_enum
-            and $line =~ m{\s*(VIR_[A-Z0-9_]+)\s*=\s*((?:[^,/\n]|/(?!\*))+)}) {
-            my ($orig, $val) = ($1, $2);
-            $val = strip_number_suffix(trim($val));
-            my (undef, $module) = pairfirst {;
-                $orig =~ m/$a/
-            } @{ $headers{$header}->{module} };
-            die "No module for constant $orig in $header"
-                unless $module;
-            my $sym = ($orig =~ s/$prefix_strip_h{$module}//r);
-            push @syms, { sym => $sym, value => $val, orig => $orig, mod => $module };
-        }
-        if ($line =~ m{#\s*define (VIR_[A-Z0-9_]+)\s+((?:[^\n/]|/(?!\*))+)}) {
-            my ($orig, $val) = ($1, $2);
-            $val = strip_number_suffix(trim($val));
-            next if $orig =~ m/^(VIR_DEPRECATED|VIR_EXPORT_VAR)$/; # for C programs, but not for us...
-            next if $val =~ m/^@.*@$/; # defined by autoconf macro... can't include
-            my (undef, $module) = pairfirst {;
-                $orig =~ m/$a/
-            } @{ $headers{$header}->{module} };
-            die "No module for constant $orig in $header"
-                unless $module;
-            my $sym = ($orig =~ s/$prefix_strip_h{$module}//r);
-            push @syms, { sym => $sym, value => $val, orig => $orig, mod => $module };
-        }
-    }
-
-    return @syms;
-}
-
-sub _named_type_name {
-    my $type = shift;
-    if ($type->{spec} eq 'named') {
-        return $type->{name}->{content};
-    }
-    return undef;
-}
-
-sub _retval_mapper {
-    my ($ast, $struct) = @_;
-    my @retvals =
-        map { +{ name => $_->{name}->{content}, type => _named_type_name( $_->{declaration}->{type} ) } }
-        @{ $struct ? $struct->{definition}->{type}->{declaration}->{members} : [] };
-
-    my %mapped_retvals;
-    for my $retval (@retvals) {
-        if ($retval->{type}
-            and $module{$retval->{type}}) {
-            $mapped_retvals{$retval->{name}} = $retval->{type};
-        }
-        elsif ($retval->{type}
-               and $retval->{type} =~ m/_msg$/
-               and my $nested_msgstruct = find_toplevel_definition($ast, $retval->{type})) {
-            my $submap = _retval_mapper($ast, $nested_msgstruct);
-            $mapped_retvals{$retval->{name}} = $submap if %{ $submap };
-        }
-    }
-
-    return \%mapped_retvals;
-}
-
-sub _retval_map {
-    my $map = shift;
-    my @rv = ();
-    for my $key ( sort keys %{ $map } ) {
-        if (ref $map->{$key} and reftype $map->{$key} eq 'HASH') {
-            push @rv, "$key => " . _retval_map( $map->{$key} );
-        }
-        else {
-            push @rv, "$key => \\&_translate_$map->{$key}";
-        }
-    }
-
-    return '{ ' . join(', ', @rv) . ' }';
-}
 
 sub _version_replacements {
     $_[0] =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
@@ -456,182 +197,6 @@ sub _version_replacements {
     $_[0] =~ s/__VERSION__/$version/g;
 }
 
-sub client {
-    my ($ast, $template, $h_syms) = @_;
-    my $procs = find_toplevel_definition($ast, 'remote_procedure');
-    my @entrypoints;
-    my (%module_functions, @module_returns); # returns are always in the client!
-
-    for my $proc ( @{ $procs->{definition}->{type}->{declaration}->{elements} } ) {
-        my $proc_annotation = join("\n", map { $_->{content} } @{ $proc->{comments} } );
-        my $proc_name = $proc->{name}->{content};
-        my $proc_value = $proc->{value}->{content};
-        my $proc_const = ($proc_name =~ s/^REMOTE_//r);
-        my $struct_basename = lc($proc_name =~ s/_PROC//r);
-
-        if (my $msgstruct = find_toplevel_definition($ast, $struct_basename . '_msg')) {
-            if ($proc_annotation =~ m/\@generate: (both|client)/) {
-                my $mapped_retvals = _retval_mapper($ast, $msgstruct);
-                if (%{ $mapped_retvals }) {
-                    my $mapstr = _retval_map( $mapped_retvals );
-                    $module_returns[$proc_value] = qq|sub { my \$client = shift; _translated(\$client, $mapstr, \@_) }|;
-                }
-                else {
-                    $module_returns[$proc_value] = '\&_no_translation';
-                }
-            }
-        }
-        elsif ($proc_annotation =~ m/\@generate: (both|client)/) {
-            my $func = ($struct_basename =~ s/^remote_//r);
-            my $callstruct_name = $struct_basename . '_args';
-            my $retstruct_name = $struct_basename . '_ret';
-            my $callstruct = find_toplevel_definition($ast, $callstruct_name);
-            my $retstruct = find_toplevel_definition($ast, $retstruct_name);
-            my $into_module = $main_module;
-
-            my @callargs =
-                map { +{ name => $_->{name}->{content}, type => _named_type_name( $_->{declaration}->{type} ) } }
-                @{ $callstruct ? $callstruct->{definition}->{type}->{declaration}->{members} : [] };
-            my @retvals =
-                map { +{ name => $_->{name}->{content}, type => _named_type_name( $_->{declaration}->{type} ) } }
-                @{ $retstruct ? $retstruct->{definition}->{type}->{declaration}->{members} : [] };
-
-            my $first_call_arg = @callargs ? $callargs[0] : undef;
-            if ($first_call_arg) {
-                my $first_arg_type_name = $first_call_arg->{type} // '__unmapped__';
-                $into_module = $module{$first_arg_type_name} // $main_module;
-            }
-
-            # gendispatch.pl says 'node_device' is special
-            if ($func =~ m/^node_device_/
-                and $func !~ m/^node_device_(lookup_(by_name|scsi_host_by_wwn)_|(create|define)_xml_)/) {
-                $into_module = $module{remote_nonnull_node_device};
-            }
-
-            my $entrypoint = ($func =~ s/$prefix_strip_xdr{$into_module}//r);
-            push @{ $module_functions{$into_module} //= [] }, {
-                name => $entrypoint,
-                const => $proc_const,
-                args => \@callargs,
-                ret  => \@retvals,
-                retstr => '{ ' . join(', ', map { $_ . ' => $' . $_ } sort map { $_->{name} }  @retvals) . ' }'
-            };
-            my %mapped_retvals;
-            for my $retval (@retvals) {
-                if ($retval->{type}
-                    and $module{$retval->{type}}) {
-                    $mapped_retvals{$retval->{name}} = $retval->{type};
-                }
-            }
-            if (%mapped_retvals) {
-                my $mapstr = join(', ', map { "$_ => \\&_translate_$mapped_retvals{$_}" } sort keys %mapped_retvals);
-                $module_returns[$proc_value] = qq|sub { my \$client = shift; _translated(\$client, { $mapstr }, \@_) }|;
-            }
-            else {
-                $module_returns[$proc_value] = '\&_no_translation';
-            }
-        }
-        else {
-            $module_returns[$proc_value] = '\&_no_translation';
-        }
-    }
-    for my $key ( sort keys %module_functions ) {
-        $module_functions{$key} = [ sort @{ $module_functions{$key} } ];
-    }
-    for my $module ( sort keys %module_functions ) {
-        if ($module eq $main_module) {
-            for my $entrypoint ( @{ $module_functions{$module} } ) {
-                my (@argnames) = map { $_->{name} } @{ $entrypoint->{args} };
-                my $argstr = join(', ', map { '$' . $_ } @argnames);
-                my $argsmap = join(', ', map { $_ . ' => $' . $_ . ($_ eq 'flags' ? ' // 0' : '') } @argnames);
-                $entrypoint->{argstr} = $argstr;
-                $entrypoint->{code} = <<~PROC;
-                sub $entrypoint->{name} {
-                    my (\$self, $argstr) = \@_;
-                    return \$self->_call(
-                        \$remote->$entrypoint->{const},
-                        { $argsmap } );
-                }
-                PROC
-            }
-        }
-        else {
-            for my $entrypoint ( @{ $module_functions{$module} } ) {
-                my ($first_arg_name, @argnames) = map { $_->{name} } @{ $entrypoint->{args} };
-                my $argstr = join(', ', map { '$' . $_ } @argnames);
-                my $argsmap = join(', ', map { $_ . ' => $' . $_ . ($_ eq 'flags' ? ' // 0' : '') } @argnames);
-                $entrypoint->{argstr} = $argstr;
-                $entrypoint->{code} = <<~PROC;
-                sub $entrypoint->{name} {
-                    my (\$self, $argstr) = \@_;
-                    return \$self->{client}->_call(
-                        \$remote->$entrypoint->{const},
-                        { $first_arg_name => \$self->{id}, $argsmap } );
-                }
-                PROC
-            }
-        }
-    }
-
-
-    my $parse_result = $json->encode( { module_functions => \%module_functions,
-                                        main_module => $main_module,
-                                        ast => $ast,
-                                      });
-
-    my $translators = join(",\n    ", map { $_ // 'undef'} @module_returns);
-    my $main_content;
-    for my $mod ($main_module, values %module){
-        my $tmpl = contents( $template . $mod . '.pm.tmpl' );
-        my $calls = join("\n",
-                         map { $_->{code} }
-                         sort { $a->{name} cmp $b->{name} }
-                         @{ $module_functions{$mod} });
-        my $entrypoints_pod = join("\n",
-                               map {
-                                   my $argstr = $_->{argstr} ? "( $_->{argstr} )" : '';
-                                   $argstr =~ s/\$flags \)/\$flags = 0 \)/;
-                                   my $retstr = ($_->{retstr} =~ s/{\s*}/(* no data *)/r);
-                                   <<~POD;
-                                   =head2 $_->{name}
-
-                                     \$serial = \$client->$_->{name}$argstr;
-                                     # -> $retstr
-                                   POD
-                               }
-                               sort { $a->{name} cmp $b->{name} }
-                               @{ $module_functions{$mod} });
-        my @constants = grep { $_->{mod} eq $mod } @{ $h_syms };
-        my $max = max map { length $_->{sym} } @constants;
-        my $constants = join("\n    ",
-                             map {
-                                 sprintf("%-${max}s => %s,", $_->{sym}, $_->{resolved})
-                             } @constants);
-        $constants = <<~CONSTANTS if $constants;
-        use constant {
-            $constants
-        };
-        CONSTANTS
-
-        my $constants_pod = join("\n\n=item ", map { $_->{sym} } @constants);
-        _version_replacements( $tmpl );
-        $tmpl =~ s/__REPLY_TRANSLATORS__/$translators/;
-        $tmpl =~ s/__CALLS__/$calls/;
-        $tmpl =~ s/__CONSTANTS__/$constants/;
-        $tmpl =~ s/__ENTRYPOINTS__/$entrypoints_pod/;
-        $tmpl =~ s/__CONSTANTS_POD__/$constants_pod/;
-        if ($mod ne $main_module) {
-            $mod = '/' . $mod;
-            open my $fh, '>', 'lib/Protocol/Sys/Virt/Client' . $mod . '.pm'
-                or die "$!";
-            print $fh $tmpl;
-        }
-        else {
-            $main_content = $tmpl;
-        }
-    }
-    return $main_content;
-}
 
 sub main_virt {
     my ($ast, $template, $h_syms) = @_;
@@ -648,19 +213,19 @@ if (not -d 'libvirt') {
 
 my @modules = (
     {
-        definitions => 'libvirt/src/rpc/virnetprotocol.x',
+        name        => 'transport',
         template    => 'templates/Transport.xdr.tmpl',
         transform   => sub { $_[0] =~ s/^(virNet(Message)?|VIR_NET_(MESSAGE_)?)//r; },
         module      => 'lib/Protocol/Sys/Virt/Transport/XDR.pm',
     },
     {
-        definitions => 'libvirt/src/rpc/virkeepaliveprotocol.x',
+        name        => 'keepalive',
         template    => 'templates/KeepAlive.xdr.tmpl',
         transform   => sub { $_[0] =~ s/^KEEPALIVE_//ir; },
         module      => 'lib/Protocol/Sys/Virt/KeepAlive/XDR.pm',
     },
     {
-        definitions => 'libvirt/src/remote/remote_protocol.x',
+        name        => 'remote',
         template    => 'templates/Remote.xdr.tmpl',
         transform   => sub { $_[0] =~ s/^remote_//ir; },
         module      => 'lib/Protocol/Sys/Virt/Remote/XDR.pm',
@@ -669,11 +234,6 @@ my @modules = (
                 template  => 'templates/Remote.pm.tmpl',
                 generator => \&call_reply_codecs,
                 module    => 'lib/Protocol/Sys/Virt/Remote.pm',
-            },
-            {
-                template  => 'templates/',
-                generator => \&client,
-                module    => 'lib/Protocol/Sys/Virt/Client.pm',
             },
             {
                 template  => 'templates/Virt.pm.tmpl',
@@ -685,31 +245,12 @@ my @modules = (
     );
 
 
-my @h_syms;
-for my $header (sort keys %headers) {
-    push @h_syms, header_parser( $header );
-}
-my %h_sym_values;
-for my $h_sym (@h_syms) {
-    $h_sym_values{$h_sym->{orig}} = $h_sym->{value};
-}
-for my $key (keys %h_sym_values) {
-    if (exists $h_sym_values{$h_sym_values{$key}}) {
-        $h_sym_values{$key} = $h_sym_values{$h_sym_values{$key}};
-    }
-}
-for my $val (values %h_sym_values) {
-    die "Unresolved value: $val"
-        if $val =~ m/^[A-Z_]+$/;
-}
-for my $h_sym (@h_syms) {
-    $h_sym->{resolved} = $h_sym_values{$h_sym->{orig}};
-}
-
+my $api_data = extract_all( 'libvirt/' );
+my $header_syms = $api_data->{header_syms};
 
 
 for my $module (@modules) {
-    my $ast = ast($module->{definitions});
+    my $ast = $api_data->{ast}->{$module->{name}};
 
     $source = '';
     @constants = ();
@@ -749,7 +290,9 @@ for my $module (@modules) {
 
     if ($module->{additional}) {
         for my $addn ( @{ $module->{additional} } ) {
-            my $content = $addn->{generator}->($ast, $addn->{template}, \@h_syms);
+            my $content = $addn->{generator}->($ast,
+                                               $addn->{template},
+                                               $header_syms);
             $content =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
             $content =~ s/__XDR_GEN_VERSION__/$XDR::Gen::VERSION/g;
             $content =~ s/__VERSION__/$version/g;
