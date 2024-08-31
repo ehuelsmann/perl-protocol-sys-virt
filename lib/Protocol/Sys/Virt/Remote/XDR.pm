@@ -32991,6 +32991,8 @@ brevity.  These prefixes have been stripped:
 
 =head2 General
 
+=over 8
+
 =item * STRING_MAX
 
 =item * CONNECT_IDENTITY_PARAMS_MAX
@@ -33135,7 +33137,11 @@ brevity.  These prefixes have been stripped:
 
 =item * PROTOCOL_VERSION
 
+=back
+
 =head2 From enums
+
+=over 8
 
 =item * auth_type
 
@@ -34048,6 +34054,8 @@ brevity.  These prefixes have been stripped:
 =item * PROC_NODE_DEVICE_UPDATE
 
 =item * PROC_DOMAIN_GRAPHICS_RELOAD
+
+=back
 
 =back
 

@@ -760,6 +760,8 @@ brevity.  These prefixes have been stripped:
 
 =head2 From enums
 
+=over 8
+
 =item * Type
 
 =over 8
@@ -789,6 +791,8 @@ brevity.  These prefixes have been stripped:
 =item * ERROR
 
 =item * CONTINUE
+
+=back
 
 =back
 
