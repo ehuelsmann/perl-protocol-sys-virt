@@ -1,6 +1,5 @@
 CHANGES
 cpanfile
-eg/client.pl
 eg/remote.pl
 lib/Protocol/Sys/Virt.pm
 lib/Protocol/Sys/Virt/KeepAlive.pm
