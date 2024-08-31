@@ -1,0 +1,15 @@
+^devel/
+^\.git
+^libvirt/
+^src/
+^templates/
+^html/
+^podstyle.css$
+.*~$
+^Makefile$
+^MYMETA.*
+^\.plx/
+^MANIFEST.bak$
+^MANIFEST.SKIP$
+^build-serializers$
+
