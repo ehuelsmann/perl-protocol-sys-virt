@@ -156,7 +156,7 @@ sub call_reply_codecs {
         $constants
     };
     CONSTANTS
-    my $constants_pod = join("\n\n=item ", map { $_->{sym} } @constants);
+    my $constants_pod = join("\n\n", map { "=item $_->{sym}" } @constants);
     my $codecs = <<~CODECS;
     my \@args_encoders = (
         $args_encode_tbl

@@ -13,13 +13,13 @@
 use v5.14;
 use warnings;
 
-package Protocol::Sys::Virt::Remote v10.3.1;
+package Protocol::Sys::Virt::Remote v10.3.2;
 
 use Carp qw(croak);
 use Log::Any qw($log);
 
-use Protocol::Sys::Virt::Remote::XDR v10.3.1;
-use Protocol::Sys::Virt::Transport::XDR v10.3.1;
+use Protocol::Sys::Virt::Remote::XDR v10.3.2;
+use Protocol::Sys::Virt::Transport::XDR v10.3.2;
 my $remote = 'Protocol::Sys::Virt::Remote::XDR';
 my $transport = 'Protocol::Sys::Virt::Transport::XDR';
 
@@ -2985,7 +2985,9 @@ Protocol::Sys::Virt::Remote - Connect to remote libvirt daemon
 
 =head1 VERSION
 
-v10.3.1
+v10.3.2
+
+Based on LibVirt tag v10.3.0
 
 =head1 SYNOPSIS
 
@@ -3138,7 +3140,7 @@ Sends a notification message C<$data> to the remote procedure C<$proc>.
 
 =over 8
 
-DRV_FEATURE_MIGRATION_V1
+=item DRV_FEATURE_MIGRATION_V1
 
 =item DRV_FEATURE_REMOTE
 
