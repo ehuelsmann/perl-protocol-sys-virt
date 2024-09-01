@@ -13,8 +13,6 @@ use XDR::Parse;
 use XDR::Gen;
 use Protocol::Sys::Virt::Devel qw(extract_all);
 
-my $json = JSON::PP->new->canonical(1);
-my $parser = XDR::Parse->new;
 my $source = '';
 my @constants;
 my @enums;
@@ -192,7 +190,8 @@ sub call_reply_codecs {
 
 
 sub _version_replacements {
-    $_[0] =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
+    my $xdr_parse_version = shift;
+    $_[0] =~ s/__XDR_PARSE_VERSION__/$xdr_parse_version/g;
     $_[0] =~ s/__XDR_GEN_VERSION__/$XDR::Gen::VERSION/g;
     $_[0] =~ s/__LIBVIRT_TAG__/$tag/g;
     $_[0] =~ s/__VERSION__/$version/g;
@@ -284,7 +283,7 @@ for my $module (@modules) {
     $tmpl =~ s/__ENUMS__/$enums/g;
     $tmpl =~ s/__SERIALIZERS__/$serializers/g;
     $tmpl =~ s/__DESERIALIZERS__/$deserializers/g;
-    _version_replacements( $tmpl );
+    _version_replacements( $api_data->{xdr_parse_version}, $tmpl );
 
     open my $fh, '>:encoding(UTF-8)', $module->{module};
     print $fh $tmpl;
@@ -294,7 +293,7 @@ for my $module (@modules) {
             my $content = $addn->{generator}->($ast,
                                                $addn->{template},
                                                $header_syms);
-            $content =~ s/__XDR_PARSE_VERSION__/$XDR::Parse::VERSION/g;
+            $content =~ s/__XDR_PARSE_VERSION__/$api_data->{xdr_parse_version}/g;
             $content =~ s/__XDR_GEN_VERSION__/$XDR::Gen::VERSION/g;
             $content =~ s/__LIBVIRT_TAG__/$tag/g;
             $content =~ s/__VERSION__/$version/g;
