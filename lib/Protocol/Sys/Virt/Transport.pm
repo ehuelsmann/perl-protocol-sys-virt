@@ -409,7 +409,7 @@ between the two is that the latter is passed an array of file descriptors
 in the C<fds> key.  The C<header> key contains the deserialized header.
 
 The C<data> key contains the undecoded data of the C<*_args> structure
-associated with C<$hdr->{proc}>.
+associated with C<< $hdr->{proc} >>.
 
 =item * on_reply
 
