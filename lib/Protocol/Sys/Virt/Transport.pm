@@ -1,8 +1,19 @@
+####################################################################
+#
+#     This file was generated using XDR::Parse version v0.3.1,
+#        XDR::Gen version 0.0.2 and LibVirt version v10.3.0
+#
+#      Don't edit this file, use the source template instead
+#
+#                 ANY CHANGES HERE WILL BE LOST !
+#
+####################################################################
+
 
 use v5.14;
 use warnings;
 
-package Protocol::Sys::Virt::Transport;
+package Protocol::Sys::Virt::Transport v10.3.3;
 
 use Carp qw(croak);
 use Log::Any qw($log);
@@ -320,6 +331,12 @@ __END__
 
 Protocol::Sys::Virt::Transport - Low level Libvirt connection protocol
 
+=head1 VERSION
+
+v10.3.3
+
+Based on LibVirt tag v10.3.0
+
 =head1 SYNOPSIS
 
   use Protocol::Sys::Virt::Transport;
@@ -477,3 +494,4 @@ hole structure.  C<$err> is the deserialized error structure.
 =head1 LICENSE AND COPYRIGHT
 
 See the LICENSE file in this distribution.
+
