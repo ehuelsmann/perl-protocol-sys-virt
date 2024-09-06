@@ -87,12 +87,15 @@ sub start_transport {
     $transport = Protocol::Sys::Virt::Transport->new(
         role => 'client',
         on_send => sub {
+            my $opaque = shift;
             while (my $data = shift) {
                 $log->trace("Writing data... " . length($data));
                 $log->trace(unpack("H*", $data));
                 $stream->write($data);
             }
             $log->trace("Writing data (finished)");
+
+            return $opaque;
         });
 }
 
@@ -131,7 +134,8 @@ do {
 
     $remote->start_auth($protocol->AUTH_NONE, on_complete => \&auth_complete);
     while (not $eof) {
-        my ($len, $type) = $transport->receive($data);
+        $transport->receive($data);
+        my ($len, $type) = $transport->need;
         die "Unexpected type $type" unless $type eq 'data';
         $log->trace("Starting socket read... $len");
         ($data, $eof) = await $stream->read_exactly( $len );
