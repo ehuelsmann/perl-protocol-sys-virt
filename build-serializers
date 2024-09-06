@@ -198,7 +198,7 @@ sub _version_replacements {
 }
 
 
-sub main_virt {
+sub plain_content {
     my ($ast, $template, $h_syms) = @_;
     return contents( $template );
 }
@@ -236,8 +236,13 @@ my @modules = (
                 module    => 'lib/Protocol/Sys/Virt/Remote.pm',
             },
             {
+                template  => 'templates/Transport.pm.tmpl',
+                generator => \&plain_content,
+                module    => 'lib/Protocol/Sys/Virt/Transport.pm',
+            },
+            {
                 template  => 'templates/Virt.pm.tmpl',
-                generator => \&main_virt,
+                generator => \&plain_content,
                 module    => 'lib/Protocol/Sys/Virt.pm',
             },
             ]
