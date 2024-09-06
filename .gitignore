@@ -7,3 +7,5 @@ libvirt/
 MANIFEST.bak
 MYMETA.*
 Makefile
+pm_to_blib
+blib/
