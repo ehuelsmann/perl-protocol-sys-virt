@@ -27,14 +27,15 @@ my $transport;
 my $remote;
 my $prot = 'Protocol::Sys::Virt::Remote::XDR';
 
-use Data::Dumper;
+use JSON::PP;
+my $json = JSON::PP->new->canonical(1);
 sub handle_reply {
     my (%args) = @_;
     my $proc = $args{header}->{proc};
 
-    print 'header: ' . Dumper( $args{header} );
-    print Dumper( $args{error} ) if $args{error};
-#    print Dumper( $args{data} );
+    say 'header: ' . $json->encode( $args{header} );
+    say $json->encode( $args{error} ) if $args{error};
+#    say Dumper( $args{data} );
     if ($proc == $prot->PROC_CONNECT_OPEN) {
 #        $remote->call( $prot->PROC_CONNECT_LIST_ALL_DOMAINS,
 #                       { need_results => 99, flags => 0 } );
@@ -57,7 +58,7 @@ sub handle_reply {
         # for my $v ( @{ $args{data}->{vols} } ) {
         #     $dl = $v if $v->{name} eq 'releaser.qcow2';
         # }
-        # print 'reading: ' . Dumper( $dl );
+        # say 'reading: ' . Dumper( $dl );
         # $remote->call( $prot->PROC_STORAGE_VOL_DOWNLOAD,
         #                { vol => $dl, offset => 0, length => 0, flags => 0 } );
     }
@@ -69,8 +70,8 @@ sub handle_reply {
 sub handle_stream {
     my (%args) = @_;
 
-    print 'header(stream): ' . Dumper( $args{header} );
-    print Dumper( $args{error} ) if $args{error};
+    say 'header(stream): ' . $json->encode( $args{header} );
+    say $json->encode( $args{error} ) if $args{error};
 
     my $len = length( $args{data} // '' );
     say 'length: ' . $len;
