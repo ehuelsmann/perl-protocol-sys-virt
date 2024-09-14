@@ -1,7 +1,7 @@
 ####################################################################
 #
 #     This file was generated using XDR::Parse version v0.3.1,
-#        XDR::Gen version 0.0.4 and LibVirt version v10.3.0
+#        XDR::Gen version 0.0.5 and LibVirt version v10.3.0
 #
 #      Don't edit this file, use the source template instead
 #
@@ -9,7 +9,7 @@
 #
 ####################################################################
 
-package Protocol::Sys::Virt::Remote::XDR v10.3.6;
+package Protocol::Sys::Virt::Remote::XDR v10.3.7;
 
 use constant {
     VIR_TYPED_PARAM_INT     => 1,
@@ -222,19 +222,19 @@ sub serialize_nonnull_domain {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 
     # Serializing field: 'id'
     croak "Missing required input value 'id'"
-        unless exists $_[1]->{id}
+        unless exists $_[1]->{id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{id};
@@ -264,13 +264,13 @@ sub serialize_nonnull_network {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -293,13 +293,13 @@ sub serialize_nonnull_network_port {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -322,13 +322,13 @@ sub serialize_nonnull_nwfilter {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -351,13 +351,13 @@ sub serialize_nonnull_nwfilter_binding {
 
     # Serializing field: 'portdev'
     croak "Missing required input value 'portdev'"
-        unless exists $_[1]->{portdev}
+        unless exists $_[1]->{portdev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{portdev}, $_[2], $_[3] );
 
     # Serializing field: 'filtername'
     croak "Missing required input value 'filtername'"
-        unless exists $_[1]->{filtername}
+        unless exists $_[1]->{filtername};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{filtername}, $_[2], $_[3] );
 }
@@ -380,13 +380,13 @@ sub serialize_nonnull_interface {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'mac'
     croak "Missing required input value 'mac'"
-        unless exists $_[1]->{mac}
+        unless exists $_[1]->{mac};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{mac}, $_[2], $_[3] );
 }
@@ -409,13 +409,13 @@ sub serialize_nonnull_storage_pool {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -442,19 +442,19 @@ sub serialize_nonnull_storage_vol {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'key'
     croak "Missing required input value 'key'"
-        unless exists $_[1]->{key}
+        unless exists $_[1]->{key};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{key}, $_[2], $_[3] );
 }
@@ -473,7 +473,7 @@ sub serialize_nonnull_node_device {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -505,13 +505,13 @@ sub serialize_nonnull_secret {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 
     # Serializing field: 'usageType'
     croak "Missing required input value 'usageType'"
-        unless exists $_[1]->{usageType}
+        unless exists $_[1]->{usageType};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{usageType};
@@ -524,7 +524,7 @@ sub serialize_nonnull_secret {
 
     # Serializing field: 'usageID'
     croak "Missing required input value 'usageID'"
-        unless exists $_[1]->{usageID}
+        unless exists $_[1]->{usageID};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{usageID}, $_[2], $_[3] );
 }
@@ -547,13 +547,13 @@ sub serialize_nonnull_domain_checkpoint {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -576,13 +576,13 @@ sub serialize_nonnull_domain_snapshot {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -1026,7 +1026,7 @@ sub serialize_error {
 
     # Serializing field: 'code'
     croak "Missing required input value 'code'"
-        unless exists $_[1]->{code}
+        unless exists $_[1]->{code};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{code};
@@ -1039,7 +1039,7 @@ sub serialize_error {
 
     # Serializing field: 'domain'
     croak "Missing required input value 'domain'"
-        unless exists $_[1]->{domain}
+        unless exists $_[1]->{domain};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{domain};
@@ -1052,13 +1052,13 @@ sub serialize_error {
 
     # Serializing field: 'message'
     croak "Missing required input value 'message'"
-        unless exists $_[1]->{message}
+        unless exists $_[1]->{message};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{message}, $_[2], $_[3] );
 
     # Serializing field: 'level'
     croak "Missing required input value 'level'"
-        unless exists $_[1]->{level}
+        unless exists $_[1]->{level};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{level};
@@ -1071,31 +1071,31 @@ sub serialize_error {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'str1'
     croak "Missing required input value 'str1'"
-        unless exists $_[1]->{str1}
+        unless exists $_[1]->{str1};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{str1}, $_[2], $_[3] );
 
     # Serializing field: 'str2'
     croak "Missing required input value 'str2'"
-        unless exists $_[1]->{str2}
+        unless exists $_[1]->{str2};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{str2}, $_[2], $_[3] );
 
     # Serializing field: 'str3'
     croak "Missing required input value 'str3'"
-        unless exists $_[1]->{str3}
+        unless exists $_[1]->{str3};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{str3}, $_[2], $_[3] );
 
     # Serializing field: 'int1'
     croak "Missing required input value 'int1'"
-        unless exists $_[1]->{int1}
+        unless exists $_[1]->{int1};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{int1};
@@ -1108,7 +1108,7 @@ sub serialize_error {
 
     # Serializing field: 'int2'
     croak "Missing required input value 'int2'"
-        unless exists $_[1]->{int2}
+        unless exists $_[1]->{int2};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{int2};
@@ -1121,7 +1121,7 @@ sub serialize_error {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -1202,7 +1202,7 @@ sub serialize_vcpu_info {
 
     # Serializing field: 'number'
     croak "Missing required input value 'number'"
-        unless exists $_[1]->{number}
+        unless exists $_[1]->{number};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{number};
@@ -1215,7 +1215,7 @@ sub serialize_vcpu_info {
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{state};
@@ -1228,7 +1228,7 @@ sub serialize_vcpu_info {
 
     # Serializing field: 'cpu_time'
     croak "Missing required input value 'cpu_time'"
-        unless exists $_[1]->{cpu_time}
+        unless exists $_[1]->{cpu_time};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{cpu_time};
@@ -1242,7 +1242,7 @@ sub serialize_vcpu_info {
 
     # Serializing field: 'cpu'
     croak "Missing required input value 'cpu'"
-        unless exists $_[1]->{cpu}
+        unless exists $_[1]->{cpu};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cpu};
@@ -1470,13 +1470,13 @@ sub serialize_typed_param {
 
     # Serializing field: 'field'
     croak "Missing required input value 'field'"
-        unless exists $_[1]->{field}
+        unless exists $_[1]->{field};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{field}, $_[2], $_[3] );
 
     # Serializing field: 'value'
     croak "Missing required input value 'value'"
-        unless exists $_[1]->{value}
+        unless exists $_[1]->{value};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_typed_param_value( $_[1]->{value}, $_[2], $_[3] );
 }
@@ -1505,13 +1505,13 @@ sub serialize_node_get_cpu_stats {
 
     # Serializing field: 'field'
     croak "Missing required input value 'field'"
-        unless exists $_[1]->{field}
+        unless exists $_[1]->{field};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{field}, $_[2], $_[3] );
 
     # Serializing field: 'value'
     croak "Missing required input value 'value'"
-        unless exists $_[1]->{value}
+        unless exists $_[1]->{value};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{value};
@@ -1548,13 +1548,13 @@ sub serialize_node_get_memory_stats {
 
     # Serializing field: 'field'
     croak "Missing required input value 'field'"
-        unless exists $_[1]->{field}
+        unless exists $_[1]->{field};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{field}, $_[2], $_[3] );
 
     # Serializing field: 'value'
     croak "Missing required input value 'value'"
-        unless exists $_[1]->{value}
+        unless exists $_[1]->{value};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{value};
@@ -1590,13 +1590,13 @@ sub serialize_domain_disk_error {
 
     # Serializing field: 'disk'
     croak "Missing required input value 'disk'"
-        unless exists $_[1]->{disk}
+        unless exists $_[1]->{disk};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{disk}, $_[2], $_[3] );
 
     # Serializing field: 'error'
     croak "Missing required input value 'error'"
-        unless exists $_[1]->{error}
+        unless exists $_[1]->{error};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{error};
@@ -1631,13 +1631,13 @@ sub serialize_connect_open_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -1668,7 +1668,7 @@ sub serialize_connect_supports_feature_args {
 
     # Serializing field: 'feature'
     croak "Missing required input value 'feature'"
-        unless exists $_[1]->{feature}
+        unless exists $_[1]->{feature};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{feature};
@@ -1699,7 +1699,7 @@ sub serialize_connect_supports_feature_ret {
 
     # Serializing field: 'supported'
     croak "Missing required input value 'supported'"
-        unless exists $_[1]->{supported}
+        unless exists $_[1]->{supported};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{supported};
@@ -1725,7 +1725,7 @@ sub serialize_connect_get_type_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{type}, $_[2], $_[3] );
 }
@@ -1750,7 +1750,7 @@ sub serialize_connect_get_version_ret {
 
     # Serializing field: 'hv_ver'
     croak "Missing required input value 'hv_ver'"
-        unless exists $_[1]->{hv_ver}
+        unless exists $_[1]->{hv_ver};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{hv_ver};
@@ -1783,7 +1783,7 @@ sub serialize_connect_get_lib_version_ret {
 
     # Serializing field: 'lib_ver'
     croak "Missing required input value 'lib_ver'"
-        unless exists $_[1]->{lib_ver}
+        unless exists $_[1]->{lib_ver};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{lib_ver};
@@ -1810,7 +1810,7 @@ sub serialize_connect_get_hostname_ret {
 
     # Serializing field: 'hostname'
     croak "Missing required input value 'hostname'"
-        unless exists $_[1]->{hostname}
+        unless exists $_[1]->{hostname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{hostname}, $_[2], $_[3] );
 }
@@ -1834,7 +1834,7 @@ sub serialize_connect_get_sysinfo_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -1860,7 +1860,7 @@ sub serialize_connect_get_sysinfo_ret {
 
     # Serializing field: 'sysinfo'
     croak "Missing required input value 'sysinfo'"
-        unless exists $_[1]->{sysinfo}
+        unless exists $_[1]->{sysinfo};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{sysinfo}, $_[2], $_[3] );
 }
@@ -1879,7 +1879,7 @@ sub serialize_connect_get_uri_ret {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{uri}, $_[2], $_[3] );
 }
@@ -1898,7 +1898,7 @@ sub serialize_connect_get_max_vcpus_args {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{type}, $_[2], $_[3] );
 }
@@ -1922,7 +1922,7 @@ sub serialize_connect_get_max_vcpus_ret {
 
     # Serializing field: 'max_vcpus'
     croak "Missing required input value 'max_vcpus'"
-        unless exists $_[1]->{max_vcpus}
+        unless exists $_[1]->{max_vcpus};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{max_vcpus};
@@ -2021,7 +2021,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'model'
     croak "Missing required input value 'model'"
-        unless exists $_[1]->{model}
+        unless exists $_[1]->{model};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{model};
@@ -2045,7 +2045,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -2059,7 +2059,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'cpus'
     croak "Missing required input value 'cpus'"
-        unless exists $_[1]->{cpus}
+        unless exists $_[1]->{cpus};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cpus};
@@ -2072,7 +2072,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'mhz'
     croak "Missing required input value 'mhz'"
-        unless exists $_[1]->{mhz}
+        unless exists $_[1]->{mhz};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{mhz};
@@ -2085,7 +2085,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'nodes'
     croak "Missing required input value 'nodes'"
-        unless exists $_[1]->{nodes}
+        unless exists $_[1]->{nodes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nodes};
@@ -2098,7 +2098,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'sockets'
     croak "Missing required input value 'sockets'"
-        unless exists $_[1]->{sockets}
+        unless exists $_[1]->{sockets};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{sockets};
@@ -2111,7 +2111,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'cores'
     croak "Missing required input value 'cores'"
-        unless exists $_[1]->{cores}
+        unless exists $_[1]->{cores};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cores};
@@ -2124,7 +2124,7 @@ sub serialize_node_get_info_ret {
 
     # Serializing field: 'threads'
     croak "Missing required input value 'threads'"
-        unless exists $_[1]->{threads}
+        unless exists $_[1]->{threads};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{threads};
@@ -2150,7 +2150,7 @@ sub serialize_connect_get_capabilities_ret {
 
     # Serializing field: 'capabilities'
     croak "Missing required input value 'capabilities'"
-        unless exists $_[1]->{capabilities}
+        unless exists $_[1]->{capabilities};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{capabilities}, $_[2], $_[3] );
 }
@@ -2190,31 +2190,31 @@ sub serialize_connect_get_domain_capabilities_args {
 
     # Serializing field: 'emulatorbin'
     croak "Missing required input value 'emulatorbin'"
-        unless exists $_[1]->{emulatorbin}
+        unless exists $_[1]->{emulatorbin};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{emulatorbin}, $_[2], $_[3] );
 
     # Serializing field: 'arch'
     croak "Missing required input value 'arch'"
-        unless exists $_[1]->{arch}
+        unless exists $_[1]->{arch};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{arch}, $_[2], $_[3] );
 
     # Serializing field: 'machine'
     croak "Missing required input value 'machine'"
-        unless exists $_[1]->{machine}
+        unless exists $_[1]->{machine};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{machine}, $_[2], $_[3] );
 
     # Serializing field: 'virttype'
     croak "Missing required input value 'virttype'"
-        unless exists $_[1]->{virttype}
+        unless exists $_[1]->{virttype};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{virttype}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -2240,7 +2240,7 @@ sub serialize_connect_get_domain_capabilities_ret {
 
     # Serializing field: 'capabilities'
     croak "Missing required input value 'capabilities'"
-        unless exists $_[1]->{capabilities}
+        unless exists $_[1]->{capabilities};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{capabilities}, $_[2], $_[3] );
 }
@@ -2282,7 +2282,7 @@ sub serialize_node_get_cpu_stats_args {
 
     # Serializing field: 'cpuNum'
     croak "Missing required input value 'cpuNum'"
-        unless exists $_[1]->{cpuNum}
+        unless exists $_[1]->{cpuNum};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cpuNum};
@@ -2295,7 +2295,7 @@ sub serialize_node_get_cpu_stats_args {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2308,7 +2308,7 @@ sub serialize_node_get_cpu_stats_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -2356,7 +2356,7 @@ sub serialize_node_get_cpu_stats_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -2375,7 +2375,7 @@ sub serialize_node_get_cpu_stats_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2424,7 +2424,7 @@ sub serialize_node_get_memory_stats_args {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2437,7 +2437,7 @@ sub serialize_node_get_memory_stats_args {
 
     # Serializing field: 'cellNum'
     croak "Missing required input value 'cellNum'"
-        unless exists $_[1]->{cellNum}
+        unless exists $_[1]->{cellNum};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cellNum};
@@ -2450,7 +2450,7 @@ sub serialize_node_get_memory_stats_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -2498,7 +2498,7 @@ sub serialize_node_get_memory_stats_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -2517,7 +2517,7 @@ sub serialize_node_get_memory_stats_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2557,7 +2557,7 @@ sub serialize_node_get_cells_free_memory_args {
 
     # Serializing field: 'startCell'
     croak "Missing required input value 'startCell'"
-        unless exists $_[1]->{startCell}
+        unless exists $_[1]->{startCell};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{startCell};
@@ -2570,7 +2570,7 @@ sub serialize_node_get_cells_free_memory_args {
 
     # Serializing field: 'maxcells'
     croak "Missing required input value 'maxcells'"
-        unless exists $_[1]->{maxcells}
+        unless exists $_[1]->{maxcells};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxcells};
@@ -2615,7 +2615,7 @@ sub serialize_node_get_cells_free_memory_ret {
 
     # Serializing field: 'cells'
     croak "Missing required input value 'cells'"
-        unless exists $_[1]->{cells}
+        unless exists $_[1]->{cells};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{cells};
@@ -2661,7 +2661,7 @@ sub serialize_node_get_free_memory_ret {
 
     # Serializing field: 'freeMem'
     croak "Missing required input value 'freeMem'"
-        unless exists $_[1]->{freeMem}
+        unless exists $_[1]->{freeMem};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{freeMem};
@@ -2688,7 +2688,7 @@ sub serialize_domain_get_scheduler_type_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -2716,13 +2716,13 @@ sub serialize_domain_get_scheduler_type_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{type}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2757,13 +2757,13 @@ sub serialize_domain_get_scheduler_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2802,7 +2802,7 @@ sub serialize_domain_get_scheduler_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -2852,13 +2852,13 @@ sub serialize_domain_get_scheduler_parameters_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -2871,7 +2871,7 @@ sub serialize_domain_get_scheduler_parameters_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -2910,7 +2910,7 @@ sub serialize_domain_get_scheduler_parameters_flags_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -2959,13 +2959,13 @@ sub serialize_domain_set_scheduler_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3023,13 +3023,13 @@ sub serialize_domain_set_scheduler_parameters_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3048,7 +3048,7 @@ sub serialize_domain_set_scheduler_parameters_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3100,13 +3100,13 @@ sub serialize_domain_set_blkio_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3125,7 +3125,7 @@ sub serialize_domain_set_blkio_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3169,13 +3169,13 @@ sub serialize_domain_get_blkio_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3188,7 +3188,7 @@ sub serialize_domain_get_blkio_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3236,7 +3236,7 @@ sub serialize_domain_get_blkio_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3255,7 +3255,7 @@ sub serialize_domain_get_blkio_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3307,13 +3307,13 @@ sub serialize_domain_set_memory_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3332,7 +3332,7 @@ sub serialize_domain_set_memory_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3376,13 +3376,13 @@ sub serialize_domain_get_memory_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3395,7 +3395,7 @@ sub serialize_domain_get_memory_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3443,7 +3443,7 @@ sub serialize_domain_get_memory_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3462,7 +3462,7 @@ sub serialize_domain_get_memory_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3511,19 +3511,19 @@ sub serialize_domain_block_resize_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'disk'
     croak "Missing required input value 'disk'"
-        unless exists $_[1]->{disk}
+        unless exists $_[1]->{disk};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{disk}, $_[2], $_[3] );
 
     # Serializing field: 'size'
     croak "Missing required input value 'size'"
-        unless exists $_[1]->{size}
+        unless exists $_[1]->{size};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{size};
@@ -3537,7 +3537,7 @@ sub serialize_domain_block_resize_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3589,13 +3589,13 @@ sub serialize_domain_set_numa_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3614,7 +3614,7 @@ sub serialize_domain_set_numa_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3658,13 +3658,13 @@ sub serialize_domain_get_numa_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3677,7 +3677,7 @@ sub serialize_domain_get_numa_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3725,7 +3725,7 @@ sub serialize_domain_get_numa_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3744,7 +3744,7 @@ sub serialize_domain_get_numa_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -3796,13 +3796,13 @@ sub serialize_domain_set_perf_events_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3821,7 +3821,7 @@ sub serialize_domain_set_perf_events_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3856,13 +3856,13 @@ sub serialize_domain_get_perf_events_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -3901,7 +3901,7 @@ sub serialize_domain_get_perf_events_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -3937,13 +3937,13 @@ sub serialize_domain_block_stats_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 }
@@ -4008,7 +4008,7 @@ sub serialize_domain_block_stats_ret {
 
     # Serializing field: 'rd_req'
     croak "Missing required input value 'rd_req'"
-        unless exists $_[1]->{rd_req}
+        unless exists $_[1]->{rd_req};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rd_req};
@@ -4022,7 +4022,7 @@ sub serialize_domain_block_stats_ret {
 
     # Serializing field: 'rd_bytes'
     croak "Missing required input value 'rd_bytes'"
-        unless exists $_[1]->{rd_bytes}
+        unless exists $_[1]->{rd_bytes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rd_bytes};
@@ -4036,7 +4036,7 @@ sub serialize_domain_block_stats_ret {
 
     # Serializing field: 'wr_req'
     croak "Missing required input value 'wr_req'"
-        unless exists $_[1]->{wr_req}
+        unless exists $_[1]->{wr_req};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{wr_req};
@@ -4050,7 +4050,7 @@ sub serialize_domain_block_stats_ret {
 
     # Serializing field: 'wr_bytes'
     croak "Missing required input value 'wr_bytes'"
-        unless exists $_[1]->{wr_bytes}
+        unless exists $_[1]->{wr_bytes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{wr_bytes};
@@ -4064,7 +4064,7 @@ sub serialize_domain_block_stats_ret {
 
     # Serializing field: 'errs'
     croak "Missing required input value 'errs'"
-        unless exists $_[1]->{errs}
+        unless exists $_[1]->{errs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{errs};
@@ -4113,19 +4113,19 @@ sub serialize_domain_block_stats_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -4138,7 +4138,7 @@ sub serialize_domain_block_stats_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -4186,7 +4186,7 @@ sub serialize_domain_block_stats_flags_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -4205,7 +4205,7 @@ sub serialize_domain_block_stats_flags_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -4235,13 +4235,13 @@ sub serialize_domain_interface_stats_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'device'
     croak "Missing required input value 'device'"
-        unless exists $_[1]->{device}
+        unless exists $_[1]->{device};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{device}, $_[2], $_[3] );
 }
@@ -4336,7 +4336,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'rx_bytes'
     croak "Missing required input value 'rx_bytes'"
-        unless exists $_[1]->{rx_bytes}
+        unless exists $_[1]->{rx_bytes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rx_bytes};
@@ -4350,7 +4350,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'rx_packets'
     croak "Missing required input value 'rx_packets'"
-        unless exists $_[1]->{rx_packets}
+        unless exists $_[1]->{rx_packets};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rx_packets};
@@ -4364,7 +4364,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'rx_errs'
     croak "Missing required input value 'rx_errs'"
-        unless exists $_[1]->{rx_errs}
+        unless exists $_[1]->{rx_errs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rx_errs};
@@ -4378,7 +4378,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'rx_drop'
     croak "Missing required input value 'rx_drop'"
-        unless exists $_[1]->{rx_drop}
+        unless exists $_[1]->{rx_drop};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{rx_drop};
@@ -4392,7 +4392,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'tx_bytes'
     croak "Missing required input value 'tx_bytes'"
-        unless exists $_[1]->{tx_bytes}
+        unless exists $_[1]->{tx_bytes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{tx_bytes};
@@ -4406,7 +4406,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'tx_packets'
     croak "Missing required input value 'tx_packets'"
-        unless exists $_[1]->{tx_packets}
+        unless exists $_[1]->{tx_packets};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{tx_packets};
@@ -4420,7 +4420,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'tx_errs'
     croak "Missing required input value 'tx_errs'"
-        unless exists $_[1]->{tx_errs}
+        unless exists $_[1]->{tx_errs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{tx_errs};
@@ -4434,7 +4434,7 @@ sub serialize_domain_interface_stats_ret {
 
     # Serializing field: 'tx_drop'
     croak "Missing required input value 'tx_drop'"
-        unless exists $_[1]->{tx_drop}
+        unless exists $_[1]->{tx_drop};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{tx_drop};
@@ -4491,19 +4491,19 @@ sub serialize_domain_set_interface_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'device'
     croak "Missing required input value 'device'"
-        unless exists $_[1]->{device}
+        unless exists $_[1]->{device};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{device}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -4522,7 +4522,7 @@ sub serialize_domain_set_interface_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -4570,19 +4570,19 @@ sub serialize_domain_get_interface_parameters_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'device'
     croak "Missing required input value 'device'"
-        unless exists $_[1]->{device}
+        unless exists $_[1]->{device};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{device}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -4595,7 +4595,7 @@ sub serialize_domain_get_interface_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -4643,7 +4643,7 @@ sub serialize_domain_get_interface_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -4662,7 +4662,7 @@ sub serialize_domain_get_interface_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -4706,13 +4706,13 @@ sub serialize_domain_memory_stats_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'maxStats'
     croak "Missing required input value 'maxStats'"
-        unless exists $_[1]->{maxStats}
+        unless exists $_[1]->{maxStats};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{maxStats};
@@ -4725,7 +4725,7 @@ sub serialize_domain_memory_stats_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -4766,7 +4766,7 @@ sub serialize_domain_memory_stat {
 
     # Serializing field: 'tag'
     croak "Missing required input value 'tag'"
-        unless exists $_[1]->{tag}
+        unless exists $_[1]->{tag};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{tag};
@@ -4779,7 +4779,7 @@ sub serialize_domain_memory_stat {
 
     # Serializing field: 'val'
     croak "Missing required input value 'val'"
-        unless exists $_[1]->{val}
+        unless exists $_[1]->{val};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{val};
@@ -4819,7 +4819,7 @@ sub serialize_domain_memory_stats_ret {
 
     # Serializing field: 'stats'
     croak "Missing required input value 'stats'"
-        unless exists $_[1]->{stats}
+        unless exists $_[1]->{stats};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{stats};
@@ -4883,19 +4883,19 @@ sub serialize_domain_block_peek_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'offset'
     croak "Missing required input value 'offset'"
-        unless exists $_[1]->{offset}
+        unless exists $_[1]->{offset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{offset};
@@ -4909,7 +4909,7 @@ sub serialize_domain_block_peek_args {
 
     # Serializing field: 'size'
     croak "Missing required input value 'size'"
-        unless exists $_[1]->{size}
+        unless exists $_[1]->{size};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{size};
@@ -4922,7 +4922,7 @@ sub serialize_domain_block_peek_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -4959,7 +4959,7 @@ sub serialize_domain_block_peek_ret {
 
     # Serializing field: 'buffer'
     croak "Missing required input value 'buffer'"
-        unless exists $_[1]->{buffer}
+        unless exists $_[1]->{buffer};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{buffer};
@@ -5021,13 +5021,13 @@ sub serialize_domain_memory_peek_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'offset'
     croak "Missing required input value 'offset'"
-        unless exists $_[1]->{offset}
+        unless exists $_[1]->{offset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{offset};
@@ -5041,7 +5041,7 @@ sub serialize_domain_memory_peek_args {
 
     # Serializing field: 'size'
     croak "Missing required input value 'size'"
-        unless exists $_[1]->{size}
+        unless exists $_[1]->{size};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{size};
@@ -5054,7 +5054,7 @@ sub serialize_domain_memory_peek_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5091,7 +5091,7 @@ sub serialize_domain_memory_peek_ret {
 
     # Serializing field: 'buffer'
     croak "Missing required input value 'buffer'"
-        unless exists $_[1]->{buffer}
+        unless exists $_[1]->{buffer};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{buffer};
@@ -5138,19 +5138,19 @@ sub serialize_domain_get_block_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5202,7 +5202,7 @@ sub serialize_domain_get_block_info_ret {
 
     # Serializing field: 'allocation'
     croak "Missing required input value 'allocation'"
-        unless exists $_[1]->{allocation}
+        unless exists $_[1]->{allocation};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{allocation};
@@ -5216,7 +5216,7 @@ sub serialize_domain_get_block_info_ret {
 
     # Serializing field: 'capacity'
     croak "Missing required input value 'capacity'"
-        unless exists $_[1]->{capacity}
+        unless exists $_[1]->{capacity};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{capacity};
@@ -5230,7 +5230,7 @@ sub serialize_domain_get_block_info_ret {
 
     # Serializing field: 'physical'
     croak "Missing required input value 'physical'"
-        unless exists $_[1]->{physical}
+        unless exists $_[1]->{physical};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{physical};
@@ -5262,7 +5262,7 @@ sub serialize_connect_list_domains_args {
 
     # Serializing field: 'maxids'
     croak "Missing required input value 'maxids'"
-        unless exists $_[1]->{maxids}
+        unless exists $_[1]->{maxids};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxids};
@@ -5306,7 +5306,7 @@ sub serialize_connect_list_domains_ret {
 
     # Serializing field: 'ids'
     croak "Missing required input value 'ids'"
-        unless exists $_[1]->{ids}
+        unless exists $_[1]->{ids};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{ids};
@@ -5350,7 +5350,7 @@ sub serialize_connect_num_of_domains_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -5385,13 +5385,13 @@ sub serialize_domain_create_xml_args {
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5417,7 +5417,7 @@ sub serialize_domain_create_xml_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5445,13 +5445,13 @@ sub serialize_domain_create_xml_with_files_args {
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5477,7 +5477,7 @@ sub serialize_domain_create_xml_with_files_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5501,7 +5501,7 @@ sub serialize_domain_lookup_by_id_args {
 
     # Serializing field: 'id'
     croak "Missing required input value 'id'"
-        unless exists $_[1]->{id}
+        unless exists $_[1]->{id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{id};
@@ -5527,7 +5527,7 @@ sub serialize_domain_lookup_by_id_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5546,7 +5546,7 @@ sub serialize_domain_lookup_by_uuid_args {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -5565,7 +5565,7 @@ sub serialize_domain_lookup_by_uuid_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5584,7 +5584,7 @@ sub serialize_domain_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -5603,7 +5603,7 @@ sub serialize_domain_lookup_by_name_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5622,7 +5622,7 @@ sub serialize_domain_suspend_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5641,7 +5641,7 @@ sub serialize_domain_resume_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5688,13 +5688,13 @@ sub serialize_domain_pm_suspend_for_duration_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'target'
     croak "Missing required input value 'target'"
-        unless exists $_[1]->{target}
+        unless exists $_[1]->{target};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{target};
@@ -5707,7 +5707,7 @@ sub serialize_domain_pm_suspend_for_duration_args {
 
     # Serializing field: 'duration'
     croak "Missing required input value 'duration'"
-        unless exists $_[1]->{duration}
+        unless exists $_[1]->{duration};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{duration};
@@ -5721,7 +5721,7 @@ sub serialize_domain_pm_suspend_for_duration_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5756,13 +5756,13 @@ sub serialize_domain_pm_wakeup_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5788,7 +5788,7 @@ sub serialize_domain_shutdown_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5816,13 +5816,13 @@ sub serialize_domain_reboot_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5857,13 +5857,13 @@ sub serialize_domain_reset_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5889,7 +5889,7 @@ sub serialize_domain_destroy_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5917,13 +5917,13 @@ sub serialize_domain_destroy_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -5949,7 +5949,7 @@ sub serialize_domain_get_os_type_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -5968,7 +5968,7 @@ sub serialize_domain_get_os_type_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{type}, $_[2], $_[3] );
 }
@@ -5987,7 +5987,7 @@ sub serialize_domain_get_max_memory_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -6012,7 +6012,7 @@ sub serialize_domain_get_max_memory_ret {
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -6049,13 +6049,13 @@ sub serialize_domain_set_max_memory_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -6092,13 +6092,13 @@ sub serialize_domain_set_memory_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -6144,13 +6144,13 @@ sub serialize_domain_set_memory_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -6164,7 +6164,7 @@ sub serialize_domain_set_memory_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6208,13 +6208,13 @@ sub serialize_domain_set_memory_stats_period_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'period'
     croak "Missing required input value 'period'"
-        unless exists $_[1]->{period}
+        unless exists $_[1]->{period};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{period};
@@ -6227,7 +6227,7 @@ sub serialize_domain_set_memory_stats_period_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6253,7 +6253,7 @@ sub serialize_domain_get_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -6316,7 +6316,7 @@ sub serialize_domain_get_info_ret {
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'char' value"
         unless defined $_[1]->{state};
@@ -6329,7 +6329,7 @@ sub serialize_domain_get_info_ret {
 
     # Serializing field: 'maxMem'
     croak "Missing required input value 'maxMem'"
-        unless exists $_[1]->{maxMem}
+        unless exists $_[1]->{maxMem};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{maxMem};
@@ -6343,7 +6343,7 @@ sub serialize_domain_get_info_ret {
 
     # Serializing field: 'memory'
     croak "Missing required input value 'memory'"
-        unless exists $_[1]->{memory}
+        unless exists $_[1]->{memory};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memory};
@@ -6357,7 +6357,7 @@ sub serialize_domain_get_info_ret {
 
     # Serializing field: 'nrVirtCpu'
     croak "Missing required input value 'nrVirtCpu'"
-        unless exists $_[1]->{nrVirtCpu}
+        unless exists $_[1]->{nrVirtCpu};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'short' value"
         unless defined $_[1]->{nrVirtCpu};
@@ -6370,7 +6370,7 @@ sub serialize_domain_get_info_ret {
 
     # Serializing field: 'cpuTime'
     croak "Missing required input value 'cpuTime'"
-        unless exists $_[1]->{cpuTime}
+        unless exists $_[1]->{cpuTime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{cpuTime};
@@ -6401,13 +6401,13 @@ sub serialize_domain_save_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'to'
     croak "Missing required input value 'to'"
-        unless exists $_[1]->{to}
+        unless exists $_[1]->{to};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{to}, $_[2], $_[3] );
 }
@@ -6443,25 +6443,25 @@ sub serialize_domain_save_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'to'
     croak "Missing required input value 'to'"
-        unless exists $_[1]->{to}
+        unless exists $_[1]->{to};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{to}, $_[2], $_[3] );
 
     # Serializing field: 'dxml'
     croak "Missing required input value 'dxml'"
-        unless exists $_[1]->{dxml}
+        unless exists $_[1]->{dxml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dxml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6513,13 +6513,13 @@ sub serialize_domain_save_params_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -6538,7 +6538,7 @@ sub serialize_domain_save_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6564,7 +6564,7 @@ sub serialize_domain_restore_args {
 
     # Serializing field: 'from'
     croak "Missing required input value 'from'"
-        unless exists $_[1]->{from}
+        unless exists $_[1]->{from};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{from}, $_[2], $_[3] );
 }
@@ -6596,19 +6596,19 @@ sub serialize_domain_restore_flags_args {
 
     # Serializing field: 'from'
     croak "Missing required input value 'from'"
-        unless exists $_[1]->{from}
+        unless exists $_[1]->{from};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{from}, $_[2], $_[3] );
 
     # Serializing field: 'dxml'
     croak "Missing required input value 'dxml'"
-        unless exists $_[1]->{dxml}
+        unless exists $_[1]->{dxml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dxml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6656,7 +6656,7 @@ sub serialize_domain_restore_params_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -6675,7 +6675,7 @@ sub serialize_domain_restore_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6710,13 +6710,13 @@ sub serialize_domain_save_image_get_xml_desc_args {
 
     # Serializing field: 'file'
     croak "Missing required input value 'file'"
-        unless exists $_[1]->{file}
+        unless exists $_[1]->{file};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{file}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6742,7 +6742,7 @@ sub serialize_domain_save_image_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -6774,19 +6774,19 @@ sub serialize_domain_save_image_define_xml_args {
 
     # Serializing field: 'file'
     croak "Missing required input value 'file'"
-        unless exists $_[1]->{file}
+        unless exists $_[1]->{file};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{file}, $_[2], $_[3] );
 
     # Serializing field: 'dxml'
     croak "Missing required input value 'dxml'"
-        unless exists $_[1]->{dxml}
+        unless exists $_[1]->{dxml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dxml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6825,19 +6825,19 @@ sub serialize_domain_core_dump_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'to'
     croak "Missing required input value 'to'"
-        unless exists $_[1]->{to}
+        unless exists $_[1]->{to};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{to}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6885,19 +6885,19 @@ sub serialize_domain_core_dump_with_format_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'to'
     croak "Missing required input value 'to'"
-        unless exists $_[1]->{to}
+        unless exists $_[1]->{to};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{to}, $_[2], $_[3] );
 
     # Serializing field: 'dumpformat'
     croak "Missing required input value 'dumpformat'"
-        unless exists $_[1]->{dumpformat}
+        unless exists $_[1]->{dumpformat};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{dumpformat};
@@ -6910,7 +6910,7 @@ sub serialize_domain_core_dump_with_format_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6954,13 +6954,13 @@ sub serialize_domain_screenshot_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'screen'
     croak "Missing required input value 'screen'"
-        unless exists $_[1]->{screen}
+        unless exists $_[1]->{screen};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{screen};
@@ -6973,7 +6973,7 @@ sub serialize_domain_screenshot_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -6999,7 +6999,7 @@ sub serialize_domain_screenshot_ret {
 
     # Serializing field: 'mime'
     croak "Missing required input value 'mime'"
-        unless exists $_[1]->{mime}
+        unless exists $_[1]->{mime};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{mime}, $_[2], $_[3] );
 }
@@ -7027,13 +7027,13 @@ sub serialize_domain_get_xml_desc_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -7059,7 +7059,7 @@ sub serialize_domain_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -7102,13 +7102,13 @@ sub serialize_domain_migrate_prepare_args {
 
     # Serializing field: 'uri_in'
     croak "Missing required input value 'uri_in'"
-        unless exists $_[1]->{uri_in}
+        unless exists $_[1]->{uri_in};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_in}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -7122,13 +7122,13 @@ sub serialize_domain_migrate_prepare_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -7170,7 +7170,7 @@ sub serialize_domain_migrate_prepare_ret {
 
     # Serializing field: 'cookie'
     croak "Missing required input value 'cookie'"
-        unless exists $_[1]->{cookie}
+        unless exists $_[1]->{cookie};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie};
@@ -7191,7 +7191,7 @@ sub serialize_domain_migrate_prepare_ret {
 
     # Serializing field: 'uri_out'
     croak "Missing required input value 'uri_out'"
-        unless exists $_[1]->{uri_out}
+        unless exists $_[1]->{uri_out};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_out}, $_[2], $_[3] );
 }
@@ -7253,13 +7253,13 @@ sub serialize_domain_migrate_perform_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cookie'
     croak "Missing required input value 'cookie'"
-        unless exists $_[1]->{cookie}
+        unless exists $_[1]->{cookie};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie};
@@ -7280,13 +7280,13 @@ sub serialize_domain_migrate_perform_args {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -7300,13 +7300,13 @@ sub serialize_domain_migrate_perform_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -7362,13 +7362,13 @@ sub serialize_domain_migrate_finish_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'cookie'
     croak "Missing required input value 'cookie'"
-        unless exists $_[1]->{cookie}
+        unless exists $_[1]->{cookie};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie};
@@ -7389,13 +7389,13 @@ sub serialize_domain_migrate_finish_args {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -7422,7 +7422,7 @@ sub serialize_domain_migrate_finish_ret {
 
     # Serializing field: 'ddom'
     croak "Missing required input value 'ddom'"
-        unless exists $_[1]->{ddom}
+        unless exists $_[1]->{ddom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{ddom}, $_[2], $_[3] );
 }
@@ -7469,13 +7469,13 @@ sub serialize_domain_migrate_prepare2_args {
 
     # Serializing field: 'uri_in'
     croak "Missing required input value 'uri_in'"
-        unless exists $_[1]->{uri_in}
+        unless exists $_[1]->{uri_in};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_in}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -7489,13 +7489,13 @@ sub serialize_domain_migrate_prepare2_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -7509,7 +7509,7 @@ sub serialize_domain_migrate_prepare2_args {
 
     # Serializing field: 'dom_xml'
     croak "Missing required input value 'dom_xml'"
-        unless exists $_[1]->{dom_xml}
+        unless exists $_[1]->{dom_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dom_xml}, $_[2], $_[3] );
 }
@@ -7543,7 +7543,7 @@ sub serialize_domain_migrate_prepare2_ret {
 
     # Serializing field: 'cookie'
     croak "Missing required input value 'cookie'"
-        unless exists $_[1]->{cookie}
+        unless exists $_[1]->{cookie};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie};
@@ -7564,7 +7564,7 @@ sub serialize_domain_migrate_prepare2_ret {
 
     # Serializing field: 'uri_out'
     croak "Missing required input value 'uri_out'"
-        unless exists $_[1]->{uri_out}
+        unless exists $_[1]->{uri_out};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_out}, $_[2], $_[3] );
 }
@@ -7621,13 +7621,13 @@ sub serialize_domain_migrate_finish2_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'cookie'
     croak "Missing required input value 'cookie'"
-        unless exists $_[1]->{cookie}
+        unless exists $_[1]->{cookie};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie};
@@ -7648,13 +7648,13 @@ sub serialize_domain_migrate_finish2_args {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -7668,7 +7668,7 @@ sub serialize_domain_migrate_finish2_args {
 
     # Serializing field: 'retcode'
     croak "Missing required input value 'retcode'"
-        unless exists $_[1]->{retcode}
+        unless exists $_[1]->{retcode};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{retcode};
@@ -7694,7 +7694,7 @@ sub serialize_domain_migrate_finish2_ret {
 
     # Serializing field: 'ddom'
     croak "Missing required input value 'ddom'"
-        unless exists $_[1]->{ddom}
+        unless exists $_[1]->{ddom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{ddom}, $_[2], $_[3] );
 }
@@ -7718,7 +7718,7 @@ sub serialize_connect_list_defined_domains_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -7757,7 +7757,7 @@ sub serialize_connect_list_defined_domains_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -7794,7 +7794,7 @@ sub serialize_connect_num_of_defined_domains_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -7820,7 +7820,7 @@ sub serialize_domain_create_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -7848,13 +7848,13 @@ sub serialize_domain_create_with_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -7880,7 +7880,7 @@ sub serialize_domain_create_with_flags_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -7908,13 +7908,13 @@ sub serialize_domain_create_with_files_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -7940,7 +7940,7 @@ sub serialize_domain_create_with_files_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -7959,7 +7959,7 @@ sub serialize_domain_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -7978,7 +7978,7 @@ sub serialize_domain_define_xml_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -8006,13 +8006,13 @@ sub serialize_domain_define_xml_flags_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8038,7 +8038,7 @@ sub serialize_domain_define_xml_flags_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -8057,7 +8057,7 @@ sub serialize_domain_undefine_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -8085,13 +8085,13 @@ sub serialize_domain_undefine_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8126,13 +8126,13 @@ sub serialize_domain_inject_nmi_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8207,13 +8207,13 @@ sub serialize_domain_send_key_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'codeset'
     croak "Missing required input value 'codeset'"
-        unless exists $_[1]->{codeset}
+        unless exists $_[1]->{codeset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{codeset};
@@ -8226,7 +8226,7 @@ sub serialize_domain_send_key_args {
 
     # Serializing field: 'holdtime'
     croak "Missing required input value 'holdtime'"
-        unless exists $_[1]->{holdtime}
+        unless exists $_[1]->{holdtime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{holdtime};
@@ -8239,7 +8239,7 @@ sub serialize_domain_send_key_args {
 
     # Serializing field: 'keycodes'
     croak "Missing required input value 'keycodes'"
-        unless exists $_[1]->{keycodes}
+        unless exists $_[1]->{keycodes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{keycodes};
@@ -8265,7 +8265,7 @@ sub serialize_domain_send_key_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8319,13 +8319,13 @@ sub serialize_domain_send_process_signal_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'pid_value'
     croak "Missing required input value 'pid_value'"
-        unless exists $_[1]->{pid_value}
+        unless exists $_[1]->{pid_value};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{pid_value};
@@ -8339,7 +8339,7 @@ sub serialize_domain_send_process_signal_args {
 
     # Serializing field: 'signum'
     croak "Missing required input value 'signum'"
-        unless exists $_[1]->{signum}
+        unless exists $_[1]->{signum};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{signum};
@@ -8352,7 +8352,7 @@ sub serialize_domain_send_process_signal_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8387,13 +8387,13 @@ sub serialize_domain_set_vcpus_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nvcpus'
     croak "Missing required input value 'nvcpus'"
-        unless exists $_[1]->{nvcpus}
+        unless exists $_[1]->{nvcpus};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{nvcpus};
@@ -8437,13 +8437,13 @@ sub serialize_domain_set_vcpus_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nvcpus'
     croak "Missing required input value 'nvcpus'"
-        unless exists $_[1]->{nvcpus}
+        unless exists $_[1]->{nvcpus};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{nvcpus};
@@ -8456,7 +8456,7 @@ sub serialize_domain_set_vcpus_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8491,13 +8491,13 @@ sub serialize_domain_get_vcpus_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8528,7 +8528,7 @@ sub serialize_domain_get_vcpus_flags_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -8578,13 +8578,13 @@ sub serialize_domain_pin_vcpu_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'vcpu'
     croak "Missing required input value 'vcpu'"
-        unless exists $_[1]->{vcpu}
+        unless exists $_[1]->{vcpu};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{vcpu};
@@ -8597,7 +8597,7 @@ sub serialize_domain_pin_vcpu_args {
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -8664,13 +8664,13 @@ sub serialize_domain_pin_vcpu_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'vcpu'
     croak "Missing required input value 'vcpu'"
-        unless exists $_[1]->{vcpu}
+        unless exists $_[1]->{vcpu};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{vcpu};
@@ -8683,7 +8683,7 @@ sub serialize_domain_pin_vcpu_flags_args {
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -8704,7 +8704,7 @@ sub serialize_domain_pin_vcpu_flags_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8757,13 +8757,13 @@ sub serialize_domain_get_vcpu_pin_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'ncpumaps'
     croak "Missing required input value 'ncpumaps'"
-        unless exists $_[1]->{ncpumaps}
+        unless exists $_[1]->{ncpumaps};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ncpumaps};
@@ -8776,7 +8776,7 @@ sub serialize_domain_get_vcpu_pin_info_args {
 
     # Serializing field: 'maplen'
     croak "Missing required input value 'maplen'"
-        unless exists $_[1]->{maplen}
+        unless exists $_[1]->{maplen};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maplen};
@@ -8789,7 +8789,7 @@ sub serialize_domain_get_vcpu_pin_info_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8835,7 +8835,7 @@ sub serialize_domain_get_vcpu_pin_info_ret {
 
     # Serializing field: 'cpumaps'
     croak "Missing required input value 'cpumaps'"
-        unless exists $_[1]->{cpumaps}
+        unless exists $_[1]->{cpumaps};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumaps};
@@ -8856,7 +8856,7 @@ sub serialize_domain_get_vcpu_pin_info_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -8906,13 +8906,13 @@ sub serialize_domain_pin_emulator_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -8933,7 +8933,7 @@ sub serialize_domain_pin_emulator_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -8977,13 +8977,13 @@ sub serialize_domain_get_emulator_pin_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'maplen'
     croak "Missing required input value 'maplen'"
-        unless exists $_[1]->{maplen}
+        unless exists $_[1]->{maplen};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maplen};
@@ -8996,7 +8996,7 @@ sub serialize_domain_get_emulator_pin_info_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9042,7 +9042,7 @@ sub serialize_domain_get_emulator_pin_info_ret {
 
     # Serializing field: 'cpumaps'
     croak "Missing required input value 'cpumaps'"
-        unless exists $_[1]->{cpumaps}
+        unless exists $_[1]->{cpumaps};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumaps};
@@ -9063,7 +9063,7 @@ sub serialize_domain_get_emulator_pin_info_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -9107,13 +9107,13 @@ sub serialize_domain_get_vcpus_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'maxinfo'
     croak "Missing required input value 'maxinfo'"
-        unless exists $_[1]->{maxinfo}
+        unless exists $_[1]->{maxinfo};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxinfo};
@@ -9126,7 +9126,7 @@ sub serialize_domain_get_vcpus_args {
 
     # Serializing field: 'maplen'
     croak "Missing required input value 'maplen'"
-        unless exists $_[1]->{maplen}
+        unless exists $_[1]->{maplen};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maplen};
@@ -9180,7 +9180,7 @@ sub serialize_domain_get_vcpus_ret {
 
     # Serializing field: 'info'
     croak "Missing required input value 'info'"
-        unless exists $_[1]->{info}
+        unless exists $_[1]->{info};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{info};
@@ -9199,7 +9199,7 @@ sub serialize_domain_get_vcpus_ret {
 
     # Serializing field: 'cpumaps'
     croak "Missing required input value 'cpumaps'"
-        unless exists $_[1]->{cpumaps}
+        unless exists $_[1]->{cpumaps};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumaps};
@@ -9233,7 +9233,7 @@ sub serialize_domain_get_max_vcpus_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -9257,7 +9257,7 @@ sub serialize_domain_get_max_vcpus_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -9303,7 +9303,7 @@ sub serialize_domain_iothread_info {
 
     # Serializing field: 'iothread_id'
     croak "Missing required input value 'iothread_id'"
-        unless exists $_[1]->{iothread_id}
+        unless exists $_[1]->{iothread_id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{iothread_id};
@@ -9316,7 +9316,7 @@ sub serialize_domain_iothread_info {
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -9359,13 +9359,13 @@ sub serialize_domain_get_iothread_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9413,7 +9413,7 @@ sub serialize_domain_get_iothread_info_ret {
 
     # Serializing field: 'info'
     croak "Missing required input value 'info'"
-        unless exists $_[1]->{info}
+        unless exists $_[1]->{info};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{info};
@@ -9432,7 +9432,7 @@ sub serialize_domain_get_iothread_info_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -9491,13 +9491,13 @@ sub serialize_domain_pin_iothread_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'iothreads_id'
     croak "Missing required input value 'iothreads_id'"
-        unless exists $_[1]->{iothreads_id}
+        unless exists $_[1]->{iothreads_id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{iothreads_id};
@@ -9510,7 +9510,7 @@ sub serialize_domain_pin_iothread_args {
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -9531,7 +9531,7 @@ sub serialize_domain_pin_iothread_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9575,13 +9575,13 @@ sub serialize_domain_add_iothread_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'iothread_id'
     croak "Missing required input value 'iothread_id'"
-        unless exists $_[1]->{iothread_id}
+        unless exists $_[1]->{iothread_id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{iothread_id};
@@ -9594,7 +9594,7 @@ sub serialize_domain_add_iothread_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9638,13 +9638,13 @@ sub serialize_domain_del_iothread_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'iothread_id'
     croak "Missing required input value 'iothread_id'"
-        unless exists $_[1]->{iothread_id}
+        unless exists $_[1]->{iothread_id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{iothread_id};
@@ -9657,7 +9657,7 @@ sub serialize_domain_del_iothread_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9718,13 +9718,13 @@ sub serialize_domain_set_iothread_params_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'iothread_id'
     croak "Missing required input value 'iothread_id'"
-        unless exists $_[1]->{iothread_id}
+        unless exists $_[1]->{iothread_id};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{iothread_id};
@@ -9737,7 +9737,7 @@ sub serialize_domain_set_iothread_params_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -9756,7 +9756,7 @@ sub serialize_domain_set_iothread_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -9782,7 +9782,7 @@ sub serialize_domain_get_security_label_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -9828,7 +9828,7 @@ sub serialize_domain_get_security_label_ret {
 
     # Serializing field: 'label'
     croak "Missing required input value 'label'"
-        unless exists $_[1]->{label}
+        unless exists $_[1]->{label};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{label};
@@ -9854,7 +9854,7 @@ sub serialize_domain_get_security_label_ret {
 
     # Serializing field: 'enforcing'
     croak "Missing required input value 'enforcing'"
-        unless exists $_[1]->{enforcing}
+        unless exists $_[1]->{enforcing};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{enforcing};
@@ -9880,7 +9880,7 @@ sub serialize_domain_get_security_label_list_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -9921,7 +9921,7 @@ sub serialize_domain_get_security_label_list_ret {
 
     # Serializing field: 'labels'
     croak "Missing required input value 'labels'"
-        unless exists $_[1]->{labels}
+        unless exists $_[1]->{labels};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{labels};
@@ -9940,7 +9940,7 @@ sub serialize_domain_get_security_label_list_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -10006,7 +10006,7 @@ sub serialize_node_get_security_model_ret {
 
     # Serializing field: 'model'
     croak "Missing required input value 'model'"
-        unless exists $_[1]->{model}
+        unless exists $_[1]->{model};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{model};
@@ -10032,7 +10032,7 @@ sub serialize_node_get_security_model_ret {
 
     # Serializing field: 'doi'
     croak "Missing required input value 'doi'"
-        unless exists $_[1]->{doi}
+        unless exists $_[1]->{doi};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{doi};
@@ -10075,13 +10075,13 @@ sub serialize_domain_attach_device_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -10113,19 +10113,19 @@ sub serialize_domain_attach_device_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10155,13 +10155,13 @@ sub serialize_domain_detach_device_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -10193,19 +10193,19 @@ sub serialize_domain_detach_device_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10244,19 +10244,19 @@ sub serialize_domain_update_device_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10295,19 +10295,19 @@ sub serialize_domain_detach_device_alias_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'alias'
     croak "Missing required input value 'alias'"
-        unless exists $_[1]->{alias}
+        unless exists $_[1]->{alias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{alias}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10333,7 +10333,7 @@ sub serialize_domain_get_autostart_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -10357,7 +10357,7 @@ sub serialize_domain_get_autostart_ret {
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -10392,13 +10392,13 @@ sub serialize_domain_set_autostart_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -10454,13 +10454,13 @@ sub serialize_domain_set_metadata_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -10473,25 +10473,25 @@ sub serialize_domain_set_metadata_args {
 
     # Serializing field: 'metadata'
     croak "Missing required input value 'metadata'"
-        unless exists $_[1]->{metadata}
+        unless exists $_[1]->{metadata};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{metadata}, $_[2], $_[3] );
 
     # Serializing field: 'key'
     croak "Missing required input value 'key'"
-        unless exists $_[1]->{key}
+        unless exists $_[1]->{key};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{key}, $_[2], $_[3] );
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10539,13 +10539,13 @@ sub serialize_domain_get_metadata_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -10558,13 +10558,13 @@ sub serialize_domain_get_metadata_args {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10590,7 +10590,7 @@ sub serialize_domain_get_metadata_ret {
 
     # Serializing field: 'metadata'
     croak "Missing required input value 'metadata'"
-        unless exists $_[1]->{metadata}
+        unless exists $_[1]->{metadata};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{metadata}, $_[2], $_[3] );
 }
@@ -10622,19 +10622,19 @@ sub serialize_domain_block_job_abort_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10673,19 +10673,19 @@ sub serialize_domain_get_block_job_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10755,7 +10755,7 @@ sub serialize_domain_get_block_job_info_ret {
 
     # Serializing field: 'found'
     croak "Missing required input value 'found'"
-        unless exists $_[1]->{found}
+        unless exists $_[1]->{found};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{found};
@@ -10768,7 +10768,7 @@ sub serialize_domain_get_block_job_info_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -10781,7 +10781,7 @@ sub serialize_domain_get_block_job_info_ret {
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -10795,7 +10795,7 @@ sub serialize_domain_get_block_job_info_ret {
 
     # Serializing field: 'cur'
     croak "Missing required input value 'cur'"
-        unless exists $_[1]->{cur}
+        unless exists $_[1]->{cur};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{cur};
@@ -10809,7 +10809,7 @@ sub serialize_domain_get_block_job_info_ret {
 
     # Serializing field: 'end'
     croak "Missing required input value 'end'"
-        unless exists $_[1]->{end}
+        unless exists $_[1]->{end};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{end};
@@ -10859,19 +10859,19 @@ sub serialize_domain_block_job_set_speed_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -10885,7 +10885,7 @@ sub serialize_domain_block_job_set_speed_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -10934,19 +10934,19 @@ sub serialize_domain_block_pull_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -10960,7 +10960,7 @@ sub serialize_domain_block_pull_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11013,25 +11013,25 @@ sub serialize_domain_block_rebase_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'base'
     croak "Missing required input value 'base'"
-        unless exists $_[1]->{base}
+        unless exists $_[1]->{base};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{base}, $_[2], $_[3] );
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -11045,7 +11045,7 @@ sub serialize_domain_block_rebase_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11105,25 +11105,25 @@ sub serialize_domain_block_copy_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'destxml'
     croak "Missing required input value 'destxml'"
-        unless exists $_[1]->{destxml}
+        unless exists $_[1]->{destxml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{destxml}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -11142,7 +11142,7 @@ sub serialize_domain_block_copy_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11199,31 +11199,31 @@ sub serialize_domain_block_commit_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'disk'
     croak "Missing required input value 'disk'"
-        unless exists $_[1]->{disk}
+        unless exists $_[1]->{disk};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{disk}, $_[2], $_[3] );
 
     # Serializing field: 'base'
     croak "Missing required input value 'base'"
-        unless exists $_[1]->{base}
+        unless exists $_[1]->{base};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{base}, $_[2], $_[3] );
 
     # Serializing field: 'top'
     croak "Missing required input value 'top'"
-        unless exists $_[1]->{top}
+        unless exists $_[1]->{top};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{top}, $_[2], $_[3] );
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -11237,7 +11237,7 @@ sub serialize_domain_block_commit_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11293,19 +11293,19 @@ sub serialize_domain_set_block_io_tune_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'disk'
     croak "Missing required input value 'disk'"
-        unless exists $_[1]->{disk}
+        unless exists $_[1]->{disk};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{disk}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -11324,7 +11324,7 @@ sub serialize_domain_set_block_io_tune_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11372,19 +11372,19 @@ sub serialize_domain_get_block_io_tune_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'disk'
     croak "Missing required input value 'disk'"
-        unless exists $_[1]->{disk}
+        unless exists $_[1]->{disk};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{disk}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -11397,7 +11397,7 @@ sub serialize_domain_get_block_io_tune_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11445,7 +11445,7 @@ sub serialize_domain_get_block_io_tune_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -11464,7 +11464,7 @@ sub serialize_domain_get_block_io_tune_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -11526,13 +11526,13 @@ sub serialize_domain_get_cpu_stats_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{nparams};
@@ -11545,7 +11545,7 @@ sub serialize_domain_get_cpu_stats_args {
 
     # Serializing field: 'start_cpu'
     croak "Missing required input value 'start_cpu'"
-        unless exists $_[1]->{start_cpu}
+        unless exists $_[1]->{start_cpu};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{start_cpu};
@@ -11558,7 +11558,7 @@ sub serialize_domain_get_cpu_stats_args {
 
     # Serializing field: 'ncpus'
     croak "Missing required input value 'ncpus'"
-        unless exists $_[1]->{ncpus}
+        unless exists $_[1]->{ncpus};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ncpus};
@@ -11571,7 +11571,7 @@ sub serialize_domain_get_cpu_stats_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11619,7 +11619,7 @@ sub serialize_domain_get_cpu_stats_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -11638,7 +11638,7 @@ sub serialize_domain_get_cpu_stats_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -11673,13 +11673,13 @@ sub serialize_domain_get_hostname_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -11705,7 +11705,7 @@ sub serialize_domain_get_hostname_ret {
 
     # Serializing field: 'hostname'
     croak "Missing required input value 'hostname'"
-        unless exists $_[1]->{hostname}
+        unless exists $_[1]->{hostname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{hostname}, $_[2], $_[3] );
 }
@@ -11729,7 +11729,7 @@ sub serialize_connect_num_of_networks_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -11760,7 +11760,7 @@ sub serialize_connect_list_networks_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -11799,7 +11799,7 @@ sub serialize_connect_list_networks_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -11836,7 +11836,7 @@ sub serialize_connect_num_of_defined_networks_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -11867,7 +11867,7 @@ sub serialize_connect_list_defined_networks_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -11906,7 +11906,7 @@ sub serialize_connect_list_defined_networks_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -11938,7 +11938,7 @@ sub serialize_network_lookup_by_uuid_args {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -11957,7 +11957,7 @@ sub serialize_network_lookup_by_uuid_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -11976,7 +11976,7 @@ sub serialize_network_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -11995,7 +11995,7 @@ sub serialize_network_lookup_by_name_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12014,7 +12014,7 @@ sub serialize_network_create_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -12033,7 +12033,7 @@ sub serialize_network_create_xml_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12061,13 +12061,13 @@ sub serialize_network_create_xml_flags_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12093,7 +12093,7 @@ sub serialize_network_create_xml_flags_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12112,7 +12112,7 @@ sub serialize_network_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -12131,7 +12131,7 @@ sub serialize_network_define_xml_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12159,13 +12159,13 @@ sub serialize_network_define_xml_flags_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12191,7 +12191,7 @@ sub serialize_network_define_xml_flags_ret {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12210,7 +12210,7 @@ sub serialize_network_undefine_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12269,13 +12269,13 @@ sub serialize_network_update_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'command'
     croak "Missing required input value 'command'"
-        unless exists $_[1]->{command}
+        unless exists $_[1]->{command};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{command};
@@ -12288,7 +12288,7 @@ sub serialize_network_update_args {
 
     # Serializing field: 'section'
     croak "Missing required input value 'section'"
-        unless exists $_[1]->{section}
+        unless exists $_[1]->{section};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{section};
@@ -12301,7 +12301,7 @@ sub serialize_network_update_args {
 
     # Serializing field: 'parentIndex'
     croak "Missing required input value 'parentIndex'"
-        unless exists $_[1]->{parentIndex}
+        unless exists $_[1]->{parentIndex};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{parentIndex};
@@ -12314,13 +12314,13 @@ sub serialize_network_update_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12346,7 +12346,7 @@ sub serialize_network_create_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12365,7 +12365,7 @@ sub serialize_network_destroy_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12393,13 +12393,13 @@ sub serialize_network_get_xml_desc_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12425,7 +12425,7 @@ sub serialize_network_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -12444,7 +12444,7 @@ sub serialize_network_get_bridge_name_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12463,7 +12463,7 @@ sub serialize_network_get_bridge_name_ret {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -12482,7 +12482,7 @@ sub serialize_network_get_autostart_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -12506,7 +12506,7 @@ sub serialize_network_get_autostart_ret {
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -12541,13 +12541,13 @@ sub serialize_network_set_autostart_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -12578,7 +12578,7 @@ sub serialize_connect_num_of_nwfilters_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -12609,7 +12609,7 @@ sub serialize_connect_list_nwfilters_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -12648,7 +12648,7 @@ sub serialize_connect_list_nwfilters_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -12680,7 +12680,7 @@ sub serialize_nwfilter_lookup_by_uuid_args {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -12699,7 +12699,7 @@ sub serialize_nwfilter_lookup_by_uuid_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -12718,7 +12718,7 @@ sub serialize_nwfilter_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -12737,7 +12737,7 @@ sub serialize_nwfilter_lookup_by_name_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -12756,7 +12756,7 @@ sub serialize_nwfilter_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -12775,7 +12775,7 @@ sub serialize_nwfilter_define_xml_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -12803,13 +12803,13 @@ sub serialize_nwfilter_define_xml_flags_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12835,7 +12835,7 @@ sub serialize_nwfilter_define_xml_flags_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -12854,7 +12854,7 @@ sub serialize_nwfilter_undefine_args {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -12882,13 +12882,13 @@ sub serialize_nwfilter_get_xml_desc_args {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter( $_[1]->{nwfilter}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -12914,7 +12914,7 @@ sub serialize_nwfilter_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -12938,7 +12938,7 @@ sub serialize_connect_num_of_interfaces_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -12969,7 +12969,7 @@ sub serialize_connect_list_interfaces_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -13008,7 +13008,7 @@ sub serialize_connect_list_interfaces_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -13045,7 +13045,7 @@ sub serialize_connect_num_of_defined_interfaces_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -13076,7 +13076,7 @@ sub serialize_connect_list_defined_interfaces_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -13115,7 +13115,7 @@ sub serialize_connect_list_defined_interfaces_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -13147,7 +13147,7 @@ sub serialize_interface_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -13166,7 +13166,7 @@ sub serialize_interface_lookup_by_name_ret {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 }
@@ -13185,7 +13185,7 @@ sub serialize_interface_lookup_by_mac_string_args {
 
     # Serializing field: 'mac'
     croak "Missing required input value 'mac'"
-        unless exists $_[1]->{mac}
+        unless exists $_[1]->{mac};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{mac}, $_[2], $_[3] );
 }
@@ -13204,7 +13204,7 @@ sub serialize_interface_lookup_by_mac_string_ret {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 }
@@ -13232,13 +13232,13 @@ sub serialize_interface_get_xml_desc_args {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13264,7 +13264,7 @@ sub serialize_interface_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -13292,13 +13292,13 @@ sub serialize_interface_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13324,7 +13324,7 @@ sub serialize_interface_define_xml_ret {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 }
@@ -13343,7 +13343,7 @@ sub serialize_interface_undefine_args {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 }
@@ -13371,13 +13371,13 @@ sub serialize_interface_create_args {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13412,13 +13412,13 @@ sub serialize_interface_destroy_args {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13449,7 +13449,7 @@ sub serialize_interface_change_begin_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13480,7 +13480,7 @@ sub serialize_interface_change_commit_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13511,7 +13511,7 @@ sub serialize_interface_change_rollback_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -13550,7 +13550,7 @@ sub serialize_auth_list_ret {
 
     # Serializing field: 'types'
     croak "Missing required input value 'types'"
-        unless exists $_[1]->{types}
+        unless exists $_[1]->{types};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{types};
@@ -13582,7 +13582,7 @@ sub serialize_auth_sasl_init_ret {
 
     # Serializing field: 'mechlist'
     croak "Missing required input value 'mechlist'"
-        unless exists $_[1]->{mechlist}
+        unless exists $_[1]->{mechlist};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{mechlist}, $_[2], $_[3] );
 }
@@ -13632,13 +13632,13 @@ sub serialize_auth_sasl_start_args {
 
     # Serializing field: 'mech'
     croak "Missing required input value 'mech'"
-        unless exists $_[1]->{mech}
+        unless exists $_[1]->{mech};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{mech}, $_[2], $_[3] );
 
     # Serializing field: 'nil'
     croak "Missing required input value 'nil'"
-        unless exists $_[1]->{nil}
+        unless exists $_[1]->{nil};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nil};
@@ -13651,7 +13651,7 @@ sub serialize_auth_sasl_start_args {
 
     # Serializing field: 'data'
     croak "Missing required input value 'data'"
-        unless exists $_[1]->{data}
+        unless exists $_[1]->{data};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{data};
@@ -13726,7 +13726,7 @@ sub serialize_auth_sasl_start_ret {
 
     # Serializing field: 'complete'
     croak "Missing required input value 'complete'"
-        unless exists $_[1]->{complete}
+        unless exists $_[1]->{complete};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{complete};
@@ -13739,7 +13739,7 @@ sub serialize_auth_sasl_start_ret {
 
     # Serializing field: 'nil'
     croak "Missing required input value 'nil'"
-        unless exists $_[1]->{nil}
+        unless exists $_[1]->{nil};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nil};
@@ -13752,7 +13752,7 @@ sub serialize_auth_sasl_start_ret {
 
     # Serializing field: 'data'
     croak "Missing required input value 'data'"
-        unless exists $_[1]->{data}
+        unless exists $_[1]->{data};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{data};
@@ -13818,7 +13818,7 @@ sub serialize_auth_sasl_step_args {
 
     # Serializing field: 'nil'
     croak "Missing required input value 'nil'"
-        unless exists $_[1]->{nil}
+        unless exists $_[1]->{nil};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nil};
@@ -13831,7 +13831,7 @@ sub serialize_auth_sasl_step_args {
 
     # Serializing field: 'data'
     croak "Missing required input value 'data'"
-        unless exists $_[1]->{data}
+        unless exists $_[1]->{data};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{data};
@@ -13906,7 +13906,7 @@ sub serialize_auth_sasl_step_ret {
 
     # Serializing field: 'complete'
     croak "Missing required input value 'complete'"
-        unless exists $_[1]->{complete}
+        unless exists $_[1]->{complete};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{complete};
@@ -13919,7 +13919,7 @@ sub serialize_auth_sasl_step_ret {
 
     # Serializing field: 'nil'
     croak "Missing required input value 'nil'"
-        unless exists $_[1]->{nil}
+        unless exists $_[1]->{nil};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nil};
@@ -13932,7 +13932,7 @@ sub serialize_auth_sasl_step_ret {
 
     # Serializing field: 'data'
     croak "Missing required input value 'data'"
-        unless exists $_[1]->{data}
+        unless exists $_[1]->{data};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{data};
@@ -13976,7 +13976,7 @@ sub serialize_auth_polkit_ret {
 
     # Serializing field: 'complete'
     croak "Missing required input value 'complete'"
-        unless exists $_[1]->{complete}
+        unless exists $_[1]->{complete};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{complete};
@@ -14007,7 +14007,7 @@ sub serialize_connect_num_of_storage_pools_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -14038,7 +14038,7 @@ sub serialize_connect_list_storage_pools_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -14077,7 +14077,7 @@ sub serialize_connect_list_storage_pools_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -14114,7 +14114,7 @@ sub serialize_connect_num_of_defined_storage_pools_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -14145,7 +14145,7 @@ sub serialize_connect_list_defined_storage_pools_args {
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -14184,7 +14184,7 @@ sub serialize_connect_list_defined_storage_pools_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -14229,19 +14229,19 @@ sub serialize_connect_find_storage_pool_sources_args {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{type}, $_[2], $_[3] );
 
     # Serializing field: 'srcSpec'
     croak "Missing required input value 'srcSpec'"
-        unless exists $_[1]->{srcSpec}
+        unless exists $_[1]->{srcSpec};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{srcSpec}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14267,7 +14267,7 @@ sub serialize_connect_find_storage_pool_sources_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -14286,7 +14286,7 @@ sub serialize_storage_pool_lookup_by_uuid_args {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -14305,7 +14305,7 @@ sub serialize_storage_pool_lookup_by_uuid_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14324,7 +14324,7 @@ sub serialize_storage_pool_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -14343,7 +14343,7 @@ sub serialize_storage_pool_lookup_by_name_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14362,7 +14362,7 @@ sub serialize_storage_pool_lookup_by_volume_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -14381,7 +14381,7 @@ sub serialize_storage_pool_lookup_by_volume_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14400,7 +14400,7 @@ sub serialize_storage_pool_lookup_by_target_path_args {
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 }
@@ -14419,7 +14419,7 @@ sub serialize_storage_pool_lookup_by_target_path_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14447,13 +14447,13 @@ sub serialize_storage_pool_create_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14479,7 +14479,7 @@ sub serialize_storage_pool_create_xml_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14507,13 +14507,13 @@ sub serialize_storage_pool_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14539,7 +14539,7 @@ sub serialize_storage_pool_define_xml_ret {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14567,13 +14567,13 @@ sub serialize_storage_pool_build_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14599,7 +14599,7 @@ sub serialize_storage_pool_undefine_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14627,13 +14627,13 @@ sub serialize_storage_pool_create_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14659,7 +14659,7 @@ sub serialize_storage_pool_destroy_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14687,13 +14687,13 @@ sub serialize_storage_pool_delete_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14728,13 +14728,13 @@ sub serialize_storage_pool_refresh_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14769,13 +14769,13 @@ sub serialize_storage_pool_get_xml_desc_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -14801,7 +14801,7 @@ sub serialize_storage_pool_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -14820,7 +14820,7 @@ sub serialize_storage_pool_get_info_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14874,7 +14874,7 @@ sub serialize_storage_pool_get_info_ret {
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'char' value"
         unless defined $_[1]->{state};
@@ -14887,7 +14887,7 @@ sub serialize_storage_pool_get_info_ret {
 
     # Serializing field: 'capacity'
     croak "Missing required input value 'capacity'"
-        unless exists $_[1]->{capacity}
+        unless exists $_[1]->{capacity};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{capacity};
@@ -14901,7 +14901,7 @@ sub serialize_storage_pool_get_info_ret {
 
     # Serializing field: 'allocation'
     croak "Missing required input value 'allocation'"
-        unless exists $_[1]->{allocation}
+        unless exists $_[1]->{allocation};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{allocation};
@@ -14915,7 +14915,7 @@ sub serialize_storage_pool_get_info_ret {
 
     # Serializing field: 'available'
     croak "Missing required input value 'available'"
-        unless exists $_[1]->{available}
+        unless exists $_[1]->{available};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{available};
@@ -14942,7 +14942,7 @@ sub serialize_storage_pool_get_autostart_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -14966,7 +14966,7 @@ sub serialize_storage_pool_get_autostart_ret {
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -15001,13 +15001,13 @@ sub serialize_storage_pool_set_autostart_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -15033,7 +15033,7 @@ sub serialize_storage_pool_num_of_volumes_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -15057,7 +15057,7 @@ sub serialize_storage_pool_num_of_volumes_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -15092,13 +15092,13 @@ sub serialize_storage_pool_list_volumes_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -15137,7 +15137,7 @@ sub serialize_storage_pool_list_volumes_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -15173,13 +15173,13 @@ sub serialize_storage_vol_lookup_by_name_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -15198,7 +15198,7 @@ sub serialize_storage_vol_lookup_by_name_ret {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15217,7 +15217,7 @@ sub serialize_storage_vol_lookup_by_key_args {
 
     # Serializing field: 'key'
     croak "Missing required input value 'key'"
-        unless exists $_[1]->{key}
+        unless exists $_[1]->{key};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{key}, $_[2], $_[3] );
 }
@@ -15236,7 +15236,7 @@ sub serialize_storage_vol_lookup_by_key_ret {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15255,7 +15255,7 @@ sub serialize_storage_vol_lookup_by_path_args {
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 }
@@ -15274,7 +15274,7 @@ sub serialize_storage_vol_lookup_by_path_ret {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15306,19 +15306,19 @@ sub serialize_storage_vol_create_xml_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15344,7 +15344,7 @@ sub serialize_storage_vol_create_xml_ret {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15380,25 +15380,25 @@ sub serialize_storage_vol_create_xml_from_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'clonevol'
     croak "Missing required input value 'clonevol'"
-        unless exists $_[1]->{clonevol}
+        unless exists $_[1]->{clonevol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{clonevol}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15424,7 +15424,7 @@ sub serialize_storage_vol_create_xml_from_ret {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15452,13 +15452,13 @@ sub serialize_storage_vol_delete_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15493,13 +15493,13 @@ sub serialize_storage_vol_wipe_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15543,13 +15543,13 @@ sub serialize_storage_vol_wipe_pattern_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'algorithm'
     croak "Missing required input value 'algorithm'"
-        unless exists $_[1]->{algorithm}
+        unless exists $_[1]->{algorithm};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{algorithm};
@@ -15562,7 +15562,7 @@ sub serialize_storage_vol_wipe_pattern_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15597,13 +15597,13 @@ sub serialize_storage_vol_get_xml_desc_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15629,7 +15629,7 @@ sub serialize_storage_vol_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -15648,7 +15648,7 @@ sub serialize_storage_vol_get_info_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15692,7 +15692,7 @@ sub serialize_storage_vol_get_info_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'char' value"
         unless defined $_[1]->{type};
@@ -15705,7 +15705,7 @@ sub serialize_storage_vol_get_info_ret {
 
     # Serializing field: 'capacity'
     croak "Missing required input value 'capacity'"
-        unless exists $_[1]->{capacity}
+        unless exists $_[1]->{capacity};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{capacity};
@@ -15719,7 +15719,7 @@ sub serialize_storage_vol_get_info_ret {
 
     # Serializing field: 'allocation'
     croak "Missing required input value 'allocation'"
-        unless exists $_[1]->{allocation}
+        unless exists $_[1]->{allocation};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{allocation};
@@ -15755,13 +15755,13 @@ sub serialize_storage_vol_get_info_flags_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15812,7 +15812,7 @@ sub serialize_storage_vol_get_info_flags_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'char' value"
         unless defined $_[1]->{type};
@@ -15825,7 +15825,7 @@ sub serialize_storage_vol_get_info_flags_ret {
 
     # Serializing field: 'capacity'
     croak "Missing required input value 'capacity'"
-        unless exists $_[1]->{capacity}
+        unless exists $_[1]->{capacity};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{capacity};
@@ -15839,7 +15839,7 @@ sub serialize_storage_vol_get_info_flags_ret {
 
     # Serializing field: 'allocation'
     croak "Missing required input value 'allocation'"
-        unless exists $_[1]->{allocation}
+        unless exists $_[1]->{allocation};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{allocation};
@@ -15866,7 +15866,7 @@ sub serialize_storage_vol_get_path_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 }
@@ -15885,7 +15885,7 @@ sub serialize_storage_vol_get_path_ret {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -15923,13 +15923,13 @@ sub serialize_storage_vol_resize_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'capacity'
     croak "Missing required input value 'capacity'"
-        unless exists $_[1]->{capacity}
+        unless exists $_[1]->{capacity};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{capacity};
@@ -15943,7 +15943,7 @@ sub serialize_storage_vol_resize_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -15978,13 +15978,13 @@ sub serialize_node_num_of_devices_args {
 
     # Serializing field: 'cap'
     croak "Missing required input value 'cap'"
-        unless exists $_[1]->{cap}
+        unless exists $_[1]->{cap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{cap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16015,7 +16015,7 @@ sub serialize_node_num_of_devices_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -16059,13 +16059,13 @@ sub serialize_node_list_devices_args {
 
     # Serializing field: 'cap'
     croak "Missing required input value 'cap'"
-        unless exists $_[1]->{cap}
+        unless exists $_[1]->{cap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{cap}, $_[2], $_[3] );
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -16078,7 +16078,7 @@ sub serialize_node_list_devices_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16117,7 +16117,7 @@ sub serialize_node_list_devices_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -16149,7 +16149,7 @@ sub serialize_node_device_lookup_by_name_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16168,7 +16168,7 @@ sub serialize_node_device_lookup_by_name_ret {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -16200,19 +16200,19 @@ sub serialize_node_device_lookup_scsi_host_by_wwn_args {
 
     # Serializing field: 'wwnn'
     croak "Missing required input value 'wwnn'"
-        unless exists $_[1]->{wwnn}
+        unless exists $_[1]->{wwnn};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{wwnn}, $_[2], $_[3] );
 
     # Serializing field: 'wwpn'
     croak "Missing required input value 'wwpn'"
-        unless exists $_[1]->{wwpn}
+        unless exists $_[1]->{wwpn};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{wwpn}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16238,7 +16238,7 @@ sub serialize_node_device_lookup_scsi_host_by_wwn_ret {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -16266,13 +16266,13 @@ sub serialize_node_device_get_xml_desc_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16298,7 +16298,7 @@ sub serialize_node_device_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -16317,7 +16317,7 @@ sub serialize_node_device_get_parent_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16336,7 +16336,7 @@ sub serialize_node_device_get_parent_ret {
 
     # Serializing field: 'parentName'
     croak "Missing required input value 'parentName'"
-        unless exists $_[1]->{parentName}
+        unless exists $_[1]->{parentName};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{parentName}, $_[2], $_[3] );
 }
@@ -16355,7 +16355,7 @@ sub serialize_node_device_num_of_caps_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16379,7 +16379,7 @@ sub serialize_node_device_num_of_caps_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -16414,13 +16414,13 @@ sub serialize_node_device_list_caps_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -16459,7 +16459,7 @@ sub serialize_node_device_list_caps_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -16491,7 +16491,7 @@ sub serialize_node_device_dettach_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16523,19 +16523,19 @@ sub serialize_node_device_detach_flags_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'driverName'
     croak "Missing required input value 'driverName'"
-        unless exists $_[1]->{driverName}
+        unless exists $_[1]->{driverName};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{driverName}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16561,7 +16561,7 @@ sub serialize_node_device_re_attach_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16580,7 +16580,7 @@ sub serialize_node_device_reset_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16608,13 +16608,13 @@ sub serialize_node_device_create_xml_args {
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16640,7 +16640,7 @@ sub serialize_node_device_create_xml_ret {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -16659,7 +16659,7 @@ sub serialize_node_device_destroy_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16687,13 +16687,13 @@ sub serialize_node_device_define_xml_args {
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16719,7 +16719,7 @@ sub serialize_node_device_define_xml_ret {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -16747,13 +16747,13 @@ sub serialize_node_device_undefine_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16788,13 +16788,13 @@ sub serialize_node_device_create_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -16820,7 +16820,7 @@ sub serialize_node_device_get_autostart_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16844,7 +16844,7 @@ sub serialize_node_device_get_autostart_ret {
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -16879,13 +16879,13 @@ sub serialize_node_device_set_autostart_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'autostart'
     croak "Missing required input value 'autostart'"
-        unless exists $_[1]->{autostart}
+        unless exists $_[1]->{autostart};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{autostart};
@@ -16911,7 +16911,7 @@ sub serialize_node_device_is_persistent_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16935,7 +16935,7 @@ sub serialize_node_device_is_persistent_ret {
 
     # Serializing field: 'persistent'
     croak "Missing required input value 'persistent'"
-        unless exists $_[1]->{persistent}
+        unless exists $_[1]->{persistent};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{persistent};
@@ -16961,7 +16961,7 @@ sub serialize_node_device_is_active_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -16985,7 +16985,7 @@ sub serialize_node_device_is_active_ret {
 
     # Serializing field: 'active'
     croak "Missing required input value 'active'"
-        unless exists $_[1]->{active}
+        unless exists $_[1]->{active};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{active};
@@ -17024,19 +17024,19 @@ sub serialize_node_device_update_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17067,7 +17067,7 @@ sub serialize_connect_domain_event_register_ret {
 
     # Serializing field: 'cb_registered'
     croak "Missing required input value 'cb_registered'"
-        unless exists $_[1]->{cb_registered}
+        unless exists $_[1]->{cb_registered};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cb_registered};
@@ -17098,7 +17098,7 @@ sub serialize_connect_domain_event_deregister_ret {
 
     # Serializing field: 'cb_registered'
     croak "Missing required input value 'cb_registered'"
-        unless exists $_[1]->{cb_registered}
+        unless exists $_[1]->{cb_registered};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cb_registered};
@@ -17142,13 +17142,13 @@ sub serialize_domain_event_lifecycle_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'event'
     croak "Missing required input value 'event'"
-        unless exists $_[1]->{event}
+        unless exists $_[1]->{event};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{event};
@@ -17161,7 +17161,7 @@ sub serialize_domain_event_lifecycle_msg {
 
     # Serializing field: 'detail'
     croak "Missing required input value 'detail'"
-        unless exists $_[1]->{detail}
+        unless exists $_[1]->{detail};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{detail};
@@ -17196,7 +17196,7 @@ sub serialize_domain_event_callback_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -17209,7 +17209,7 @@ sub serialize_domain_event_callback_lifecycle_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_lifecycle_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -17241,19 +17241,19 @@ sub serialize_connect_domain_xml_from_native_args {
 
     # Serializing field: 'nativeFormat'
     croak "Missing required input value 'nativeFormat'"
-        unless exists $_[1]->{nativeFormat}
+        unless exists $_[1]->{nativeFormat};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{nativeFormat}, $_[2], $_[3] );
 
     # Serializing field: 'nativeConfig'
     croak "Missing required input value 'nativeConfig'"
-        unless exists $_[1]->{nativeConfig}
+        unless exists $_[1]->{nativeConfig};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{nativeConfig}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17279,7 +17279,7 @@ sub serialize_connect_domain_xml_from_native_ret {
 
     # Serializing field: 'domainXml'
     croak "Missing required input value 'domainXml'"
-        unless exists $_[1]->{domainXml}
+        unless exists $_[1]->{domainXml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{domainXml}, $_[2], $_[3] );
 }
@@ -17311,19 +17311,19 @@ sub serialize_connect_domain_xml_to_native_args {
 
     # Serializing field: 'nativeFormat'
     croak "Missing required input value 'nativeFormat'"
-        unless exists $_[1]->{nativeFormat}
+        unless exists $_[1]->{nativeFormat};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{nativeFormat}, $_[2], $_[3] );
 
     # Serializing field: 'domainXml'
     croak "Missing required input value 'domainXml'"
-        unless exists $_[1]->{domainXml}
+        unless exists $_[1]->{domainXml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{domainXml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17349,7 +17349,7 @@ sub serialize_connect_domain_xml_to_native_ret {
 
     # Serializing field: 'nativeConfig'
     croak "Missing required input value 'nativeConfig'"
-        unless exists $_[1]->{nativeConfig}
+        unless exists $_[1]->{nativeConfig};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{nativeConfig}, $_[2], $_[3] );
 }
@@ -17373,7 +17373,7 @@ sub serialize_connect_num_of_secrets_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -17404,7 +17404,7 @@ sub serialize_connect_list_secrets_args {
 
     # Serializing field: 'maxuuids'
     croak "Missing required input value 'maxuuids'"
-        unless exists $_[1]->{maxuuids}
+        unless exists $_[1]->{maxuuids};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxuuids};
@@ -17443,7 +17443,7 @@ sub serialize_connect_list_secrets_ret {
 
     # Serializing field: 'uuids'
     croak "Missing required input value 'uuids'"
-        unless exists $_[1]->{uuids}
+        unless exists $_[1]->{uuids};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{uuids};
@@ -17475,7 +17475,7 @@ sub serialize_secret_lookup_by_uuid_args {
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -17494,7 +17494,7 @@ sub serialize_secret_lookup_by_uuid_ret {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -17522,13 +17522,13 @@ sub serialize_secret_define_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17554,7 +17554,7 @@ sub serialize_secret_define_xml_ret {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -17582,13 +17582,13 @@ sub serialize_secret_get_xml_desc_args {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17614,7 +17614,7 @@ sub serialize_secret_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -17657,13 +17657,13 @@ sub serialize_secret_set_value_args {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 
     # Serializing field: 'value'
     croak "Missing required input value 'value'"
-        unless exists $_[1]->{value}
+        unless exists $_[1]->{value};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{value};
@@ -17684,7 +17684,7 @@ sub serialize_secret_set_value_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17719,13 +17719,13 @@ sub serialize_secret_get_value_args {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -17762,7 +17762,7 @@ sub serialize_secret_get_value_ret {
 
     # Serializing field: 'value'
     croak "Missing required input value 'value'"
-        unless exists $_[1]->{value}
+        unless exists $_[1]->{value};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{value};
@@ -17796,7 +17796,7 @@ sub serialize_secret_undefine_args {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -17824,7 +17824,7 @@ sub serialize_secret_lookup_by_usage_args {
 
     # Serializing field: 'usageType'
     croak "Missing required input value 'usageType'"
-        unless exists $_[1]->{usageType}
+        unless exists $_[1]->{usageType};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{usageType};
@@ -17837,7 +17837,7 @@ sub serialize_secret_lookup_by_usage_args {
 
     # Serializing field: 'usageID'
     croak "Missing required input value 'usageID'"
-        unless exists $_[1]->{usageID}
+        unless exists $_[1]->{usageID};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{usageID}, $_[2], $_[3] );
 }
@@ -17856,7 +17856,7 @@ sub serialize_secret_lookup_by_usage_ret {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -17899,7 +17899,7 @@ sub serialize_domain_migrate_prepare_tunnel_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -17913,13 +17913,13 @@ sub serialize_domain_migrate_prepare_tunnel_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -17933,7 +17933,7 @@ sub serialize_domain_migrate_prepare_tunnel_args {
 
     # Serializing field: 'dom_xml'
     croak "Missing required input value 'dom_xml'"
-        unless exists $_[1]->{dom_xml}
+        unless exists $_[1]->{dom_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dom_xml}, $_[2], $_[3] );
 }
@@ -17957,7 +17957,7 @@ sub serialize_connect_is_secure_ret {
 
     # Serializing field: 'secure'
     croak "Missing required input value 'secure'"
-        unless exists $_[1]->{secure}
+        unless exists $_[1]->{secure};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{secure};
@@ -17983,7 +17983,7 @@ sub serialize_domain_is_active_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -18007,7 +18007,7 @@ sub serialize_domain_is_active_ret {
 
     # Serializing field: 'active'
     croak "Missing required input value 'active'"
-        unless exists $_[1]->{active}
+        unless exists $_[1]->{active};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{active};
@@ -18033,7 +18033,7 @@ sub serialize_domain_is_persistent_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -18057,7 +18057,7 @@ sub serialize_domain_is_persistent_ret {
 
     # Serializing field: 'persistent'
     croak "Missing required input value 'persistent'"
-        unless exists $_[1]->{persistent}
+        unless exists $_[1]->{persistent};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{persistent};
@@ -18083,7 +18083,7 @@ sub serialize_domain_is_updated_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -18107,7 +18107,7 @@ sub serialize_domain_is_updated_ret {
 
     # Serializing field: 'updated'
     croak "Missing required input value 'updated'"
-        unless exists $_[1]->{updated}
+        unless exists $_[1]->{updated};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{updated};
@@ -18133,7 +18133,7 @@ sub serialize_network_is_active_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -18157,7 +18157,7 @@ sub serialize_network_is_active_ret {
 
     # Serializing field: 'active'
     croak "Missing required input value 'active'"
-        unless exists $_[1]->{active}
+        unless exists $_[1]->{active};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{active};
@@ -18183,7 +18183,7 @@ sub serialize_network_is_persistent_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -18207,7 +18207,7 @@ sub serialize_network_is_persistent_ret {
 
     # Serializing field: 'persistent'
     croak "Missing required input value 'persistent'"
-        unless exists $_[1]->{persistent}
+        unless exists $_[1]->{persistent};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{persistent};
@@ -18233,7 +18233,7 @@ sub serialize_storage_pool_is_active_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -18257,7 +18257,7 @@ sub serialize_storage_pool_is_active_ret {
 
     # Serializing field: 'active'
     croak "Missing required input value 'active'"
-        unless exists $_[1]->{active}
+        unless exists $_[1]->{active};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{active};
@@ -18283,7 +18283,7 @@ sub serialize_storage_pool_is_persistent_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -18307,7 +18307,7 @@ sub serialize_storage_pool_is_persistent_ret {
 
     # Serializing field: 'persistent'
     croak "Missing required input value 'persistent'"
-        unless exists $_[1]->{persistent}
+        unless exists $_[1]->{persistent};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{persistent};
@@ -18333,7 +18333,7 @@ sub serialize_interface_is_active_args {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_interface( $_[1]->{iface}, $_[2], $_[3] );
 }
@@ -18357,7 +18357,7 @@ sub serialize_interface_is_active_ret {
 
     # Serializing field: 'active'
     croak "Missing required input value 'active'"
-        unless exists $_[1]->{active}
+        unless exists $_[1]->{active};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{active};
@@ -18392,13 +18392,13 @@ sub serialize_connect_compare_cpu_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -18429,7 +18429,7 @@ sub serialize_connect_compare_cpu_ret {
 
     # Serializing field: 'result'
     croak "Missing required input value 'result'"
-        unless exists $_[1]->{result}
+        unless exists $_[1]->{result};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{result};
@@ -18477,7 +18477,7 @@ sub serialize_connect_baseline_cpu_args {
 
     # Serializing field: 'xmlCPUs'
     croak "Missing required input value 'xmlCPUs'"
-        unless exists $_[1]->{xmlCPUs}
+        unless exists $_[1]->{xmlCPUs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{xmlCPUs};
@@ -18496,7 +18496,7 @@ sub serialize_connect_baseline_cpu_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -18522,7 +18522,7 @@ sub serialize_connect_baseline_cpu_ret {
 
     # Serializing field: 'cpu'
     croak "Missing required input value 'cpu'"
-        unless exists $_[1]->{cpu}
+        unless exists $_[1]->{cpu};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{cpu}, $_[2], $_[3] );
 }
@@ -18541,7 +18541,7 @@ sub serialize_domain_get_job_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -18675,7 +18675,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -18688,7 +18688,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'timeElapsed'
     croak "Missing required input value 'timeElapsed'"
-        unless exists $_[1]->{timeElapsed}
+        unless exists $_[1]->{timeElapsed};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{timeElapsed};
@@ -18702,7 +18702,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'timeRemaining'
     croak "Missing required input value 'timeRemaining'"
-        unless exists $_[1]->{timeRemaining}
+        unless exists $_[1]->{timeRemaining};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{timeRemaining};
@@ -18716,7 +18716,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'dataTotal'
     croak "Missing required input value 'dataTotal'"
-        unless exists $_[1]->{dataTotal}
+        unless exists $_[1]->{dataTotal};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{dataTotal};
@@ -18730,7 +18730,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'dataProcessed'
     croak "Missing required input value 'dataProcessed'"
-        unless exists $_[1]->{dataProcessed}
+        unless exists $_[1]->{dataProcessed};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{dataProcessed};
@@ -18744,7 +18744,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'dataRemaining'
     croak "Missing required input value 'dataRemaining'"
-        unless exists $_[1]->{dataRemaining}
+        unless exists $_[1]->{dataRemaining};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{dataRemaining};
@@ -18758,7 +18758,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'memTotal'
     croak "Missing required input value 'memTotal'"
-        unless exists $_[1]->{memTotal}
+        unless exists $_[1]->{memTotal};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memTotal};
@@ -18772,7 +18772,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'memProcessed'
     croak "Missing required input value 'memProcessed'"
-        unless exists $_[1]->{memProcessed}
+        unless exists $_[1]->{memProcessed};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memProcessed};
@@ -18786,7 +18786,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'memRemaining'
     croak "Missing required input value 'memRemaining'"
-        unless exists $_[1]->{memRemaining}
+        unless exists $_[1]->{memRemaining};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{memRemaining};
@@ -18800,7 +18800,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'fileTotal'
     croak "Missing required input value 'fileTotal'"
-        unless exists $_[1]->{fileTotal}
+        unless exists $_[1]->{fileTotal};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{fileTotal};
@@ -18814,7 +18814,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'fileProcessed'
     croak "Missing required input value 'fileProcessed'"
-        unless exists $_[1]->{fileProcessed}
+        unless exists $_[1]->{fileProcessed};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{fileProcessed};
@@ -18828,7 +18828,7 @@ sub serialize_domain_get_job_info_ret {
 
     # Serializing field: 'fileRemaining'
     croak "Missing required input value 'fileRemaining'"
-        unless exists $_[1]->{fileRemaining}
+        unless exists $_[1]->{fileRemaining};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{fileRemaining};
@@ -18864,13 +18864,13 @@ sub serialize_domain_get_job_stats_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -18918,7 +18918,7 @@ sub serialize_domain_get_job_stats_ret {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -18931,7 +18931,7 @@ sub serialize_domain_get_job_stats_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -18963,7 +18963,7 @@ sub serialize_domain_abort_job_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -18991,13 +18991,13 @@ sub serialize_domain_abort_job_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19032,13 +19032,13 @@ sub serialize_domain_migrate_get_max_downtime_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19070,7 +19070,7 @@ sub serialize_domain_migrate_get_max_downtime_ret {
 
     # Serializing field: 'downtime'
     croak "Missing required input value 'downtime'"
-        unless exists $_[1]->{downtime}
+        unless exists $_[1]->{downtime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{downtime};
@@ -19116,13 +19116,13 @@ sub serialize_domain_migrate_set_max_downtime_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'downtime'
     croak "Missing required input value 'downtime'"
-        unless exists $_[1]->{downtime}
+        unless exists $_[1]->{downtime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{downtime};
@@ -19136,7 +19136,7 @@ sub serialize_domain_migrate_set_max_downtime_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19171,13 +19171,13 @@ sub serialize_domain_migrate_get_compression_cache_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19209,7 +19209,7 @@ sub serialize_domain_migrate_get_compression_cache_ret {
 
     # Serializing field: 'cacheSize'
     croak "Missing required input value 'cacheSize'"
-        unless exists $_[1]->{cacheSize}
+        unless exists $_[1]->{cacheSize};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{cacheSize};
@@ -19255,13 +19255,13 @@ sub serialize_domain_migrate_set_compression_cache_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cacheSize'
     croak "Missing required input value 'cacheSize'"
-        unless exists $_[1]->{cacheSize}
+        unless exists $_[1]->{cacheSize};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{cacheSize};
@@ -19275,7 +19275,7 @@ sub serialize_domain_migrate_set_compression_cache_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19320,13 +19320,13 @@ sub serialize_domain_migrate_set_max_speed_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -19340,7 +19340,7 @@ sub serialize_domain_migrate_set_max_speed_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19375,13 +19375,13 @@ sub serialize_domain_migrate_get_max_speed_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -19413,7 +19413,7 @@ sub serialize_domain_migrate_get_max_speed_ret {
 
     # Serializing field: 'bandwidth'
     croak "Missing required input value 'bandwidth'"
-        unless exists $_[1]->{bandwidth}
+        unless exists $_[1]->{bandwidth};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{bandwidth};
@@ -19445,7 +19445,7 @@ sub serialize_connect_domain_event_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -19476,7 +19476,7 @@ sub serialize_connect_domain_event_deregister_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -19511,7 +19511,7 @@ sub serialize_connect_domain_event_callback_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -19524,7 +19524,7 @@ sub serialize_connect_domain_event_callback_register_any_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -19548,7 +19548,7 @@ sub serialize_connect_domain_event_callback_register_any_ret {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19579,7 +19579,7 @@ sub serialize_connect_domain_event_callback_deregister_any_args {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19605,7 +19605,7 @@ sub serialize_domain_event_reboot_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -19633,7 +19633,7 @@ sub serialize_domain_event_callback_reboot_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19646,7 +19646,7 @@ sub serialize_domain_event_callback_reboot_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_reboot_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -19675,13 +19675,13 @@ sub serialize_domain_event_rtc_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'offset'
     croak "Missing required input value 'offset'"
-        unless exists $_[1]->{offset}
+        unless exists $_[1]->{offset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{offset};
@@ -19717,7 +19717,7 @@ sub serialize_domain_event_callback_rtc_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19730,7 +19730,7 @@ sub serialize_domain_event_callback_rtc_change_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_rtc_change_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -19758,13 +19758,13 @@ sub serialize_domain_event_watchdog_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'action'
     croak "Missing required input value 'action'"
-        unless exists $_[1]->{action}
+        unless exists $_[1]->{action};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{action};
@@ -19799,7 +19799,7 @@ sub serialize_domain_event_callback_watchdog_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19812,7 +19812,7 @@ sub serialize_domain_event_callback_watchdog_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_watchdog_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -19848,25 +19848,25 @@ sub serialize_domain_event_io_error_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'srcPath'
     croak "Missing required input value 'srcPath'"
-        unless exists $_[1]->{srcPath}
+        unless exists $_[1]->{srcPath};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{srcPath}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 
     # Serializing field: 'action'
     croak "Missing required input value 'action'"
-        unless exists $_[1]->{action}
+        unless exists $_[1]->{action};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{action};
@@ -19901,7 +19901,7 @@ sub serialize_domain_event_callback_io_error_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -19914,7 +19914,7 @@ sub serialize_domain_event_callback_io_error_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_io_error_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -19954,25 +19954,25 @@ sub serialize_domain_event_io_error_reason_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'srcPath'
     croak "Missing required input value 'srcPath'"
-        unless exists $_[1]->{srcPath}
+        unless exists $_[1]->{srcPath};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{srcPath}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 
     # Serializing field: 'action'
     croak "Missing required input value 'action'"
-        unless exists $_[1]->{action}
+        unless exists $_[1]->{action};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{action};
@@ -19985,7 +19985,7 @@ sub serialize_domain_event_io_error_reason_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{reason}, $_[2], $_[3] );
 }
@@ -20013,7 +20013,7 @@ sub serialize_domain_event_callback_io_error_reason_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20026,7 +20026,7 @@ sub serialize_domain_event_callback_io_error_reason_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_io_error_reason_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20058,7 +20058,7 @@ sub serialize_domain_event_graphics_address {
 
     # Serializing field: 'family'
     croak "Missing required input value 'family'"
-        unless exists $_[1]->{family}
+        unless exists $_[1]->{family};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{family};
@@ -20071,13 +20071,13 @@ sub serialize_domain_event_graphics_address {
 
     # Serializing field: 'node'
     croak "Missing required input value 'node'"
-        unless exists $_[1]->{node}
+        unless exists $_[1]->{node};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{node}, $_[2], $_[3] );
 
     # Serializing field: 'service'
     croak "Missing required input value 'service'"
-        unless exists $_[1]->{service}
+        unless exists $_[1]->{service};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{service}, $_[2], $_[3] );
 }
@@ -20101,13 +20101,13 @@ sub serialize_domain_event_graphics_identity {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{type}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -20164,13 +20164,13 @@ sub serialize_domain_event_graphics_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'phase'
     croak "Missing required input value 'phase'"
-        unless exists $_[1]->{phase}
+        unless exists $_[1]->{phase};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{phase};
@@ -20183,25 +20183,25 @@ sub serialize_domain_event_graphics_msg {
 
     # Serializing field: 'local'
     croak "Missing required input value 'local'"
-        unless exists $_[1]->{local}
+        unless exists $_[1]->{local};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_graphics_address( $_[1]->{local}, $_[2], $_[3] );
 
     # Serializing field: 'remote'
     croak "Missing required input value 'remote'"
-        unless exists $_[1]->{remote}
+        unless exists $_[1]->{remote};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_graphics_address( $_[1]->{remote}, $_[2], $_[3] );
 
     # Serializing field: 'authScheme'
     croak "Missing required input value 'authScheme'"
-        unless exists $_[1]->{authScheme}
+        unless exists $_[1]->{authScheme};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{authScheme}, $_[2], $_[3] );
 
     # Serializing field: 'subject'
     croak "Missing required input value 'subject'"
-        unless exists $_[1]->{subject}
+        unless exists $_[1]->{subject};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{subject};
@@ -20242,7 +20242,7 @@ sub serialize_domain_event_callback_graphics_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20255,7 +20255,7 @@ sub serialize_domain_event_callback_graphics_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_graphics_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20296,19 +20296,19 @@ sub serialize_domain_event_block_job_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -20321,7 +20321,7 @@ sub serialize_domain_event_block_job_msg {
 
     # Serializing field: 'status'
     croak "Missing required input value 'status'"
-        unless exists $_[1]->{status}
+        unless exists $_[1]->{status};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{status};
@@ -20356,7 +20356,7 @@ sub serialize_domain_event_callback_block_job_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20369,7 +20369,7 @@ sub serialize_domain_event_callback_block_job_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_block_job_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20409,31 +20409,31 @@ sub serialize_domain_event_disk_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'oldSrcPath'
     croak "Missing required input value 'oldSrcPath'"
-        unless exists $_[1]->{oldSrcPath}
+        unless exists $_[1]->{oldSrcPath};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{oldSrcPath}, $_[2], $_[3] );
 
     # Serializing field: 'newSrcPath'
     croak "Missing required input value 'newSrcPath'"
-        unless exists $_[1]->{newSrcPath}
+        unless exists $_[1]->{newSrcPath};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{newSrcPath}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -20468,7 +20468,7 @@ sub serialize_domain_event_callback_disk_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20481,7 +20481,7 @@ sub serialize_domain_event_callback_disk_change_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_disk_change_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20513,19 +20513,19 @@ sub serialize_domain_event_tray_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -20560,7 +20560,7 @@ sub serialize_domain_event_callback_tray_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20573,7 +20573,7 @@ sub serialize_domain_event_callback_tray_change_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_tray_change_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20592,7 +20592,7 @@ sub serialize_domain_event_pmwakeup_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -20629,7 +20629,7 @@ sub serialize_domain_event_callback_pmwakeup_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20642,7 +20642,7 @@ sub serialize_domain_event_callback_pmwakeup_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -20655,7 +20655,7 @@ sub serialize_domain_event_callback_pmwakeup_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_pmwakeup_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20674,7 +20674,7 @@ sub serialize_domain_event_pmsuspend_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -20711,7 +20711,7 @@ sub serialize_domain_event_callback_pmsuspend_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20724,7 +20724,7 @@ sub serialize_domain_event_callback_pmsuspend_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -20737,7 +20737,7 @@ sub serialize_domain_event_callback_pmsuspend_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_pmsuspend_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20766,13 +20766,13 @@ sub serialize_domain_event_balloon_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'actual'
     croak "Missing required input value 'actual'"
-        unless exists $_[1]->{actual}
+        unless exists $_[1]->{actual};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{actual};
@@ -20808,7 +20808,7 @@ sub serialize_domain_event_callback_balloon_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20821,7 +20821,7 @@ sub serialize_domain_event_callback_balloon_change_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_balloon_change_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20840,7 +20840,7 @@ sub serialize_domain_event_pmsuspend_disk_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -20877,7 +20877,7 @@ sub serialize_domain_event_callback_pmsuspend_disk_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -20890,7 +20890,7 @@ sub serialize_domain_event_callback_pmsuspend_disk_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -20903,7 +20903,7 @@ sub serialize_domain_event_callback_pmsuspend_disk_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_pmsuspend_disk_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -20931,13 +20931,13 @@ sub serialize_domain_managed_save_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -20972,13 +20972,13 @@ sub serialize_domain_has_managed_save_image_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21009,7 +21009,7 @@ sub serialize_domain_has_managed_save_image_ret {
 
     # Serializing field: 'result'
     croak "Missing required input value 'result'"
-        unless exists $_[1]->{result}
+        unless exists $_[1]->{result};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{result};
@@ -21044,13 +21044,13 @@ sub serialize_domain_managed_save_remove_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21085,13 +21085,13 @@ sub serialize_domain_managed_save_get_xml_desc_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21117,7 +21117,7 @@ sub serialize_domain_managed_save_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -21149,19 +21149,19 @@ sub serialize_domain_managed_save_define_xml_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dxml'
     croak "Missing required input value 'dxml'"
-        unless exists $_[1]->{dxml}
+        unless exists $_[1]->{dxml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dxml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21200,19 +21200,19 @@ sub serialize_domain_snapshot_create_xml_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21238,7 +21238,7 @@ sub serialize_domain_snapshot_create_xml_ret {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 }
@@ -21266,13 +21266,13 @@ sub serialize_domain_snapshot_get_xml_desc_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21298,7 +21298,7 @@ sub serialize_domain_snapshot_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -21326,13 +21326,13 @@ sub serialize_domain_snapshot_num_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21363,7 +21363,7 @@ sub serialize_domain_snapshot_num_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -21407,13 +21407,13 @@ sub serialize_domain_snapshot_list_names_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -21426,7 +21426,7 @@ sub serialize_domain_snapshot_list_names_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21465,7 +21465,7 @@ sub serialize_domain_snapshot_list_names_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -21515,13 +21515,13 @@ sub serialize_domain_list_all_snapshots_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -21534,7 +21534,7 @@ sub serialize_domain_list_all_snapshots_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21582,7 +21582,7 @@ sub serialize_domain_list_all_snapshots_ret {
 
     # Serializing field: 'snapshots'
     croak "Missing required input value 'snapshots'"
-        unless exists $_[1]->{snapshots}
+        unless exists $_[1]->{snapshots};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{snapshots};
@@ -21601,7 +21601,7 @@ sub serialize_domain_list_all_snapshots_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -21636,13 +21636,13 @@ sub serialize_domain_snapshot_num_children_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21673,7 +21673,7 @@ sub serialize_domain_snapshot_num_children_ret {
 
     # Serializing field: 'num'
     croak "Missing required input value 'num'"
-        unless exists $_[1]->{num}
+        unless exists $_[1]->{num};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{num};
@@ -21717,13 +21717,13 @@ sub serialize_domain_snapshot_list_children_names_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'maxnames'
     croak "Missing required input value 'maxnames'"
-        unless exists $_[1]->{maxnames}
+        unless exists $_[1]->{maxnames};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{maxnames};
@@ -21736,7 +21736,7 @@ sub serialize_domain_snapshot_list_children_names_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21775,7 +21775,7 @@ sub serialize_domain_snapshot_list_children_names_ret {
 
     # Serializing field: 'names'
     croak "Missing required input value 'names'"
-        unless exists $_[1]->{names}
+        unless exists $_[1]->{names};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{names};
@@ -21825,13 +21825,13 @@ sub serialize_domain_snapshot_list_all_children_args {
 
     # Serializing field: 'snapshot'
     croak "Missing required input value 'snapshot'"
-        unless exists $_[1]->{snapshot}
+        unless exists $_[1]->{snapshot};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snapshot}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -21844,7 +21844,7 @@ sub serialize_domain_snapshot_list_all_children_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21892,7 +21892,7 @@ sub serialize_domain_snapshot_list_all_children_ret {
 
     # Serializing field: 'snapshots'
     croak "Missing required input value 'snapshots'"
-        unless exists $_[1]->{snapshots}
+        unless exists $_[1]->{snapshots};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{snapshots};
@@ -21911,7 +21911,7 @@ sub serialize_domain_snapshot_list_all_children_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -21950,19 +21950,19 @@ sub serialize_domain_snapshot_lookup_by_name_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -21988,7 +21988,7 @@ sub serialize_domain_snapshot_lookup_by_name_ret {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 }
@@ -22016,13 +22016,13 @@ sub serialize_domain_has_current_snapshot_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22053,7 +22053,7 @@ sub serialize_domain_has_current_snapshot_ret {
 
     # Serializing field: 'result'
     croak "Missing required input value 'result'"
-        unless exists $_[1]->{result}
+        unless exists $_[1]->{result};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{result};
@@ -22088,13 +22088,13 @@ sub serialize_domain_snapshot_get_parent_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22120,7 +22120,7 @@ sub serialize_domain_snapshot_get_parent_ret {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 }
@@ -22148,13 +22148,13 @@ sub serialize_domain_snapshot_current_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22180,7 +22180,7 @@ sub serialize_domain_snapshot_current_ret {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 }
@@ -22208,13 +22208,13 @@ sub serialize_domain_snapshot_is_current_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22245,7 +22245,7 @@ sub serialize_domain_snapshot_is_current_ret {
 
     # Serializing field: 'current'
     croak "Missing required input value 'current'"
-        unless exists $_[1]->{current}
+        unless exists $_[1]->{current};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{current};
@@ -22280,13 +22280,13 @@ sub serialize_domain_snapshot_has_metadata_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22317,7 +22317,7 @@ sub serialize_domain_snapshot_has_metadata_ret {
 
     # Serializing field: 'metadata'
     croak "Missing required input value 'metadata'"
-        unless exists $_[1]->{metadata}
+        unless exists $_[1]->{metadata};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{metadata};
@@ -22352,13 +22352,13 @@ sub serialize_domain_revert_to_snapshot_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22393,13 +22393,13 @@ sub serialize_domain_snapshot_delete_args {
 
     # Serializing field: 'snap'
     croak "Missing required input value 'snap'"
-        unless exists $_[1]->{snap}
+        unless exists $_[1]->{snap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_snapshot( $_[1]->{snap}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22438,19 +22438,19 @@ sub serialize_domain_open_console_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dev_name'
     croak "Missing required input value 'dev_name'"
-        unless exists $_[1]->{dev_name}
+        unless exists $_[1]->{dev_name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dev_name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22489,19 +22489,19 @@ sub serialize_domain_open_channel_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22556,13 +22556,13 @@ sub serialize_storage_vol_upload_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'offset'
     croak "Missing required input value 'offset'"
-        unless exists $_[1]->{offset}
+        unless exists $_[1]->{offset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{offset};
@@ -22576,7 +22576,7 @@ sub serialize_storage_vol_upload_args {
 
     # Serializing field: 'length'
     croak "Missing required input value 'length'"
-        unless exists $_[1]->{length}
+        unless exists $_[1]->{length};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{length};
@@ -22590,7 +22590,7 @@ sub serialize_storage_vol_upload_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22645,13 +22645,13 @@ sub serialize_storage_vol_download_args {
 
     # Serializing field: 'vol'
     croak "Missing required input value 'vol'"
-        unless exists $_[1]->{vol}
+        unless exists $_[1]->{vol};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_vol( $_[1]->{vol}, $_[2], $_[3] );
 
     # Serializing field: 'offset'
     croak "Missing required input value 'offset'"
-        unless exists $_[1]->{offset}
+        unless exists $_[1]->{offset};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{offset};
@@ -22665,7 +22665,7 @@ sub serialize_storage_vol_download_args {
 
     # Serializing field: 'length'
     croak "Missing required input value 'length'"
-        unless exists $_[1]->{length}
+        unless exists $_[1]->{length};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{length};
@@ -22679,7 +22679,7 @@ sub serialize_storage_vol_download_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22714,13 +22714,13 @@ sub serialize_domain_get_state_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -22760,7 +22760,7 @@ sub serialize_domain_get_state_ret {
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{state};
@@ -22773,7 +22773,7 @@ sub serialize_domain_get_state_ret {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -22827,19 +22827,19 @@ sub serialize_domain_migrate_begin3_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xmlin'
     croak "Missing required input value 'xmlin'"
-        unless exists $_[1]->{xmlin}
+        unless exists $_[1]->{xmlin};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{xmlin}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -22853,13 +22853,13 @@ sub serialize_domain_migrate_begin3_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -22901,7 +22901,7 @@ sub serialize_domain_migrate_begin3_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -22922,7 +22922,7 @@ sub serialize_domain_migrate_begin3_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -22984,7 +22984,7 @@ sub serialize_domain_migrate_prepare3_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -23005,13 +23005,13 @@ sub serialize_domain_migrate_prepare3_args {
 
     # Serializing field: 'uri_in'
     croak "Missing required input value 'uri_in'"
-        unless exists $_[1]->{uri_in}
+        unless exists $_[1]->{uri_in};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_in}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -23025,13 +23025,13 @@ sub serialize_domain_migrate_prepare3_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -23045,7 +23045,7 @@ sub serialize_domain_migrate_prepare3_args {
 
     # Serializing field: 'dom_xml'
     croak "Missing required input value 'dom_xml'"
-        unless exists $_[1]->{dom_xml}
+        unless exists $_[1]->{dom_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dom_xml}, $_[2], $_[3] );
 }
@@ -23079,7 +23079,7 @@ sub serialize_domain_migrate_prepare3_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -23100,7 +23100,7 @@ sub serialize_domain_migrate_prepare3_ret {
 
     # Serializing field: 'uri_out'
     croak "Missing required input value 'uri_out'"
-        unless exists $_[1]->{uri_out}
+        unless exists $_[1]->{uri_out};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_out}, $_[2], $_[3] );
 }
@@ -23158,7 +23158,7 @@ sub serialize_domain_migrate_prepare_tunnel3_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -23179,7 +23179,7 @@ sub serialize_domain_migrate_prepare_tunnel3_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -23193,13 +23193,13 @@ sub serialize_domain_migrate_prepare_tunnel3_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -23213,7 +23213,7 @@ sub serialize_domain_migrate_prepare_tunnel3_args {
 
     # Serializing field: 'dom_xml'
     croak "Missing required input value 'dom_xml'"
-        unless exists $_[1]->{dom_xml}
+        unless exists $_[1]->{dom_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dom_xml}, $_[2], $_[3] );
 }
@@ -23243,7 +23243,7 @@ sub serialize_domain_migrate_prepare_tunnel3_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -23328,19 +23328,19 @@ sub serialize_domain_migrate_perform3_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xmlin'
     croak "Missing required input value 'xmlin'"
-        unless exists $_[1]->{xmlin}
+        unless exists $_[1]->{xmlin};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{xmlin}, $_[2], $_[3] );
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -23361,19 +23361,19 @@ sub serialize_domain_migrate_perform3_args {
 
     # Serializing field: 'dconnuri'
     croak "Missing required input value 'dconnuri'"
-        unless exists $_[1]->{dconnuri}
+        unless exists $_[1]->{dconnuri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dconnuri}, $_[2], $_[3] );
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -23387,13 +23387,13 @@ sub serialize_domain_migrate_perform3_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'resource'
     croak "Missing required input value 'resource'"
-        unless exists $_[1]->{resource}
+        unless exists $_[1]->{resource};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{resource};
@@ -23431,7 +23431,7 @@ sub serialize_domain_migrate_perform3_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -23507,13 +23507,13 @@ sub serialize_domain_migrate_finish3_args {
 
     # Serializing field: 'dname'
     croak "Missing required input value 'dname'"
-        unless exists $_[1]->{dname}
+        unless exists $_[1]->{dname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dname}, $_[2], $_[3] );
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -23534,19 +23534,19 @@ sub serialize_domain_migrate_finish3_args {
 
     # Serializing field: 'dconnuri'
     croak "Missing required input value 'dconnuri'"
-        unless exists $_[1]->{dconnuri}
+        unless exists $_[1]->{dconnuri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dconnuri}, $_[2], $_[3] );
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -23560,7 +23560,7 @@ sub serialize_domain_migrate_finish3_args {
 
     # Serializing field: 'cancelled'
     croak "Missing required input value 'cancelled'"
-        unless exists $_[1]->{cancelled}
+        unless exists $_[1]->{cancelled};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cancelled};
@@ -23601,13 +23601,13 @@ sub serialize_domain_migrate_finish3_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -23675,13 +23675,13 @@ sub serialize_domain_migrate_confirm3_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -23702,7 +23702,7 @@ sub serialize_domain_migrate_confirm3_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{flags};
@@ -23716,7 +23716,7 @@ sub serialize_domain_migrate_confirm3_args {
 
     # Serializing field: 'cancelled'
     croak "Missing required input value 'cancelled'"
-        unless exists $_[1]->{cancelled}
+        unless exists $_[1]->{cancelled};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cancelled};
@@ -23742,7 +23742,7 @@ sub serialize_domain_event_control_error_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 }
@@ -23770,7 +23770,7 @@ sub serialize_domain_event_callback_control_error_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -23783,7 +23783,7 @@ sub serialize_domain_event_callback_control_error_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_control_error_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -23811,13 +23811,13 @@ sub serialize_domain_get_control_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -23867,7 +23867,7 @@ sub serialize_domain_get_control_info_ret {
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{state};
@@ -23880,7 +23880,7 @@ sub serialize_domain_get_control_info_ret {
 
     # Serializing field: 'details'
     croak "Missing required input value 'details'"
-        unless exists $_[1]->{details}
+        unless exists $_[1]->{details};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{details};
@@ -23893,7 +23893,7 @@ sub serialize_domain_get_control_info_ret {
 
     # Serializing field: 'stateTime'
     croak "Missing required input value 'stateTime'"
-        unless exists $_[1]->{stateTime}
+        unless exists $_[1]->{stateTime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{stateTime};
@@ -23938,13 +23938,13 @@ sub serialize_domain_open_graphics_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'idx'
     croak "Missing required input value 'idx'"
-        unless exists $_[1]->{idx}
+        unless exists $_[1]->{idx};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{idx};
@@ -23957,7 +23957,7 @@ sub serialize_domain_open_graphics_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24001,13 +24001,13 @@ sub serialize_domain_open_graphics_fd_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'idx'
     croak "Missing required input value 'idx'"
-        unless exists $_[1]->{idx}
+        unless exists $_[1]->{idx};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{idx};
@@ -24020,7 +24020,7 @@ sub serialize_domain_open_graphics_fd_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24070,7 +24070,7 @@ sub serialize_node_suspend_for_duration_args {
 
     # Serializing field: 'target'
     croak "Missing required input value 'target'"
-        unless exists $_[1]->{target}
+        unless exists $_[1]->{target};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{target};
@@ -24083,7 +24083,7 @@ sub serialize_node_suspend_for_duration_args {
 
     # Serializing field: 'duration'
     croak "Missing required input value 'duration'"
-        unless exists $_[1]->{duration}
+        unless exists $_[1]->{duration};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{duration};
@@ -24097,7 +24097,7 @@ sub serialize_node_suspend_for_duration_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24132,13 +24132,13 @@ sub serialize_domain_shutdown_flags_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24182,13 +24182,13 @@ sub serialize_domain_get_disk_errors_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'maxerrors'
     croak "Missing required input value 'maxerrors'"
-        unless exists $_[1]->{maxerrors}
+        unless exists $_[1]->{maxerrors};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{maxerrors};
@@ -24201,7 +24201,7 @@ sub serialize_domain_get_disk_errors_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24249,7 +24249,7 @@ sub serialize_domain_get_disk_errors_ret {
 
     # Serializing field: 'errors'
     croak "Missing required input value 'errors'"
-        unless exists $_[1]->{errors}
+        unless exists $_[1]->{errors};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{errors};
@@ -24268,7 +24268,7 @@ sub serialize_domain_get_disk_errors_ret {
 
     # Serializing field: 'nerrors'
     croak "Missing required input value 'nerrors'"
-        unless exists $_[1]->{nerrors}
+        unless exists $_[1]->{nerrors};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nerrors};
@@ -24308,7 +24308,7 @@ sub serialize_connect_list_all_domains_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24321,7 +24321,7 @@ sub serialize_connect_list_all_domains_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24369,7 +24369,7 @@ sub serialize_connect_list_all_domains_ret {
 
     # Serializing field: 'domains'
     croak "Missing required input value 'domains'"
-        unless exists $_[1]->{domains}
+        unless exists $_[1]->{domains};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{domains};
@@ -24388,7 +24388,7 @@ sub serialize_connect_list_all_domains_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -24428,7 +24428,7 @@ sub serialize_connect_list_all_storage_pools_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24441,7 +24441,7 @@ sub serialize_connect_list_all_storage_pools_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24489,7 +24489,7 @@ sub serialize_connect_list_all_storage_pools_ret {
 
     # Serializing field: 'pools'
     croak "Missing required input value 'pools'"
-        unless exists $_[1]->{pools}
+        unless exists $_[1]->{pools};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{pools};
@@ -24508,7 +24508,7 @@ sub serialize_connect_list_all_storage_pools_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -24552,13 +24552,13 @@ sub serialize_storage_pool_list_all_volumes_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24571,7 +24571,7 @@ sub serialize_storage_pool_list_all_volumes_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24619,7 +24619,7 @@ sub serialize_storage_pool_list_all_volumes_ret {
 
     # Serializing field: 'vols'
     croak "Missing required input value 'vols'"
-        unless exists $_[1]->{vols}
+        unless exists $_[1]->{vols};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{vols};
@@ -24638,7 +24638,7 @@ sub serialize_storage_pool_list_all_volumes_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -24678,7 +24678,7 @@ sub serialize_connect_list_all_networks_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24691,7 +24691,7 @@ sub serialize_connect_list_all_networks_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24739,7 +24739,7 @@ sub serialize_connect_list_all_networks_ret {
 
     # Serializing field: 'nets'
     croak "Missing required input value 'nets'"
-        unless exists $_[1]->{nets}
+        unless exists $_[1]->{nets};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{nets};
@@ -24758,7 +24758,7 @@ sub serialize_connect_list_all_networks_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -24798,7 +24798,7 @@ sub serialize_connect_list_all_interfaces_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24811,7 +24811,7 @@ sub serialize_connect_list_all_interfaces_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24859,7 +24859,7 @@ sub serialize_connect_list_all_interfaces_ret {
 
     # Serializing field: 'ifaces'
     croak "Missing required input value 'ifaces'"
-        unless exists $_[1]->{ifaces}
+        unless exists $_[1]->{ifaces};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{ifaces};
@@ -24878,7 +24878,7 @@ sub serialize_connect_list_all_interfaces_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -24918,7 +24918,7 @@ sub serialize_connect_list_all_node_devices_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -24931,7 +24931,7 @@ sub serialize_connect_list_all_node_devices_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -24979,7 +24979,7 @@ sub serialize_connect_list_all_node_devices_ret {
 
     # Serializing field: 'devices'
     croak "Missing required input value 'devices'"
-        unless exists $_[1]->{devices}
+        unless exists $_[1]->{devices};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{devices};
@@ -24998,7 +24998,7 @@ sub serialize_connect_list_all_node_devices_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -25038,7 +25038,7 @@ sub serialize_connect_list_all_nwfilters_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -25051,7 +25051,7 @@ sub serialize_connect_list_all_nwfilters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25099,7 +25099,7 @@ sub serialize_connect_list_all_nwfilters_ret {
 
     # Serializing field: 'filters'
     croak "Missing required input value 'filters'"
-        unless exists $_[1]->{filters}
+        unless exists $_[1]->{filters};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{filters};
@@ -25118,7 +25118,7 @@ sub serialize_connect_list_all_nwfilters_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -25158,7 +25158,7 @@ sub serialize_connect_list_all_secrets_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -25171,7 +25171,7 @@ sub serialize_connect_list_all_secrets_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25219,7 +25219,7 @@ sub serialize_connect_list_all_secrets_ret {
 
     # Serializing field: 'secrets'
     croak "Missing required input value 'secrets'"
-        unless exists $_[1]->{secrets}
+        unless exists $_[1]->{secrets};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{secrets};
@@ -25238,7 +25238,7 @@ sub serialize_connect_list_all_secrets_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -25286,7 +25286,7 @@ sub serialize_node_set_memory_parameters_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -25305,7 +25305,7 @@ sub serialize_node_set_memory_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25345,7 +25345,7 @@ sub serialize_node_get_memory_parameters_args {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -25358,7 +25358,7 @@ sub serialize_node_get_memory_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25406,7 +25406,7 @@ sub serialize_node_get_memory_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -25425,7 +25425,7 @@ sub serialize_node_get_memory_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -25474,7 +25474,7 @@ sub serialize_node_get_cpu_map_args {
 
     # Serializing field: 'need_map'
     croak "Missing required input value 'need_map'"
-        unless exists $_[1]->{need_map}
+        unless exists $_[1]->{need_map};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_map};
@@ -25487,7 +25487,7 @@ sub serialize_node_get_cpu_map_args {
 
     # Serializing field: 'need_online'
     croak "Missing required input value 'need_online'"
-        unless exists $_[1]->{need_online}
+        unless exists $_[1]->{need_online};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_online};
@@ -25500,7 +25500,7 @@ sub serialize_node_get_cpu_map_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25555,7 +25555,7 @@ sub serialize_node_get_cpu_map_ret {
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cpumap};
@@ -25576,7 +25576,7 @@ sub serialize_node_get_cpu_map_ret {
 
     # Serializing field: 'online'
     croak "Missing required input value 'online'"
-        unless exists $_[1]->{online}
+        unless exists $_[1]->{online};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{online};
@@ -25589,7 +25589,7 @@ sub serialize_node_get_cpu_map_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -25638,19 +25638,19 @@ sub serialize_domain_fstrim_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'mountPoint'
     croak "Missing required input value 'mountPoint'"
-        unless exists $_[1]->{mountPoint}
+        unless exists $_[1]->{mountPoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{mountPoint}, $_[2], $_[3] );
 
     # Serializing field: 'minimum'
     croak "Missing required input value 'minimum'"
-        unless exists $_[1]->{minimum}
+        unless exists $_[1]->{minimum};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{minimum};
@@ -25664,7 +25664,7 @@ sub serialize_domain_fstrim_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25699,13 +25699,13 @@ sub serialize_domain_get_time_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25746,7 +25746,7 @@ sub serialize_domain_get_time_ret {
 
     # Serializing field: 'seconds'
     croak "Missing required input value 'seconds'"
-        unless exists $_[1]->{seconds}
+        unless exists $_[1]->{seconds};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{seconds};
@@ -25760,7 +25760,7 @@ sub serialize_domain_get_time_ret {
 
     # Serializing field: 'nseconds'
     croak "Missing required input value 'nseconds'"
-        unless exists $_[1]->{nseconds}
+        unless exists $_[1]->{nseconds};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{nseconds};
@@ -25814,13 +25814,13 @@ sub serialize_domain_set_time_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'seconds'
     croak "Missing required input value 'seconds'"
-        unless exists $_[1]->{seconds}
+        unless exists $_[1]->{seconds};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{seconds};
@@ -25834,7 +25834,7 @@ sub serialize_domain_set_time_args {
 
     # Serializing field: 'nseconds'
     croak "Missing required input value 'nseconds'"
-        unless exists $_[1]->{nseconds}
+        unless exists $_[1]->{nseconds};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{nseconds};
@@ -25847,7 +25847,7 @@ sub serialize_domain_set_time_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25899,13 +25899,13 @@ sub serialize_domain_migrate_begin3_params_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -25924,7 +25924,7 @@ sub serialize_domain_migrate_begin3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -25965,7 +25965,7 @@ sub serialize_domain_migrate_begin3_params_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -25986,7 +25986,7 @@ sub serialize_domain_migrate_begin3_params_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -26042,7 +26042,7 @@ sub serialize_domain_migrate_prepare3_params_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -26061,7 +26061,7 @@ sub serialize_domain_migrate_prepare3_params_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -26082,7 +26082,7 @@ sub serialize_domain_migrate_prepare3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -26123,7 +26123,7 @@ sub serialize_domain_migrate_prepare3_params_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -26144,7 +26144,7 @@ sub serialize_domain_migrate_prepare3_params_ret {
 
     # Serializing field: 'uri_out'
     croak "Missing required input value 'uri_out'"
-        unless exists $_[1]->{uri_out}
+        unless exists $_[1]->{uri_out};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri_out}, $_[2], $_[3] );
 }
@@ -26200,7 +26200,7 @@ sub serialize_domain_migrate_prepare_tunnel3_params_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -26219,7 +26219,7 @@ sub serialize_domain_migrate_prepare_tunnel3_params_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -26240,7 +26240,7 @@ sub serialize_domain_migrate_prepare_tunnel3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -26277,7 +26277,7 @@ sub serialize_domain_migrate_prepare_tunnel3_params_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -26356,19 +26356,19 @@ sub serialize_domain_migrate_perform3_params_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dconnuri'
     croak "Missing required input value 'dconnuri'"
-        unless exists $_[1]->{dconnuri}
+        unless exists $_[1]->{dconnuri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{dconnuri}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -26387,7 +26387,7 @@ sub serialize_domain_migrate_perform3_params_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -26408,7 +26408,7 @@ sub serialize_domain_migrate_perform3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -26445,7 +26445,7 @@ sub serialize_domain_migrate_perform3_params_ret {
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -26525,7 +26525,7 @@ sub serialize_domain_migrate_finish3_params_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -26544,7 +26544,7 @@ sub serialize_domain_migrate_finish3_params_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -26565,7 +26565,7 @@ sub serialize_domain_migrate_finish3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -26578,7 +26578,7 @@ sub serialize_domain_migrate_finish3_params_args {
 
     # Serializing field: 'cancelled'
     croak "Missing required input value 'cancelled'"
-        unless exists $_[1]->{cancelled}
+        unless exists $_[1]->{cancelled};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cancelled};
@@ -26619,13 +26619,13 @@ sub serialize_domain_migrate_finish3_params_ret {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cookie_out'
     croak "Missing required input value 'cookie_out'"
-        unless exists $_[1]->{cookie_out}
+        unless exists $_[1]->{cookie_out};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_out};
@@ -26709,13 +26709,13 @@ sub serialize_domain_migrate_confirm3_params_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -26734,7 +26734,7 @@ sub serialize_domain_migrate_confirm3_params_args {
 
     # Serializing field: 'cookie_in'
     croak "Missing required input value 'cookie_in'"
-        unless exists $_[1]->{cookie_in}
+        unless exists $_[1]->{cookie_in};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'opaque' value"
         unless defined $_[1]->{cookie_in};
@@ -26755,7 +26755,7 @@ sub serialize_domain_migrate_confirm3_params_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -26768,7 +26768,7 @@ sub serialize_domain_migrate_confirm3_params_args {
 
     # Serializing field: 'cancelled'
     croak "Missing required input value 'cancelled'"
-        unless exists $_[1]->{cancelled}
+        unless exists $_[1]->{cancelled};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{cancelled};
@@ -26798,13 +26798,13 @@ sub serialize_domain_event_device_removed_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 }
@@ -26832,7 +26832,7 @@ sub serialize_domain_event_callback_device_removed_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -26845,7 +26845,7 @@ sub serialize_domain_event_callback_device_removed_msg {
 
     # Serializing field: 'msg'
     croak "Missing required input value 'msg'"
-        unless exists $_[1]->{msg}
+        unless exists $_[1]->{msg};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_domain_event_device_removed_msg( $_[1]->{msg}, $_[2], $_[3] );
 }
@@ -26895,7 +26895,7 @@ sub serialize_domain_event_block_job_2_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -26908,19 +26908,19 @@ sub serialize_domain_event_block_job_2_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dst'
     croak "Missing required input value 'dst'"
-        unless exists $_[1]->{dst}
+        unless exists $_[1]->{dst};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dst}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -26933,7 +26933,7 @@ sub serialize_domain_event_block_job_2_msg {
 
     # Serializing field: 'status'
     croak "Missing required input value 'status'"
-        unless exists $_[1]->{status}
+        unless exists $_[1]->{status};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{status};
@@ -26996,7 +26996,7 @@ sub serialize_domain_event_block_threshold_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27009,25 +27009,25 @@ sub serialize_domain_event_block_threshold_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dev}, $_[2], $_[3] );
 
     # Serializing field: 'path'
     croak "Missing required input value 'path'"
-        unless exists $_[1]->{path}
+        unless exists $_[1]->{path};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{path}, $_[2], $_[3] );
 
     # Serializing field: 'threshold'
     croak "Missing required input value 'threshold'"
-        unless exists $_[1]->{threshold}
+        unless exists $_[1]->{threshold};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{threshold};
@@ -27041,7 +27041,7 @@ sub serialize_domain_event_block_threshold_msg {
 
     # Serializing field: 'excess'
     croak "Missing required input value 'excess'"
-        unless exists $_[1]->{excess}
+        unless exists $_[1]->{excess};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{excess};
@@ -27094,7 +27094,7 @@ sub serialize_domain_event_callback_tunable_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27107,13 +27107,13 @@ sub serialize_domain_event_callback_tunable_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -27158,7 +27158,7 @@ sub serialize_domain_event_callback_device_added_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27171,13 +27171,13 @@ sub serialize_domain_event_callback_device_added_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 }
@@ -27201,7 +27201,7 @@ sub serialize_connect_event_connection_closed_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -27245,13 +27245,13 @@ sub serialize_connect_get_cpu_model_names_args {
 
     # Serializing field: 'arch'
     croak "Missing required input value 'arch'"
-        unless exists $_[1]->{arch}
+        unless exists $_[1]->{arch};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{arch}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -27264,7 +27264,7 @@ sub serialize_connect_get_cpu_model_names_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -27312,7 +27312,7 @@ sub serialize_connect_get_cpu_model_names_ret {
 
     # Serializing field: 'models'
     croak "Missing required input value 'models'"
-        unless exists $_[1]->{models}
+        unless exists $_[1]->{models};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{models};
@@ -27331,7 +27331,7 @@ sub serialize_connect_get_cpu_model_names_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -27366,7 +27366,7 @@ sub serialize_connect_network_event_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -27379,7 +27379,7 @@ sub serialize_connect_network_event_register_any_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_network( $_[1]->{net}, $_[2], $_[3] );
 }
@@ -27403,7 +27403,7 @@ sub serialize_connect_network_event_register_any_ret {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27434,7 +27434,7 @@ sub serialize_connect_network_event_deregister_any_args {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27487,7 +27487,7 @@ sub serialize_network_event_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27500,13 +27500,13 @@ sub serialize_network_event_lifecycle_msg {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'event'
     croak "Missing required input value 'event'"
-        unless exists $_[1]->{event}
+        unless exists $_[1]->{event};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{event};
@@ -27519,7 +27519,7 @@ sub serialize_network_event_lifecycle_msg {
 
     # Serializing field: 'detail'
     croak "Missing required input value 'detail'"
-        unless exists $_[1]->{detail}
+        unless exists $_[1]->{detail};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{detail};
@@ -27567,7 +27567,7 @@ sub serialize_network_event_callback_metadata_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27580,13 +27580,13 @@ sub serialize_network_event_callback_metadata_change_msg {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -27599,7 +27599,7 @@ sub serialize_network_event_callback_metadata_change_msg {
 
     # Serializing field: 'nsuri'
     croak "Missing required input value 'nsuri'"
-        unless exists $_[1]->{nsuri}
+        unless exists $_[1]->{nsuri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{nsuri}, $_[2], $_[3] );
 }
@@ -27648,13 +27648,13 @@ sub serialize_network_set_metadata_args {
 
     # Serializing field: 'network'
     croak "Missing required input value 'network'"
-        unless exists $_[1]->{network}
+        unless exists $_[1]->{network};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{network}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -27667,25 +27667,25 @@ sub serialize_network_set_metadata_args {
 
     # Serializing field: 'metadata'
     croak "Missing required input value 'metadata'"
-        unless exists $_[1]->{metadata}
+        unless exists $_[1]->{metadata};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{metadata}, $_[2], $_[3] );
 
     # Serializing field: 'key'
     croak "Missing required input value 'key'"
-        unless exists $_[1]->{key}
+        unless exists $_[1]->{key};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{key}, $_[2], $_[3] );
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -27733,13 +27733,13 @@ sub serialize_network_get_metadata_args {
 
     # Serializing field: 'network'
     croak "Missing required input value 'network'"
-        unless exists $_[1]->{network}
+        unless exists $_[1]->{network};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{network}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -27752,13 +27752,13 @@ sub serialize_network_get_metadata_args {
 
     # Serializing field: 'uri'
     croak "Missing required input value 'uri'"
-        unless exists $_[1]->{uri}
+        unless exists $_[1]->{uri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{uri}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -27784,7 +27784,7 @@ sub serialize_network_get_metadata_ret {
 
     # Serializing field: 'metadata'
     croak "Missing required input value 'metadata'"
-        unless exists $_[1]->{metadata}
+        unless exists $_[1]->{metadata};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{metadata}, $_[2], $_[3] );
 }
@@ -27812,7 +27812,7 @@ sub serialize_connect_storage_pool_event_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -27825,7 +27825,7 @@ sub serialize_connect_storage_pool_event_register_any_args {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -27849,7 +27849,7 @@ sub serialize_connect_storage_pool_event_register_any_ret {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27880,7 +27880,7 @@ sub serialize_connect_storage_pool_event_deregister_any_args {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27933,7 +27933,7 @@ sub serialize_storage_pool_event_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -27946,13 +27946,13 @@ sub serialize_storage_pool_event_lifecycle_msg {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 
     # Serializing field: 'event'
     croak "Missing required input value 'event'"
-        unless exists $_[1]->{event}
+        unless exists $_[1]->{event};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{event};
@@ -27965,7 +27965,7 @@ sub serialize_storage_pool_event_lifecycle_msg {
 
     # Serializing field: 'detail'
     croak "Missing required input value 'detail'"
-        unless exists $_[1]->{detail}
+        unless exists $_[1]->{detail};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{detail};
@@ -28000,7 +28000,7 @@ sub serialize_storage_pool_event_refresh_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -28013,7 +28013,7 @@ sub serialize_storage_pool_event_refresh_msg {
 
     # Serializing field: 'pool'
     croak "Missing required input value 'pool'"
-        unless exists $_[1]->{pool}
+        unless exists $_[1]->{pool};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_storage_pool( $_[1]->{pool}, $_[2], $_[3] );
 }
@@ -28041,7 +28041,7 @@ sub serialize_connect_node_device_event_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -28054,7 +28054,7 @@ sub serialize_connect_node_device_event_register_any_args {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -28078,7 +28078,7 @@ sub serialize_connect_node_device_event_register_any_ret {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -28109,7 +28109,7 @@ sub serialize_connect_node_device_event_deregister_any_args {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -28162,7 +28162,7 @@ sub serialize_node_device_event_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -28175,13 +28175,13 @@ sub serialize_node_device_event_lifecycle_msg {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 
     # Serializing field: 'event'
     croak "Missing required input value 'event'"
-        unless exists $_[1]->{event}
+        unless exists $_[1]->{event};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{event};
@@ -28194,7 +28194,7 @@ sub serialize_node_device_event_lifecycle_msg {
 
     # Serializing field: 'detail'
     croak "Missing required input value 'detail'"
-        unless exists $_[1]->{detail}
+        unless exists $_[1]->{detail};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{detail};
@@ -28229,7 +28229,7 @@ sub serialize_node_device_event_update_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -28242,7 +28242,7 @@ sub serialize_node_device_event_update_msg {
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_node_device( $_[1]->{dev}, $_[2], $_[3] );
 }
@@ -28287,13 +28287,13 @@ sub serialize_domain_fsfreeze_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'mountpoints'
     croak "Missing required input value 'mountpoints'"
-        unless exists $_[1]->{mountpoints}
+        unless exists $_[1]->{mountpoints};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{mountpoints};
@@ -28312,7 +28312,7 @@ sub serialize_domain_fsfreeze_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -28343,7 +28343,7 @@ sub serialize_domain_fsfreeze_ret {
 
     # Serializing field: 'filesystems'
     croak "Missing required input value 'filesystems'"
-        unless exists $_[1]->{filesystems}
+        unless exists $_[1]->{filesystems};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{filesystems};
@@ -28395,13 +28395,13 @@ sub serialize_domain_fsthaw_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'mountpoints'
     croak "Missing required input value 'mountpoints'"
-        unless exists $_[1]->{mountpoints}
+        unless exists $_[1]->{mountpoints};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{mountpoints};
@@ -28420,7 +28420,7 @@ sub serialize_domain_fsthaw_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -28451,7 +28451,7 @@ sub serialize_domain_fsthaw_ret {
 
     # Serializing field: 'filesystems'
     croak "Missing required input value 'filesystems'"
-        unless exists $_[1]->{filesystems}
+        unless exists $_[1]->{filesystems};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{filesystems};
@@ -28522,7 +28522,7 @@ sub serialize_node_get_free_pages_args {
 
     # Serializing field: 'pages'
     croak "Missing required input value 'pages'"
-        unless exists $_[1]->{pages}
+        unless exists $_[1]->{pages};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{pages};
@@ -28548,7 +28548,7 @@ sub serialize_node_get_free_pages_args {
 
     # Serializing field: 'startCell'
     croak "Missing required input value 'startCell'"
-        unless exists $_[1]->{startCell}
+        unless exists $_[1]->{startCell};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{startCell};
@@ -28561,7 +28561,7 @@ sub serialize_node_get_free_pages_args {
 
     # Serializing field: 'cellCount'
     croak "Missing required input value 'cellCount'"
-        unless exists $_[1]->{cellCount}
+        unless exists $_[1]->{cellCount};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{cellCount};
@@ -28574,7 +28574,7 @@ sub serialize_node_get_free_pages_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -28619,7 +28619,7 @@ sub serialize_node_get_free_pages_ret {
 
     # Serializing field: 'counts'
     croak "Missing required input value 'counts'"
-        unless exists $_[1]->{counts}
+        unless exists $_[1]->{counts};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{counts};
@@ -28727,7 +28727,7 @@ sub serialize_node_alloc_pages_args {
 
     # Serializing field: 'pageSizes'
     croak "Missing required input value 'pageSizes'"
-        unless exists $_[1]->{pageSizes}
+        unless exists $_[1]->{pageSizes};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{pageSizes};
@@ -28753,7 +28753,7 @@ sub serialize_node_alloc_pages_args {
 
     # Serializing field: 'pageCounts'
     croak "Missing required input value 'pageCounts'"
-        unless exists $_[1]->{pageCounts}
+        unless exists $_[1]->{pageCounts};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{pageCounts};
@@ -28780,7 +28780,7 @@ sub serialize_node_alloc_pages_args {
 
     # Serializing field: 'startCell'
     croak "Missing required input value 'startCell'"
-        unless exists $_[1]->{startCell}
+        unless exists $_[1]->{startCell};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{startCell};
@@ -28793,7 +28793,7 @@ sub serialize_node_alloc_pages_args {
 
     # Serializing field: 'cellCount'
     croak "Missing required input value 'cellCount'"
-        unless exists $_[1]->{cellCount}
+        unless exists $_[1]->{cellCount};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{cellCount};
@@ -28806,7 +28806,7 @@ sub serialize_node_alloc_pages_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -28837,7 +28837,7 @@ sub serialize_node_alloc_pages_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -28911,13 +28911,13 @@ sub serialize_network_dhcp_lease {
 
     # Serializing field: 'iface'
     croak "Missing required input value 'iface'"
-        unless exists $_[1]->{iface}
+        unless exists $_[1]->{iface};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{iface}, $_[2], $_[3] );
 
     # Serializing field: 'expirytime'
     croak "Missing required input value 'expirytime'"
-        unless exists $_[1]->{expirytime}
+        unless exists $_[1]->{expirytime};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
         unless defined $_[1]->{expirytime};
@@ -28931,7 +28931,7 @@ sub serialize_network_dhcp_lease {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -28944,25 +28944,25 @@ sub serialize_network_dhcp_lease {
 
     # Serializing field: 'mac'
     croak "Missing required input value 'mac'"
-        unless exists $_[1]->{mac}
+        unless exists $_[1]->{mac};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{mac}, $_[2], $_[3] );
 
     # Serializing field: 'iaid'
     croak "Missing required input value 'iaid'"
-        unless exists $_[1]->{iaid}
+        unless exists $_[1]->{iaid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{iaid}, $_[2], $_[3] );
 
     # Serializing field: 'ipaddr'
     croak "Missing required input value 'ipaddr'"
-        unless exists $_[1]->{ipaddr}
+        unless exists $_[1]->{ipaddr};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{ipaddr}, $_[2], $_[3] );
 
     # Serializing field: 'prefix'
     croak "Missing required input value 'prefix'"
-        unless exists $_[1]->{prefix}
+        unless exists $_[1]->{prefix};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{prefix};
@@ -28975,13 +28975,13 @@ sub serialize_network_dhcp_lease {
 
     # Serializing field: 'hostname'
     croak "Missing required input value 'hostname'"
-        unless exists $_[1]->{hostname}
+        unless exists $_[1]->{hostname};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{hostname}, $_[2], $_[3] );
 
     # Serializing field: 'clientid'
     croak "Missing required input value 'clientid'"
-        unless exists $_[1]->{clientid}
+        unless exists $_[1]->{clientid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{clientid}, $_[2], $_[3] );
 }
@@ -29022,19 +29022,19 @@ sub serialize_network_get_dhcp_leases_args {
 
     # Serializing field: 'net'
     croak "Missing required input value 'net'"
-        unless exists $_[1]->{net}
+        unless exists $_[1]->{net};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{net}, $_[2], $_[3] );
 
     # Serializing field: 'mac'
     croak "Missing required input value 'mac'"
-        unless exists $_[1]->{mac}
+        unless exists $_[1]->{mac};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{mac}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -29047,7 +29047,7 @@ sub serialize_network_get_dhcp_leases_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29095,7 +29095,7 @@ sub serialize_network_get_dhcp_leases_ret {
 
     # Serializing field: 'leases'
     croak "Missing required input value 'leases'"
-        unless exists $_[1]->{leases}
+        unless exists $_[1]->{leases};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{leases};
@@ -29114,7 +29114,7 @@ sub serialize_network_get_dhcp_leases_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -29157,13 +29157,13 @@ sub serialize_domain_stats_record {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -29226,7 +29226,7 @@ sub serialize_connect_get_all_domain_stats_args {
 
     # Serializing field: 'doms'
     croak "Missing required input value 'doms'"
-        unless exists $_[1]->{doms}
+        unless exists $_[1]->{doms};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{doms};
@@ -29245,7 +29245,7 @@ sub serialize_connect_get_all_domain_stats_args {
 
     # Serializing field: 'stats'
     croak "Missing required input value 'stats'"
-        unless exists $_[1]->{stats}
+        unless exists $_[1]->{stats};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{stats};
@@ -29258,7 +29258,7 @@ sub serialize_connect_get_all_domain_stats_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29311,7 +29311,7 @@ sub serialize_domain_event_callback_agent_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -29324,13 +29324,13 @@ sub serialize_domain_event_callback_agent_lifecycle_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{state};
@@ -29343,7 +29343,7 @@ sub serialize_domain_event_callback_agent_lifecycle_msg {
 
     # Serializing field: 'reason'
     croak "Missing required input value 'reason'"
-        unless exists $_[1]->{reason}
+        unless exists $_[1]->{reason};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{reason};
@@ -29382,7 +29382,7 @@ sub serialize_connect_get_all_domain_stats_ret {
 
     # Serializing field: 'retStats'
     croak "Missing required input value 'retStats'"
-        unless exists $_[1]->{retStats}
+        unless exists $_[1]->{retStats};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{retStats};
@@ -29439,25 +29439,25 @@ sub serialize_domain_fsinfo {
 
     # Serializing field: 'mountpoint'
     croak "Missing required input value 'mountpoint'"
-        unless exists $_[1]->{mountpoint}
+        unless exists $_[1]->{mountpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{mountpoint}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'fstype'
     croak "Missing required input value 'fstype'"
-        unless exists $_[1]->{fstype}
+        unless exists $_[1]->{fstype};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{fstype}, $_[2], $_[3] );
 
     # Serializing field: 'dev_aliases'
     croak "Missing required input value 'dev_aliases'"
-        unless exists $_[1]->{dev_aliases}
+        unless exists $_[1]->{dev_aliases};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{dev_aliases};
@@ -29498,13 +29498,13 @@ sub serialize_domain_get_fsinfo_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29552,7 +29552,7 @@ sub serialize_domain_get_fsinfo_ret {
 
     # Serializing field: 'info'
     croak "Missing required input value 'info'"
-        unless exists $_[1]->{info}
+        unless exists $_[1]->{info};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{info};
@@ -29571,7 +29571,7 @@ sub serialize_domain_get_fsinfo_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -29615,7 +29615,7 @@ sub serialize_domain_ip_addr {
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -29628,13 +29628,13 @@ sub serialize_domain_ip_addr {
 
     # Serializing field: 'addr'
     croak "Missing required input value 'addr'"
-        unless exists $_[1]->{addr}
+        unless exists $_[1]->{addr};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{addr}, $_[2], $_[3] );
 
     # Serializing field: 'prefix'
     croak "Missing required input value 'prefix'"
-        unless exists $_[1]->{prefix}
+        unless exists $_[1]->{prefix};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{prefix};
@@ -29681,19 +29681,19 @@ sub serialize_domain_interface {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'hwaddr'
     croak "Missing required input value 'hwaddr'"
-        unless exists $_[1]->{hwaddr}
+        unless exists $_[1]->{hwaddr};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{hwaddr}, $_[2], $_[3] );
 
     # Serializing field: 'addrs'
     croak "Missing required input value 'addrs'"
-        unless exists $_[1]->{addrs}
+        unless exists $_[1]->{addrs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{addrs};
@@ -29743,13 +29743,13 @@ sub serialize_domain_interface_addresses_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'source'
     croak "Missing required input value 'source'"
-        unless exists $_[1]->{source}
+        unless exists $_[1]->{source};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{source};
@@ -29762,7 +29762,7 @@ sub serialize_domain_interface_addresses_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29801,7 +29801,7 @@ sub serialize_domain_interface_addresses_ret {
 
     # Serializing field: 'ifaces'
     croak "Missing required input value 'ifaces'"
-        unless exists $_[1]->{ifaces}
+        unless exists $_[1]->{ifaces};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{ifaces};
@@ -29850,25 +29850,25 @@ sub serialize_domain_set_user_password_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'user'
     croak "Missing required input value 'user'"
-        unless exists $_[1]->{user}
+        unless exists $_[1]->{user};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{user}, $_[2], $_[3] );
 
     # Serializing field: 'password'
     croak "Missing required input value 'password'"
-        unless exists $_[1]->{password}
+        unless exists $_[1]->{password};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{password}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29907,19 +29907,19 @@ sub serialize_domain_rename_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'new_name'
     croak "Missing required input value 'new_name'"
-        unless exists $_[1]->{new_name}
+        unless exists $_[1]->{new_name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{new_name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -29950,7 +29950,7 @@ sub serialize_domain_rename_ret {
 
     # Serializing field: 'retcode'
     croak "Missing required input value 'retcode'"
-        unless exists $_[1]->{retcode}
+        unless exists $_[1]->{retcode};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{retcode};
@@ -29994,7 +29994,7 @@ sub serialize_domain_event_callback_migration_iteration_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30007,13 +30007,13 @@ sub serialize_domain_event_callback_migration_iteration_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'iteration'
     croak "Missing required input value 'iteration'"
-        unless exists $_[1]->{iteration}
+        unless exists $_[1]->{iteration};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{iteration};
@@ -30065,7 +30065,7 @@ sub serialize_domain_event_callback_job_completed_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30078,13 +30078,13 @@ sub serialize_domain_event_callback_job_completed_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -30125,13 +30125,13 @@ sub serialize_domain_migrate_start_post_copy_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30170,7 +30170,7 @@ sub serialize_domain_event_callback_device_removal_failed_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30183,13 +30183,13 @@ sub serialize_domain_event_callback_device_removal_failed_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'devAlias'
     croak "Missing required input value 'devAlias'"
-        unless exists $_[1]->{devAlias}
+        unless exists $_[1]->{devAlias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{devAlias}, $_[2], $_[3] );
 }
@@ -30217,13 +30217,13 @@ sub serialize_domain_get_guest_vcpus_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30262,7 +30262,7 @@ sub serialize_domain_get_guest_vcpus_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -30316,19 +30316,19 @@ sub serialize_domain_set_guest_vcpus_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{cpumap}, $_[2], $_[3] );
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{state};
@@ -30341,7 +30341,7 @@ sub serialize_domain_set_guest_vcpus_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30389,19 +30389,19 @@ sub serialize_domain_set_vcpu_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'cpumap'
     croak "Missing required input value 'cpumap'"
-        unless exists $_[1]->{cpumap}
+        unless exists $_[1]->{cpumap};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{cpumap}, $_[2], $_[3] );
 
     # Serializing field: 'state'
     croak "Missing required input value 'state'"
-        unless exists $_[1]->{state}
+        unless exists $_[1]->{state};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{state};
@@ -30414,7 +30414,7 @@ sub serialize_domain_set_vcpu_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30462,7 +30462,7 @@ sub serialize_domain_event_callback_metadata_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30475,13 +30475,13 @@ sub serialize_domain_event_callback_metadata_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{type};
@@ -30494,7 +30494,7 @@ sub serialize_domain_event_callback_metadata_change_msg {
 
     # Serializing field: 'nsuri'
     croak "Missing required input value 'nsuri'"
-        unless exists $_[1]->{nsuri}
+        unless exists $_[1]->{nsuri};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{nsuri}, $_[2], $_[3] );
 }
@@ -30549,7 +30549,7 @@ sub serialize_domain_event_memory_failure_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30562,13 +30562,13 @@ sub serialize_domain_event_memory_failure_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'recipient'
     croak "Missing required input value 'recipient'"
-        unless exists $_[1]->{recipient}
+        unless exists $_[1]->{recipient};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{recipient};
@@ -30581,7 +30581,7 @@ sub serialize_domain_event_memory_failure_msg {
 
     # Serializing field: 'action'
     croak "Missing required input value 'action'"
-        unless exists $_[1]->{action}
+        unless exists $_[1]->{action};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{action};
@@ -30594,7 +30594,7 @@ sub serialize_domain_event_memory_failure_msg {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30629,7 +30629,7 @@ sub serialize_connect_secret_event_register_any_args {
 
     # Serializing field: 'eventID'
     croak "Missing required input value 'eventID'"
-        unless exists $_[1]->{eventID}
+        unless exists $_[1]->{eventID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{eventID};
@@ -30642,7 +30642,7 @@ sub serialize_connect_secret_event_register_any_args {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -30666,7 +30666,7 @@ sub serialize_connect_secret_event_register_any_ret {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30697,7 +30697,7 @@ sub serialize_connect_secret_event_deregister_any_args {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30750,7 +30750,7 @@ sub serialize_secret_event_lifecycle_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30763,13 +30763,13 @@ sub serialize_secret_event_lifecycle_msg {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 
     # Serializing field: 'event'
     croak "Missing required input value 'event'"
-        unless exists $_[1]->{event}
+        unless exists $_[1]->{event};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{event};
@@ -30782,7 +30782,7 @@ sub serialize_secret_event_lifecycle_msg {
 
     # Serializing field: 'detail'
     croak "Missing required input value 'detail'"
-        unless exists $_[1]->{detail}
+        unless exists $_[1]->{detail};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{detail};
@@ -30817,7 +30817,7 @@ sub serialize_secret_event_value_changed_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -30830,7 +30830,7 @@ sub serialize_secret_event_value_changed_msg {
 
     # Serializing field: 'secret'
     croak "Missing required input value 'secret'"
-        unless exists $_[1]->{secret}
+        unless exists $_[1]->{secret};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_secret( $_[1]->{secret}, $_[2], $_[3] );
 }
@@ -30872,19 +30872,19 @@ sub serialize_domain_set_block_threshold_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'dev'
     croak "Missing required input value 'dev'"
-        unless exists $_[1]->{dev}
+        unless exists $_[1]->{dev};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{dev}, $_[2], $_[3] );
 
     # Serializing field: 'threshold'
     croak "Missing required input value 'threshold'"
-        unless exists $_[1]->{threshold}
+        unless exists $_[1]->{threshold};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{threshold};
@@ -30898,7 +30898,7 @@ sub serialize_domain_set_block_threshold_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -30951,13 +30951,13 @@ sub serialize_domain_set_lifecycle_action_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{type};
@@ -30970,7 +30970,7 @@ sub serialize_domain_set_lifecycle_action_args {
 
     # Serializing field: 'action'
     croak "Missing required input value 'action'"
-        unless exists $_[1]->{action}
+        unless exists $_[1]->{action};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{action};
@@ -30983,7 +30983,7 @@ sub serialize_domain_set_lifecycle_action_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31034,37 +31034,37 @@ sub serialize_connect_compare_hypervisor_cpu_args {
 
     # Serializing field: 'emulator'
     croak "Missing required input value 'emulator'"
-        unless exists $_[1]->{emulator}
+        unless exists $_[1]->{emulator};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{emulator}, $_[2], $_[3] );
 
     # Serializing field: 'arch'
     croak "Missing required input value 'arch'"
-        unless exists $_[1]->{arch}
+        unless exists $_[1]->{arch};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{arch}, $_[2], $_[3] );
 
     # Serializing field: 'machine'
     croak "Missing required input value 'machine'"
-        unless exists $_[1]->{machine}
+        unless exists $_[1]->{machine};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{machine}, $_[2], $_[3] );
 
     # Serializing field: 'virttype'
     croak "Missing required input value 'virttype'"
-        unless exists $_[1]->{virttype}
+        unless exists $_[1]->{virttype};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{virttype}, $_[2], $_[3] );
 
     # Serializing field: 'xmlCPU'
     croak "Missing required input value 'xmlCPU'"
-        unless exists $_[1]->{xmlCPU}
+        unless exists $_[1]->{xmlCPU};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xmlCPU}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31095,7 +31095,7 @@ sub serialize_connect_compare_hypervisor_cpu_ret {
 
     # Serializing field: 'result'
     croak "Missing required input value 'result'"
-        unless exists $_[1]->{result}
+        unless exists $_[1]->{result};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{result};
@@ -31159,31 +31159,31 @@ sub serialize_connect_baseline_hypervisor_cpu_args {
 
     # Serializing field: 'emulator'
     croak "Missing required input value 'emulator'"
-        unless exists $_[1]->{emulator}
+        unless exists $_[1]->{emulator};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{emulator}, $_[2], $_[3] );
 
     # Serializing field: 'arch'
     croak "Missing required input value 'arch'"
-        unless exists $_[1]->{arch}
+        unless exists $_[1]->{arch};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{arch}, $_[2], $_[3] );
 
     # Serializing field: 'machine'
     croak "Missing required input value 'machine'"
-        unless exists $_[1]->{machine}
+        unless exists $_[1]->{machine};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{machine}, $_[2], $_[3] );
 
     # Serializing field: 'virttype'
     croak "Missing required input value 'virttype'"
-        unless exists $_[1]->{virttype}
+        unless exists $_[1]->{virttype};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{virttype}, $_[2], $_[3] );
 
     # Serializing field: 'xmlCPUs'
     croak "Missing required input value 'xmlCPUs'"
-        unless exists $_[1]->{xmlCPUs}
+        unless exists $_[1]->{xmlCPUs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{xmlCPUs};
@@ -31202,7 +31202,7 @@ sub serialize_connect_baseline_hypervisor_cpu_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31228,7 +31228,7 @@ sub serialize_connect_baseline_hypervisor_cpu_ret {
 
     # Serializing field: 'cpu'
     croak "Missing required input value 'cpu'"
-        unless exists $_[1]->{cpu}
+        unless exists $_[1]->{cpu};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{cpu}, $_[2], $_[3] );
 }
@@ -31261,7 +31261,7 @@ sub serialize_node_get_sev_info_args {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -31274,7 +31274,7 @@ sub serialize_node_get_sev_info_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31322,7 +31322,7 @@ sub serialize_node_get_sev_info_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -31341,7 +31341,7 @@ sub serialize_node_get_sev_info_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -31376,13 +31376,13 @@ sub serialize_domain_get_launch_security_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31421,7 +31421,7 @@ sub serialize_domain_get_launch_security_info_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -31479,13 +31479,13 @@ sub serialize_domain_set_launch_security_state_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -31504,7 +31504,7 @@ sub serialize_domain_set_launch_security_state_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31530,7 +31530,7 @@ sub serialize_nwfilter_binding_lookup_by_port_dev_args {
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 }
@@ -31549,7 +31549,7 @@ sub serialize_nwfilter_binding_lookup_by_port_dev_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter_binding( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -31577,13 +31577,13 @@ sub serialize_nwfilter_binding_create_xml_args {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31609,7 +31609,7 @@ sub serialize_nwfilter_binding_create_xml_ret {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter_binding( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -31628,7 +31628,7 @@ sub serialize_nwfilter_binding_delete_args {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter_binding( $_[1]->{nwfilter}, $_[2], $_[3] );
 }
@@ -31656,13 +31656,13 @@ sub serialize_nwfilter_binding_get_xml_desc_args {
 
     # Serializing field: 'nwfilter'
     croak "Missing required input value 'nwfilter'"
-        unless exists $_[1]->{nwfilter}
+        unless exists $_[1]->{nwfilter};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_nwfilter_binding( $_[1]->{nwfilter}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31688,7 +31688,7 @@ sub serialize_nwfilter_binding_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -31721,7 +31721,7 @@ sub serialize_connect_list_all_nwfilter_bindings_args {
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -31734,7 +31734,7 @@ sub serialize_connect_list_all_nwfilter_bindings_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31782,7 +31782,7 @@ sub serialize_connect_list_all_nwfilter_bindings_ret {
 
     # Serializing field: 'bindings'
     croak "Missing required input value 'bindings'"
-        unless exists $_[1]->{bindings}
+        unless exists $_[1]->{bindings};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{bindings};
@@ -31801,7 +31801,7 @@ sub serialize_connect_list_all_nwfilter_bindings_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -31832,7 +31832,7 @@ sub serialize_connect_get_storage_pool_capabilities_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31858,7 +31858,7 @@ sub serialize_connect_get_storage_pool_capabilities_ret {
 
     # Serializing field: 'capabilities'
     croak "Missing required input value 'capabilities'"
-        unless exists $_[1]->{capabilities}
+        unless exists $_[1]->{capabilities};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{capabilities}, $_[2], $_[3] );
 }
@@ -31895,13 +31895,13 @@ sub serialize_network_list_all_ports_args {
 
     # Serializing field: 'network'
     croak "Missing required input value 'network'"
-        unless exists $_[1]->{network}
+        unless exists $_[1]->{network};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{network}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -31914,7 +31914,7 @@ sub serialize_network_list_all_ports_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -31962,7 +31962,7 @@ sub serialize_network_list_all_ports_ret {
 
     # Serializing field: 'ports'
     croak "Missing required input value 'ports'"
-        unless exists $_[1]->{ports}
+        unless exists $_[1]->{ports};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{ports};
@@ -31981,7 +31981,7 @@ sub serialize_network_list_all_ports_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{ret};
@@ -32011,13 +32011,13 @@ sub serialize_network_port_lookup_by_uuid_args {
 
     # Serializing field: 'network'
     croak "Missing required input value 'network'"
-        unless exists $_[1]->{network}
+        unless exists $_[1]->{network};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{network}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
     croak "Missing required input value 'uuid'"
-        unless exists $_[1]->{uuid}
+        unless exists $_[1]->{uuid};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_uuid( $_[1]->{uuid}, $_[2], $_[3] );
 }
@@ -32036,7 +32036,7 @@ sub serialize_network_port_lookup_by_uuid_ret {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 }
@@ -32068,19 +32068,19 @@ sub serialize_network_port_create_xml_args {
 
     # Serializing field: 'network'
     croak "Missing required input value 'network'"
-        unless exists $_[1]->{network}
+        unless exists $_[1]->{network};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network( $_[1]->{network}, $_[2], $_[3] );
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32106,7 +32106,7 @@ sub serialize_network_port_create_xml_ret {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 }
@@ -32151,13 +32151,13 @@ sub serialize_network_port_set_parameters_args {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -32176,7 +32176,7 @@ sub serialize_network_port_set_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32220,13 +32220,13 @@ sub serialize_network_port_get_parameters_args {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -32239,7 +32239,7 @@ sub serialize_network_port_get_parameters_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32287,7 +32287,7 @@ sub serialize_network_port_get_parameters_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -32306,7 +32306,7 @@ sub serialize_network_port_get_parameters_ret {
 
     # Serializing field: 'nparams'
     croak "Missing required input value 'nparams'"
-        unless exists $_[1]->{nparams}
+        unless exists $_[1]->{nparams};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{nparams};
@@ -32341,13 +32341,13 @@ sub serialize_network_port_get_xml_desc_args {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32373,7 +32373,7 @@ sub serialize_network_port_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -32401,13 +32401,13 @@ sub serialize_network_port_delete_args {
 
     # Serializing field: 'port'
     croak "Missing required input value 'port'"
-        unless exists $_[1]->{port}
+        unless exists $_[1]->{port};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_network_port( $_[1]->{port}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32446,19 +32446,19 @@ sub serialize_domain_checkpoint_create_xml_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'xml_desc'
     croak "Missing required input value 'xml_desc'"
-        unless exists $_[1]->{xml_desc}
+        unless exists $_[1]->{xml_desc};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml_desc}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32484,7 +32484,7 @@ sub serialize_domain_checkpoint_create_xml_ret {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 }
@@ -32512,13 +32512,13 @@ sub serialize_domain_checkpoint_get_xml_desc_args {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32544,7 +32544,7 @@ sub serialize_domain_checkpoint_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -32581,13 +32581,13 @@ sub serialize_domain_list_all_checkpoints_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -32600,7 +32600,7 @@ sub serialize_domain_list_all_checkpoints_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32648,7 +32648,7 @@ sub serialize_domain_list_all_checkpoints_ret {
 
     # Serializing field: 'checkpoints'
     croak "Missing required input value 'checkpoints'"
-        unless exists $_[1]->{checkpoints}
+        unless exists $_[1]->{checkpoints};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{checkpoints};
@@ -32667,7 +32667,7 @@ sub serialize_domain_list_all_checkpoints_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -32711,13 +32711,13 @@ sub serialize_domain_checkpoint_list_all_children_args {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 
     # Serializing field: 'need_results'
     croak "Missing required input value 'need_results'"
-        unless exists $_[1]->{need_results}
+        unless exists $_[1]->{need_results};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{need_results};
@@ -32730,7 +32730,7 @@ sub serialize_domain_checkpoint_list_all_children_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32778,7 +32778,7 @@ sub serialize_domain_checkpoint_list_all_children_ret {
 
     # Serializing field: 'checkpoints'
     croak "Missing required input value 'checkpoints'"
-        unless exists $_[1]->{checkpoints}
+        unless exists $_[1]->{checkpoints};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{checkpoints};
@@ -32797,7 +32797,7 @@ sub serialize_domain_checkpoint_list_all_children_ret {
 
     # Serializing field: 'ret'
     croak "Missing required input value 'ret'"
-        unless exists $_[1]->{ret}
+        unless exists $_[1]->{ret};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{ret};
@@ -32836,19 +32836,19 @@ sub serialize_domain_checkpoint_lookup_by_name_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32874,7 +32874,7 @@ sub serialize_domain_checkpoint_lookup_by_name_ret {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 }
@@ -32902,13 +32902,13 @@ sub serialize_domain_checkpoint_get_parent_args {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -32934,7 +32934,7 @@ sub serialize_domain_checkpoint_get_parent_ret {
 
     # Serializing field: 'parent'
     croak "Missing required input value 'parent'"
-        unless exists $_[1]->{parent}
+        unless exists $_[1]->{parent};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{parent}, $_[2], $_[3] );
 }
@@ -32962,13 +32962,13 @@ sub serialize_domain_checkpoint_delete_args {
 
     # Serializing field: 'checkpoint'
     croak "Missing required input value 'checkpoint'"
-        unless exists $_[1]->{checkpoint}
+        unless exists $_[1]->{checkpoint};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain_checkpoint( $_[1]->{checkpoint}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33012,13 +33012,13 @@ sub serialize_domain_get_guest_info_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'types'
     croak "Missing required input value 'types'"
-        unless exists $_[1]->{types}
+        unless exists $_[1]->{types};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{types};
@@ -33031,7 +33031,7 @@ sub serialize_domain_get_guest_info_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33070,7 +33070,7 @@ sub serialize_domain_get_guest_info_ret {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -33124,7 +33124,7 @@ sub serialize_connect_set_identity_args {
 
     # Serializing field: 'params'
     croak "Missing required input value 'params'"
-        unless exists $_[1]->{params}
+        unless exists $_[1]->{params};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{params};
@@ -33143,7 +33143,7 @@ sub serialize_connect_set_identity_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33187,13 +33187,13 @@ sub serialize_domain_agent_set_response_timeout_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'timeout'
     croak "Missing required input value 'timeout'"
-        unless exists $_[1]->{timeout}
+        unless exists $_[1]->{timeout};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{timeout};
@@ -33206,7 +33206,7 @@ sub serialize_domain_agent_set_response_timeout_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33237,7 +33237,7 @@ sub serialize_domain_agent_set_response_timeout_ret {
 
     # Serializing field: 'result'
     croak "Missing required input value 'result'"
-        unless exists $_[1]->{result}
+        unless exists $_[1]->{result};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{result};
@@ -33280,25 +33280,25 @@ sub serialize_domain_backup_begin_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'backup_xml'
     croak "Missing required input value 'backup_xml'"
-        unless exists $_[1]->{backup_xml}
+        unless exists $_[1]->{backup_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{backup_xml}, $_[2], $_[3] );
 
     # Serializing field: 'checkpoint_xml'
     croak "Missing required input value 'checkpoint_xml'"
-        unless exists $_[1]->{checkpoint_xml}
+        unless exists $_[1]->{checkpoint_xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_string( $_[1]->{checkpoint_xml}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33333,13 +33333,13 @@ sub serialize_domain_backup_get_xml_desc_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33365,7 +33365,7 @@ sub serialize_domain_backup_get_xml_desc_ret {
 
     # Serializing field: 'xml'
     croak "Missing required input value 'xml'"
-        unless exists $_[1]->{xml}
+        unless exists $_[1]->{xml};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{xml}, $_[2], $_[3] );
 }
@@ -33397,19 +33397,19 @@ sub serialize_domain_authorized_ssh_keys_get_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'user'
     croak "Missing required input value 'user'"
-        unless exists $_[1]->{user}
+        unless exists $_[1]->{user};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{user}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33448,7 +33448,7 @@ sub serialize_domain_authorized_ssh_keys_get_ret {
 
     # Serializing field: 'keys'
     croak "Missing required input value 'keys'"
-        unless exists $_[1]->{keys}
+        unless exists $_[1]->{keys};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{keys};
@@ -33510,19 +33510,19 @@ sub serialize_domain_authorized_ssh_keys_set_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'user'
     croak "Missing required input value 'user'"
-        unless exists $_[1]->{user}
+        unless exists $_[1]->{user};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{user}, $_[2], $_[3] );
 
     # Serializing field: 'keys'
     croak "Missing required input value 'keys'"
-        unless exists $_[1]->{keys}
+        unless exists $_[1]->{keys};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{keys};
@@ -33541,7 +33541,7 @@ sub serialize_domain_authorized_ssh_keys_set_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33576,13 +33576,13 @@ sub serialize_domain_get_messages_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33621,7 +33621,7 @@ sub serialize_domain_get_messages_ret {
 
     # Serializing field: 'msgs'
     croak "Missing required input value 'msgs'"
-        unless exists $_[1]->{msgs}
+        unless exists $_[1]->{msgs};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'array' value"
         unless defined $_[1]->{msgs};
@@ -33671,13 +33671,13 @@ sub serialize_domain_start_dirty_rate_calc_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'seconds'
     croak "Missing required input value 'seconds'"
-        unless exists $_[1]->{seconds}
+        unless exists $_[1]->{seconds};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{seconds};
@@ -33690,7 +33690,7 @@ sub serialize_domain_start_dirty_rate_calc_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33734,13 +33734,13 @@ sub serialize_domain_graphics_reload_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'type'
     croak "Missing required input value 'type'"
-        unless exists $_[1]->{type}
+        unless exists $_[1]->{type};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{type};
@@ -33753,7 +33753,7 @@ sub serialize_domain_graphics_reload_args {
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -33802,7 +33802,7 @@ sub serialize_domain_event_memory_device_size_change_msg {
 
     # Serializing field: 'callbackID'
     croak "Missing required input value 'callbackID'"
-        unless exists $_[1]->{callbackID}
+        unless exists $_[1]->{callbackID};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
         unless defined $_[1]->{callbackID};
@@ -33815,19 +33815,19 @@ sub serialize_domain_event_memory_device_size_change_msg {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'alias'
     croak "Missing required input value 'alias'"
-        unless exists $_[1]->{alias}
+        unless exists $_[1]->{alias};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{alias}, $_[2], $_[3] );
 
     # Serializing field: 'size'
     croak "Missing required input value 'size'"
-        unless exists $_[1]->{size}
+        unless exists $_[1]->{size};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned long' value"
         unless defined $_[1]->{size};
@@ -33867,19 +33867,19 @@ sub serialize_domain_fd_associate_args {
 
     # Serializing field: 'dom'
     croak "Missing required input value 'dom'"
-        unless exists $_[1]->{dom}
+        unless exists $_[1]->{dom};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'name'
     croak "Missing required input value 'name'"
-        unless exists $_[1]->{name}
+        unless exists $_[1]->{name};
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_nonnull_string( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'flags'
     croak "Missing required input value 'flags'"
-        unless exists $_[1]->{flags}
+        unless exists $_[1]->{flags};
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
         unless defined $_[1]->{flags};
@@ -34378,7 +34378,7 @@ Protocol::Sys::Virt::Remote::XDR - Constants and (de)serializers for remote serv
 
 =head1 VERSION
 
-v10.3.6
+v10.3.7
 
 Based on LibVirt tag v10.3.0
 

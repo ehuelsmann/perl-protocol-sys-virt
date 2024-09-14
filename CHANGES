@@ -1,8 +1,13 @@
 -----
 
+10.3.7   2024-09-14
+    [Changed]
+        * Regenerated with XDR::Gen v0.0.5,
+          including generator fixes
+
 10.3.6   2024-09-14
     [Changed]
-        * Regenerated with XDR::Gen v0.0.3,
+        * Regenerated with XDR::Gen v0.0.4,
           including generator fixes
     [Fixed]
         * Added missing item to 10.3.5 CHANGES entry
