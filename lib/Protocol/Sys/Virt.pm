@@ -44,6 +44,11 @@ its own Perl interpreter with its own copies of all variables -- a clear
 difference with Python, where a single interpreter is used for all threads,
 sharing variables and values.
 
+=head1 API Guarantees
+
+The LibVirt project describes the stability guarantees of the protocol
+at L<https://libvirt.org/support.html#rpc-protocol>.
+
 =head1 TODO
 
 =over 8
