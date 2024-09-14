@@ -82,6 +82,7 @@ sub call_reply_codecs {
         if (my $msg = find_toplevel_definition(
                 $ast,
                 my $structname = ($struct_basename . '_msg')) ) {
+            $structname =~ s/^remote_//;
             $msg_encoders[$proc_id] =
                 qq|sub { my \$idx = 0; my \$rv = ''; \$remote->serialize_$structname(\$_[0], \$idx, \$rv); return \$rv; }|;
             $msg_decoders[$proc_id] =
