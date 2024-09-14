@@ -1,6 +1,16 @@
 -----
 
+10.3.6   2024-09-14
+    [Changed]
+        * Regenerated with XDR::Gen v0.0.3,
+          including generator fixes
+    [Fixed]
+        * Added missing item to 10.3.5 CHANGES entry
+
 10.3.5   2024-09-14
+    [Added]
+        * Reference to the protocol stability guarantees from
+          the LibVirt project
     [Changed]
         * Regenerated with XDR::Gen v0.0.3,
           including generator fixes

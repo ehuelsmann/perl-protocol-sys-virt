@@ -1,7 +1,7 @@
 ####################################################################
 #
 #     This file was generated using XDR::Parse version v0.3.1,
-#        XDR::Gen version 0.0.3 and LibVirt version v10.3.0
+#        XDR::Gen version 0.0.4 and LibVirt version v10.3.0
 #
 #      Don't edit this file, use the source template instead
 #
@@ -9,7 +9,7 @@
 #
 ####################################################################
 
-package Protocol::Sys::Virt::Transport::XDR v10.3.5;
+package Protocol::Sys::Virt::Transport::XDR v10.3.6;
 
 use v5.14;
 use warnings FATAL => 'uninitialized';
@@ -140,7 +140,7 @@ sub serialize_Header {
         unless defined $_[1];
 
     # Serializing field: 'prog'
-    croak "Missing required input value 'prog'
+    croak "Missing required input value 'prog'"
         unless exists $_[1]->{prog}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
@@ -153,7 +153,7 @@ sub serialize_Header {
     $_[2] += 4;
 
     # Serializing field: 'vers'
-    croak "Missing required input value 'vers'
+    croak "Missing required input value 'vers'"
         unless exists $_[1]->{vers}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
@@ -166,7 +166,7 @@ sub serialize_Header {
     $_[2] += 4;
 
     # Serializing field: 'proc'
-    croak "Missing required input value 'proc'
+    croak "Missing required input value 'proc'"
         unless exists $_[1]->{proc}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -179,13 +179,13 @@ sub serialize_Header {
     $_[2] += 4;
 
     # Serializing field: 'type'
-    croak "Missing required input value 'type'
+    croak "Missing required input value 'type'"
         unless exists $_[1]->{type}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_Type( $_[1]->{type}, $_[2], $_[3] );
 
     # Serializing field: 'serial'
-    croak "Missing required input value 'serial'
+    croak "Missing required input value 'serial'"
         unless exists $_[1]->{serial}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
@@ -198,7 +198,7 @@ sub serialize_Header {
     $_[2] += 4;
 
     # Serializing field: 'status'
-    croak "Missing required input value 'status'
+    croak "Missing required input value 'status'"
         unless exists $_[1]->{status}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_Status( $_[1]->{status}, $_[2], $_[3] );
@@ -330,19 +330,19 @@ sub serialize_NonnullDomain {
         unless defined $_[1];
 
     # Serializing field: 'name'
-    croak "Missing required input value 'name'
+    croak "Missing required input value 'name'"
         unless exists $_[1]->{name}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_NonnullString( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
-    croak "Missing required input value 'uuid'
+    croak "Missing required input value 'uuid'"
         unless exists $_[1]->{uuid}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_UUID( $_[1]->{uuid}, $_[2], $_[3] );
 
     # Serializing field: 'id'
-    croak "Missing required input value 'id'
+    croak "Missing required input value 'id'"
         unless exists $_[1]->{id}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -372,13 +372,13 @@ sub serialize_NonnullNetwork {
         unless defined $_[1];
 
     # Serializing field: 'name'
-    croak "Missing required input value 'name'
+    croak "Missing required input value 'name'"
         unless exists $_[1]->{name}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_NonnullString( $_[1]->{name}, $_[2], $_[3] );
 
     # Serializing field: 'uuid'
-    croak "Missing required input value 'uuid'
+    croak "Missing required input value 'uuid'"
         unless exists $_[1]->{uuid}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_UUID( $_[1]->{uuid}, $_[2], $_[3] );
@@ -542,7 +542,7 @@ sub serialize_Error {
         unless defined $_[1];
 
     # Serializing field: 'code'
-    croak "Missing required input value 'code'
+    croak "Missing required input value 'code'"
         unless exists $_[1]->{code}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -555,7 +555,7 @@ sub serialize_Error {
     $_[2] += 4;
 
     # Serializing field: 'domain'
-    croak "Missing required input value 'domain'
+    croak "Missing required input value 'domain'"
         unless exists $_[1]->{domain}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -568,13 +568,13 @@ sub serialize_Error {
     $_[2] += 4;
 
     # Serializing field: 'message'
-    croak "Missing required input value 'message'
+    croak "Missing required input value 'message'"
         unless exists $_[1]->{message}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_String( $_[1]->{message}, $_[2], $_[3] );
 
     # Serializing field: 'level'
-    croak "Missing required input value 'level'
+    croak "Missing required input value 'level'"
         unless exists $_[1]->{level}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -587,31 +587,31 @@ sub serialize_Error {
     $_[2] += 4;
 
     # Serializing field: 'dom'
-    croak "Missing required input value 'dom'
+    croak "Missing required input value 'dom'"
         unless exists $_[1]->{dom}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_Domain( $_[1]->{dom}, $_[2], $_[3] );
 
     # Serializing field: 'str1'
-    croak "Missing required input value 'str1'
+    croak "Missing required input value 'str1'"
         unless exists $_[1]->{str1}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_String( $_[1]->{str1}, $_[2], $_[3] );
 
     # Serializing field: 'str2'
-    croak "Missing required input value 'str2'
+    croak "Missing required input value 'str2'"
         unless exists $_[1]->{str2}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_String( $_[1]->{str2}, $_[2], $_[3] );
 
     # Serializing field: 'str3'
-    croak "Missing required input value 'str3'
+    croak "Missing required input value 'str3'"
         unless exists $_[1]->{str3}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_String( $_[1]->{str3}, $_[2], $_[3] );
 
     # Serializing field: 'int1'
-    croak "Missing required input value 'int1'
+    croak "Missing required input value 'int1'"
         unless exists $_[1]->{int1}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -624,7 +624,7 @@ sub serialize_Error {
     $_[2] += 4;
 
     # Serializing field: 'int2'
-    croak "Missing required input value 'int2'
+    croak "Missing required input value 'int2'"
         unless exists $_[1]->{int2}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'int' value"
@@ -637,7 +637,7 @@ sub serialize_Error {
     $_[2] += 4;
 
     # Serializing field: 'net'
-    croak "Missing required input value 'net'
+    croak "Missing required input value 'net'"
         unless exists $_[1]->{net}
     # my ($class, $value, $index, $output) = @_;
     $_[0]->serialize_Network( $_[1]->{net}, $_[2], $_[3] );
@@ -671,7 +671,7 @@ sub serialize_StreamHole {
         unless defined $_[1];
 
     # Serializing field: 'length'
-    croak "Missing required input value 'length'
+    croak "Missing required input value 'length'"
         unless exists $_[1]->{length}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'long' value"
@@ -685,7 +685,7 @@ sub serialize_StreamHole {
     $_[2] += 8;
 
     # Serializing field: 'flags'
-    croak "Missing required input value 'flags'
+    croak "Missing required input value 'flags'"
         unless exists $_[1]->{flags}
     # my ($class, $value, $index, $output) = @_;
     croak "Missing required input 'unsigned int' value"
@@ -709,7 +709,7 @@ Protocol::Sys::Virt::Transport::XDR - Protocol header and error constants and (d
 
 =head1 VERSION
 
-v10.3.5
+v10.3.6
 
 Based on LibVirt tag v10.3.0
 
