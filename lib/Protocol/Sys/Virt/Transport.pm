@@ -293,7 +293,7 @@ sub _send {
     elsif ($status == $msgs->ERROR) {
         my $payload = '';
         unless ($type == $msgs->STREAM
-                and $self->{role} eq 'server') { # client message
+                and $self->{role} eq 'client') { # client message
             my $i = 0;
             $msgs->serialize_Error( $args{error}, $i, $payload );
         }
