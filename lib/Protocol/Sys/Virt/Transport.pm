@@ -306,7 +306,7 @@ sub _send {
         if ($type == $msgs->STREAM_HOLE) {
             $msgs->serialize_StreamHole( $args{hole}, $i, $payload );
         }
-        elsif ($status == $msgs->STREAM) {
+        elsif ($type == $msgs->STREAM) {
             $payload = $args{data};
         }
         else {
