@@ -294,7 +294,8 @@ sub _send {
         my $payload = '';
         unless ($type == $msgs->STREAM
                 and $self->{role} eq 'server') { # client message
-            # set up error payload
+            my $i = 0;
+            $msgs->serialize_Error( $args{error}, $i, $payload );
         }
 
         my $len = pack('L>', 4 + length($hdr) + length($payload));
