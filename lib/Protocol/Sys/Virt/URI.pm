@@ -47,12 +47,12 @@ sub parse_url {
                    )?
                    :
                 )?
-                (?<host>[a-z0-9_\-\.]+)
+                (?<host>[a-z0-9_\-\.]+)?
                 /
                 (?<type>system|session)
                 $
                 #xi) {
-        my $bare = "$+{hypervisor}:///$type";
+        my $bare = "$+{hypervisor}:///$+{type}";
         $bare .= '?' if ($args{mode} or $args{socket});
         $bare .= 'mode=' . uri_encode($args{mode},
                                       { encode_reserved => 1 })
