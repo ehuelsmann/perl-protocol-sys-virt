@@ -1,7 +1,7 @@
 ####################################################################
 #
-#     This file was generated using XDR::Parse version v0.3.1,
-#        XDR::Gen version 0.0.5 and LibVirt version v10.3.0
+#     This file was generated using XDR::Parse version __XDR_PARSE_VERSION__,
+#        XDR::Gen version __XDR_GEN_VERSION__ and LibVirt version __LIBVIRT_TAG__
 #
 #      Don't edit this file, use the source template instead
 #
@@ -12,7 +12,7 @@
 use v5.14;
 use warnings;
 
-package Protocol::Sys::Virt::KeepAlive v10.3.11;
+package Protocol::Sys::Virt::KeepAlive __VERSION__;
 
 use Carp qw(croak);
 
@@ -75,9 +75,9 @@ Protocol::Sys::Virt::KeepAlive - Check transport link availability
 
 =head1 VERSION
 
-v10.3.11
+__VERSION__
 
-Based on LibVirt tag v10.3.0
+Based on LibVirt tag __LIBVIRT_TAG__
 
 =head1 SYNOPSIS
 
@@ -155,5 +155,4 @@ Registers the 'keep alive program' with C<$transport>.
 =head1 LICENSE AND COPYRIGHT
 
 See the LICENSE file in this distribution.
-
 

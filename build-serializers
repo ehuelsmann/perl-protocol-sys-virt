@@ -237,6 +237,11 @@ my @modules = (
                 module    => 'lib/Protocol/Sys/Virt/Remote.pm',
             },
             {
+                template  => 'templates/KeepAlive.pm.tmpl',
+                generator => \&plain_content,
+                module    => 'lib/Protocol/Sys/Virt/KeepAlive.pm',
+            },
+            {
                 template  => 'templates/Transport.pm.tmpl',
                 generator => \&plain_content,
                 module    => 'lib/Protocol/Sys/Virt/Transport.pm',
