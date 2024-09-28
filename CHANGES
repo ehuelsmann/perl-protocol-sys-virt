@@ -1,5 +1,9 @@
 -----
 
+10.3.11   to-be-released
+    [Fixed]
+        * parse_url 'bare' URLs should have their components URI encoded
+
 10.3.10   2024-09-28
     [Fixed]
         * Package name of URI parser incorrect

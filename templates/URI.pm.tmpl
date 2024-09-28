@@ -19,6 +19,7 @@ use parent qw(Exporter);
 
 use Carp qw(croak);
 use Log::Any qw($log);
+use URI::Encode qw(uri_encode uri_decode);
 
 our @EXPORT = qw( parse_url );
 
@@ -27,9 +28,7 @@ sub parse_url {
     my ($base, $query) = split( /\?/, $url, 2 );
     $query //= '';
     my %args = map {
-        s/%([0-9a-z]{2})/chr(hex($1))/gie;
-        # Encode::decode ascii -> Perl-internal????
-        $_;
+        uri_decode($_)
     }
     map {
         my ($key, $val) = split( /=/, $_, 2 );
@@ -53,13 +52,19 @@ sub parse_url {
                 (?<type>system|session)
                 $
                 #xi) {
-        my $host = $+{host} // '';
         my $bare = "$+{hypervisor}:///$type";
         $bare .= '?' if ($args{mode} or $args{socket});
-        $bare .= "mode=$args{mode}" if $args{mode};
+        $bare .= 'mode=' . uri_encode($args{mode},
+                                      { encode_reserved => 1 })
+            if $args{mode};
         $bare .= '&' if ($args{mode} and $args{socket});
-        $bare .= "socket=$args{socket}" if $args{socket};
-        return (base => $base, bare => $bare, %+, query => \%args);
+        $bare .= 'socket=' . uri_encode($args{socket},
+                                        { encode_reserved => 1 })
+            if $args{socket};
+        return (base => $base,
+                bare => $bare,
+                %+,
+                query => \%args);
     }
 
     die "Malformed hypervisor URI $url";
