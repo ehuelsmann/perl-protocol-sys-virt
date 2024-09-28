@@ -1,6 +1,6 @@
 -----
 
-10.3.11   to be released
+10.3.11   2024-09-28
     [Fixed]
         * parse_url 'bare' URLs should have their components URI encoded
         * 'host' URL component should not be required (but is) in parse_url
