@@ -12,4 +12,5 @@
 ^MANIFEST.bak$
 ^MANIFEST.SKIP$
 ^build-serializers$
-
+^blib/
+^pm_to_blib
