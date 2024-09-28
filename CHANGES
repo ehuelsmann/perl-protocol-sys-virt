@@ -9,6 +9,7 @@
         * parse_url now parses URLs as specified by https://libvirt.org/uri.html
     [Added]
         * Tests for parse_url
+        * Tests asserting code loads correctly
 
 10.3.10   2024-09-28
     [Fixed]
