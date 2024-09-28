@@ -5,6 +5,8 @@
         * parse_url 'bare' URLs should have their components URI encoded
         * 'host' URL component should not be required (but is) in parse_url
         * Undeclared variable '$type'
+    [Changed]
+        * parse_url now parses URLs as specified by https://libvirt.org/uri.html
     [Added]
         * Tests for parse_url
 
