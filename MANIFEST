@@ -12,3 +12,5 @@ lib/Protocol/Sys/Virt/URI.pm
 Makefile.PL
 MANIFEST
 README.pod
+t/01-load.t
+t/02-parse-url.t
