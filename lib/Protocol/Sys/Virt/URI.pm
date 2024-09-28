@@ -13,7 +13,7 @@
 use v5.14;
 use warnings;
 
-package Sys::Async::Virt::URI v10.3.9;
+package Protocol::Sys::Virt::URI v10.3.9;
 
 use parent qw(Exporter);
 
