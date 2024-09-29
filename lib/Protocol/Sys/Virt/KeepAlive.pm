@@ -15,6 +15,7 @@ use warnings;
 package Protocol::Sys::Virt::KeepAlive v10.3.11;
 
 use Carp qw(croak);
+use Log::Any qw($log);
 
 use Protocol::Sys::Virt::KeepAlive::XDR;
 use Protocol::Sys::Virt::Transport::XDR;
@@ -24,11 +25,12 @@ my $type = 'Protocol::Sys::Virt::Transport::XDR';
 sub new {
     my ($class, %args) = @_;
     return bless {
-        unacked     => 0,
-        max_unacked => 10,
-        on_ack      => sub { },
-        on_fail     => sub { },
-        sender      => sub { croak 'Not registered with a transport'; },
+        inactive     => 0,
+        max_inactive => 10,
+        on_ack       => sub { },
+        on_fail      => sub { },
+        on_ping      => sub { },
+        sender       => sub { croak 'Not registered with a transport'; },
         %args
     }, $class;
 }
@@ -47,22 +49,49 @@ sub register {
             on_reply   => \&_unexpected_msg,
             on_call    => \&_unexpected_msg,
             on_message => sub {
-                $self->{on_ack}->($self, $transport);
-                $self->{unacked} = 0;
+                my %args = @_;
 
+                if ($args{header}->{proc} == $msgs->PROC_PONG) {
+                    $self->{inactive} = 0; # our PING; keep pinging
+                    $self->{on_ack}->($self, $transport);
+                    return;
+                }
+
+                $self->mark_active;
+                if ($args{header}->{proc} == $msgs->PROC_PING) {
+                    $self->{on_ping}->($self, $transport);
+                }
                 return;
             },
             on_stream  => \&_unexpected_msg
         });
 }
 
+
+sub mark_active {
+    $_[0]->{inactive} = -1; # external activity
+}
+
 sub ping {
     my ($self) = @_;
-    $self->{unacked}++;
-    if ($self->{unacked} > $self->{max_unacked}) {
+
+    $self->{inactive}++;
+    if ($self->{inactive} > $self->{max_inactive}) {
         $self->{on_fail}->($self);
     }
-    $self->{sender}->($msgs->PROC_PING, $type->MESSAGE, data => '');
+    if ($self->{inactive}) {
+        $log->trace("Inactivity timer: $self->{inactive}");
+        $self->{sender}->($msgs->PROC_PING, $type->MESSAGE, data => '');
+    }
+    else {
+        $log->trace("Activity found; no need to PING");
+        return;
+    }
+}
+
+sub pong {
+    my ($self) = @_;
+    $self->{sender}->($msgs->PROC_PONG, $type->MESSAGE, data => '');
 }
 
 1;
@@ -93,6 +122,10 @@ Based on LibVirt tag v10.3.0
      max_unacked => 20,
      on_ack  => sub { say 'We are still alive!'; },
      on_fail => sub { die 'Connection timed out'; },
+     on_ping => sub {
+        my ($ka, $trnsp) = @_;
+        $ka->pong;
+     },
   );
   $keepalive->register( $transport );
 
@@ -120,10 +153,13 @@ Accepts the following options:
 
 =over 8
 
-=item * max_unacked
+=item * max_inactive
 
-The threshold number of unacknowledged C<PING> messages (i.e., without
-a C<PONG> response) before calling the C<on_fail> callback.
+The threshold number of C<ping> calls without activity; when the number
+of calls exceeds this value, the C<on_fail> callback will be invoked.
+
+Note that activity can be signalled through C<mark_active> as well as
+receiving C<PING> or C<PONG> messages.
 
 =item * on_ack
 
@@ -134,9 +170,28 @@ Callback called when a C<PONG> message is received.
 Callback called when the number of unacknowledged C<PING> messages exceeds
 the C<max_unacked> threshold.
 
+=item * on_ping
+
+  $on_ping->( $keepalive, $transport );
+
+Callback called when a PING message is received. Typically should call
+C<< $keepalive->pong >> (and deal with its return value).
+
 =back
 
 =head1 METHODS
+
+=head2 mark_active
+
+  $keepalive->mark_active;
+
+Makes the keep alive tracker aware of connection activity other than
+the PING and PONG messages it registered itself for with the C<$transport>.
+
+This function may be called on incoming data but should not be called
+when data is transmitted.  When this function has been called between two
+calls to C<< $keepalive->ping >>, it will not send a C< PING > message,
+taking the current activity as sufficient proof of an open connection.
 
 =head2 ping
 
@@ -145,6 +200,18 @@ the C<max_unacked> threshold.
 Sends a C<PROC_PING> message over the C<$transport> on which it is registered.
 If the number of unacknowledged pings grows above the threshold, triggers the
 C<on_fail> event.
+
+Returns either nothing at all (in case no PING message needed to be sent),
+or the return value of the sender routine registered with the transport
+when a PING message was sent.
+
+=head2 pong
+
+  $keepalive->pong;
+
+Sends a C<PROC_PONG> message over the C<$transport> on which it is registered.
+
+Returns the return value of the sender routine registered with the transport.
 
 =head2 register
 
