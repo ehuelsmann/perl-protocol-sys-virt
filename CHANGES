@@ -1,6 +1,6 @@
 -----
 
-10.3.12   to be released
+10.3.12   2024-09-29
     [Fixed]
         * KeepAlive sends messages, not call/replies
         * Generate KeepAlive, so it has a version number
