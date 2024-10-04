@@ -247,6 +247,11 @@ my @modules = (
                 module    => 'lib/Protocol/Sys/Virt/Transport.pm',
             },
             {
+                template  => 'templates/UNIXSocket.pm.tmpl',
+                generator => \&plain_content,
+                module    => 'lib/Protocol/Sys/Virt/UNIXSocket.pm',
+            },
+            {
                 template  => 'templates/URI.pm.tmpl',
                 generator => \&plain_content,
                 module    => 'lib/Protocol/Sys/Virt/URI.pm',
