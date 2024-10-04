@@ -70,14 +70,14 @@ Helper functions for LibVirt Unix sockets.
 
 =head2 socket_path
 
-  my $path = socket_path(session => 'system', mode => 'direct', readonly => 1);
+  my $path = socket_path(type => 'system', mode => 'direct', readonly => 1);
 
 Returns the path name of the socket with the given parameters. The following
 parameters may be given:
 
 =over 8
 
-=item * session
+=item * type
 
 =over 8
 
@@ -94,6 +94,9 @@ parameters may be given:
 =item * C<legacy> (default)
 
 =item * C<direct>
+
+In case the C<hypervisor> value is missing, the function
+falls back to C<legacy> mode.
 
 =back
 
