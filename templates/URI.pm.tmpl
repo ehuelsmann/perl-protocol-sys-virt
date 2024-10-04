@@ -99,6 +99,7 @@ Helper functions operating on LibVirt hypervisor URLs.
   # { base => 'qemu+ssh://user@password:host/system',
   #   proxy => 'qemu:///system?mode=legacy&socket=/path/socket',
   #   name  => 'qemu:///system',
+  #   type  => 'system',
   #   query => { param => 'value', mode => 'legacy', socket => '/path/socket' },
   #   transport => 'ssh',
   #   hypervisor => 'qemu',
@@ -125,6 +126,11 @@ and C<mode> parameters are passed through).
 
 This is the URL as it should be passed to the C<name> parameter in
 the protocol's C<REMOTE_PROC_CONNECT_OPEN> message.
+
+=item type
+
+This is the type of session. The value can either be C<system> or
+C<session>.
 
 =item query
 
