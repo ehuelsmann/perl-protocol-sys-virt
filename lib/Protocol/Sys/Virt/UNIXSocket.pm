@@ -13,7 +13,7 @@
 use v5.14;
 use warnings;
 
-package Protocol::Sys::Virt::UNIXSocket v10.3.12;
+package Protocol::Sys::Virt::UNIXSocket v10.3.13;
 
 use parent qw(Exporter);
 
@@ -54,7 +54,7 @@ Protocol::Sys::Virt::UNIXSocket - Helper routines for parsing LibVirt
 
 =head1 VERSION
 
-v10.3.12
+v10.3.13
 
 =head1 SYNOPSIS
 
