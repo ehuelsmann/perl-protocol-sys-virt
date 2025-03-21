@@ -204,6 +204,18 @@ sub plain_content {
     return contents( $template );
 }
 
+
+if (@ARGV != 2) {
+   print <<~'EOF';
+      Usage: build-serializers <tag> <version>
+
+        <tag>:       libvirt tag to convert, e.g. v11.1.0
+        <version>:   Protocol::Sys::Virt version to produce, e.g. v11.1.0
+      EOF
+  exit 1;
+}
+
+
 if (-d libvirt) {
     say "Deleting libvirt/...";
     system 'rm -rf libvirt/';
@@ -264,7 +276,6 @@ my @modules = (
             ]
     },
     );
-
 
 my $api_data = extract_all( 'libvirt/' );
 my $header_syms = $api_data->{header_syms};
