@@ -1,8 +1,9 @@
 -----
 
-11.8.0    TO BE RELEASED
+11.8.0    2025-10-12
     [Changed]
        * Minimum versions of XDR::Gen and Protocol::Sys::Virt::Devel increased
+       * Updated to libvirt tag v11.8.0 (from 11.7.0 - no actual changes) 
 
 11.7.0    2025-09-06
     [Changed]
