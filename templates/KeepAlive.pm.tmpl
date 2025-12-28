@@ -77,11 +77,11 @@ sub ping {
 
     $self->{inactive}++;
     if ($self->{inactive} > $self->{max_inactive}) {
-        $self->{on_fail}->($self);
+        return $self->{on_fail}->($self);
     }
     if ($self->{inactive}) {
         $log->trace("Inactivity timer: $self->{inactive}");
-        $self->{sender}->($msgs->PROC_PING, $type->MESSAGE, data => '');
+        return $self->{sender}->($msgs->PROC_PING, $type->MESSAGE, data => '');
     }
     else {
         $log->trace("Activity found; no need to PING");
@@ -199,10 +199,10 @@ taking the current activity as sufficient proof of an open connection.
 
 Sends a C<PROC_PING> message over the C<$transport> on which it is registered.
 If the number of unacknowledged pings grows above the threshold, triggers the
-C<on_fail> event.
+C<on_fail> event, returning the callbacks results.
 
-Returns either nothing at all (in case no PING message needed to be sent),
-or the return value of the sender routine registered with the transport
+Otherwise returns either nothing at all (in case no PING message needed to be
+sent), or the return value of the sender routine registered with the transport
 when a PING message was sent.
 
 =head2 pong
