@@ -1,6 +1,6 @@
 -----
 
-11.10.1   TO BE RELEASED
+11.10.1   2025-12-31
     [Changed]
        * Return return-value of callbacks and *::Transport->receive(), allowing
          Sys::Async::Virt to capture and track returned futures
