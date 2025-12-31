@@ -2,9 +2,8 @@
 
 11.10.1   TO BE RELEASED
     [Changed]
-       * Return value of Keep Alive callbacks now returned from
-         Protocol::Sys::Virt::Transport->receive(), allowing Sys::Async::Virt
-         to capture and track returned futures
+       * Return return-value of callbacks and *::Transport->receive(), allowing
+         Sys::Async::Virt to capture and track returned futures
 
 11.10.0   2025-12-02
     [Changed]

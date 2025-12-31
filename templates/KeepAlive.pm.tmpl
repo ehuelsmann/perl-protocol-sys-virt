@@ -53,13 +53,12 @@ sub register {
 
                 if ($args{header}->{proc} == $msgs->PROC_PONG) {
                     $self->{inactive} = 0; # our PING; keep pinging
-                    $self->{on_ack}->($self, $transport);
-                    return;
+                    return $self->{on_ack}->($self, $transport);
                 }
 
                 $self->mark_active;
                 if ($args{header}->{proc} == $msgs->PROC_PING) {
-                    $self->{on_ping}->($self, $transport);
+                    return $self->{on_ping}->($self, $transport);
                 }
                 return;
             },
