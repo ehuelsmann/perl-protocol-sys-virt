@@ -499,13 +499,15 @@ data of the C<*_msg> structure associated with C<$hdr->{proc}>.
 
 =item * on_stream
 
-  my $rv = $on_stream->(header => $hdr, data => $data);
-  my $rv = $on_stream->(header => $hdr, hole => $hole);
-  my $rv = $on_stream->(header => $hdr, error => $err);
+  my $rv = $on_stream->(header => $hdr, data => $data, eof => $eof);
+  my $rv = $on_stream->(header => $hdr, hole => $hole, eof => $eof);
+  my $rv = $on_stream->(header => $hdr, error => $err, eof => $eof);
 
 Called for messages of type C<STREAM> or C<STREAM_HOLE>.  C<$data> is the raw
 stream data to be written to the stream.  C<$hole> is the deserialized stream
 hole structure.  C<$err> is the deserialized error structure.
+
+The end-of-stream is indicated by the C<$eof> boolean value.
 
 =back
 
