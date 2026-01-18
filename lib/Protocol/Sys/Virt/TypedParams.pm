@@ -13,7 +13,7 @@
 use v5.14.1;
 use warnings;
 
-package Protocol::Sys::Virt::TypedParams v12.0.0;
+package Protocol::Sys::Virt::TypedParams v12.0.1;
 
 
 use Carp qw(croak);
@@ -200,7 +200,7 @@ Protocol::Sys::Virt::TypedParams - Helper functions for typed parameter values
 
 =head1 VERSION
 
-v12.0.0
+v12.0.1
 
 =head1 SYNOPSYS
 
