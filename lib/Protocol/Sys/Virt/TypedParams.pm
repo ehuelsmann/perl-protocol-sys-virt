@@ -196,7 +196,7 @@ __END__
 
 =head1 NAME
 
-Protocol::Sys::Virt::TypedParams - Helper functions for typed parameter values
+Protocol::Sys::Virt::TypedParams - Helper routines for typed parameter values
 
 =head1 VERSION
 
