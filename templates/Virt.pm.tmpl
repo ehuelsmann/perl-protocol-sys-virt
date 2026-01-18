@@ -71,11 +71,7 @@ L<Sys::Virt>, L<LibVirt|https://libvirt.org>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2024, Erik Huelsmann C<< <ehuels@gmail.com> >>.
-All rights reserved.
-
-This module is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+See the LICENSE file in this distribution.
 
 =head1 DISCLAIMER OF WARRANTY
 
