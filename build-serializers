@@ -259,6 +259,11 @@ my @modules = (
                 module    => 'lib/Protocol/Sys/Virt/Transport.pm',
             },
             {
+                template  => 'templates/TypedParams.pm.tmpl',
+                generator => \&plain_content,
+                module    => 'lib/Protocol/Sys/Virt/TypedParams.pm',
+            },
+            {
                 template  => 'templates/UNIXSocket.pm.tmpl',
                 generator => \&plain_content,
                 module    => 'lib/Protocol/Sys/Virt/UNIXSocket.pm',
