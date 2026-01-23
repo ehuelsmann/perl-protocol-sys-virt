@@ -74,7 +74,7 @@ our @EXPORT = qw(
 sub typed_params_check_fields_only {
     my ( $params, @fields ) = @_;
 
-    for my $param ($params->@*) {
+    for my $param (@{ $params }) {
         unless (elem_str $param->{field}, @fields) {
             croak "Unexpected parameter $param->{fields}";
         }
@@ -86,7 +86,7 @@ sub typed_params_field {
     my ( $params, $name, @rest ) = @_;
     return unless $params;
 
-    for my $param ($params->@*) {
+    for my $param (@{ $params }) {
         next unless $param->{field} eq $name;
 
         if (@rest) {
@@ -99,7 +99,7 @@ sub typed_params_field {
     if (@rest) {
         my $new_entry = shift @rest;
         my $param = { field => $name, value => $new_entry };
-        push $params->@*, $param;
+        push @{ $params }, $param;
         return $param;
     }
     return undef;
@@ -107,7 +107,7 @@ sub typed_params_field {
 
 sub typed_params_fields {
     my ( $params, $name ) = @_;
-    return [ grep { $_->{field} eq $name } $params->@* ];
+    return [ grep { $_->{field} eq $name } @{ $params } ];
 }
 
 sub typed_value_new {
@@ -124,14 +124,14 @@ sub typed_params_new {
     my ( $from ) = @_;
     $from = [] unless $from;
 
-    return [ map { { $_->%* } } $from->@* ];
+    return [ map { { %{ $_ } } } @{ $from } ];
 }
 
 sub _typed_params_field_value {
     my ( $params, $name, $type, @rest ) = @_;
     return unless $params;
 
-    for my $param ($params->@*) {
+    for my $param (@{ $params }) {
         next unless $param->{field} eq $name;
         croak "TypedParam type mismatch: expected $type, found $param->{value}->{type}"
             if $type != $param->{value}->{type};
@@ -152,7 +152,7 @@ sub _typed_params_field_value {
 
     if (@rest) {
         my $new_value = shift @rest;
-        push $params->@*, {
+        push @{ $params }, {
             field => $name,
             value => {
                 type => $type,
