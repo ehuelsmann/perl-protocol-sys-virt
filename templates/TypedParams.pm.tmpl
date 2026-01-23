@@ -12,6 +12,7 @@
 
 use v5.14.1;
 use warnings;
+use Syntax::Operator::Elem qw( elem_str );
 
 package Protocol::Sys::Virt::TypedParams __VERSION__;
 
@@ -47,6 +48,7 @@ our @EXPORT = qw(
     typed_field_new
     typed_value_new
 
+    typed_params_check_fields_only
     typed_params_field
     typed_params_fields
 
@@ -69,6 +71,16 @@ our @EXPORT = qw(
     );
 
 
+sub typed_params_check_fields_only {
+    my ( $params, @fields ) = @_;
+
+    for my $param ($params->@*) {
+        unless (elem_str $param->{field}, @fields) {
+            croak "Unexpected parameter $param->{fields}";
+        }
+    }
+    return 1;
+}
 
 sub typed_params_field {
     my ( $params, $name, @rest ) = @_;
