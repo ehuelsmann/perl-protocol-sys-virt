@@ -3,6 +3,7 @@
 12.0.6    TO BE RELEASED
    [Fixed]
        * Missing documentation for typed_params_check_fields_only()
+       * Warning in TypedParams.pm:81 about useless use of hash element
 
 12.0.5    2026-01-23
    [Added]

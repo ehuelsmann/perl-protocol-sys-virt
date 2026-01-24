@@ -75,8 +75,8 @@ sub typed_params_check_fields_only {
     my ( $params, @fields ) = @_;
 
     for my $param (@{ $params }) {
-        unless (elem_str $param->{field}, @fields) {
-            croak "Unexpected parameter $param->{fields}";
+        unless (elem_str( $param->{field}, @fields )) {
+            croak "Unexpected parameter $param->{field}";
         }
     }
     return 1;
