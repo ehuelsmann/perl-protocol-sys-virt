@@ -309,6 +309,15 @@ adds a field by this name to the parameter set.
 
 Returns all fields in the parameter set whose name matches C<$fieldname>.
 
+=head2 typed_params_check_fields_only
+
+  my $bool = typed_params_check_fields_only( $params, $fieldname1, $fieldname2, ... );
+
+Returns true when there are no other parameters than with the field names
+passed in the arguments list.
+
+On failure, throws an error.
+
 =head2 typed_params_field_int_value
 
   my $value = typed_params_field_int_value( $params, $fieldname );
