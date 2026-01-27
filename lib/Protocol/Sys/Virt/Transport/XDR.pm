@@ -1,7 +1,7 @@
 ####################################################################
 #
 #     This file was generated using XDR::Parse version v1.0.1,
-#        XDR::Gen version 1.0.0 and LibVirt version v12.0.0
+#        XDR::Gen version 1.1.1 and LibVirt version v12.0.0
 #
 #      Don't edit this file, use the source template instead
 #
@@ -215,11 +215,11 @@ sub deserialize_UUID {
 # @_: ($class, $value, $index, $output) = @_;
 sub serialize_UUID {
     # my ($class, $value, $index, $output) = @_;
-    croak "Missing required input 'opaque' value"
+    croak "Missing required input 'opaque data' value"
         unless defined $_[1];
     do {
         my $len = length $_[1];
-        die "Opaque value length mismatch (defined: 16): $len"
+        die "Opaque data length mismatch (defined: 16): $len"
             if not $len  == 16;
 
         substr( $_[3], $_[2] ) = $_[1];
