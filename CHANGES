@@ -1,6 +1,12 @@
 -----
 
-12.0.5    2026-07-01
+12.5.1    2026-07-01
+   [Added]
+       * Support for the 'argv' URI query parameter for the 'ext' transport
+   [Fixed]
+       * Version number in CHANGES for 12.5.0 (was accidentally 12.0.5)
+
+12.5.0    2026-07-01
    [Added]
        * (De)serializers: deserialize_domain_announce_interface_args,
          serialize_domain_announce_interface_args
