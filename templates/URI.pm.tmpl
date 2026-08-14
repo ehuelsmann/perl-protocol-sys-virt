@@ -32,7 +32,7 @@ sub parse_url {
     pairmap {
         if ($a eq 'argv') {
             if (exists $args{argv}) {
-                push $args{argv}->@*, $b;
+                push @{ $args{argv} }, $b;
             }
             else {
                 $args{argv} = [ $b ];
